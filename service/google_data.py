@@ -39,20 +39,6 @@ class GridScheduler:
         print(self.credentials_path)
         self.gc = None
         self.spreadsheet = None
-        # Список дней недели по умолчанию (будет обновлен после подключения)
-        # self.days = DEFAULT_GRID_DAYS.copy()
-        
-        # Названия дней недели для поиска в названиях листов
-        # self.weekday_names = WEEKDAY_NAMES
-        # Подключаемся только если есть URL и credentials файл существует
-        # if self.spreadsheet_url and os.path.exists(self.credentials_path):
-        #     if self.connect():
-        #         # Обновляем список дней из названий листов
-        #         self.days = self._get_days_from_sheets()
-        
-
-
-    
 
     def connect(self) -> bool:
         """Подключение к Google Sheets"""
@@ -80,16 +66,8 @@ class GridScheduler:
 
         # self.connect()
         if self.spreadsheet:
-            # --- 1. Получение всех данных ---
+            
             worksheet = self.spreadsheet.worksheet('календарь new')
-            data = worksheet.get_all_values()
-            
-            # --- 2. Поиск строки начала нужного блока ("ИЮЛЬ") ---
-            # 1. Найти строку, где начинается календарная сетка (ищем "ША" в диапазоне строк)
-            import gspread
-            import re
-
-            
             data = worksheet.get_all_values()
 
             # --- 2. Справочник месяцев ---
@@ -108,7 +86,7 @@ class GridScheduler:
                 'ДЕКАБРЬ': '12'
             }
 
-            YEAR = "2025"  # Укажите нужный год!
+            YEAR = "2025"
 
             raw_events = []
             events = []
@@ -161,7 +139,6 @@ class GridScheduler:
                     j += 1
                 i = j  # Перепрыгиваем к следующему блоку месяца
 
-            # --- 3. ПРОВЕРКА: выводим все события ---
             for raw_event in raw_events:
                 event = Event(
                     activity=raw_event['activity'],

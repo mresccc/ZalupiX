@@ -1,7 +1,6 @@
 # service/models.py
 from pydantic import BaseModel
 from datetime import date
-from typing import List
 
 class Event(BaseModel):
     activity: str
@@ -10,9 +9,9 @@ class Event(BaseModel):
 
 class Activity(BaseModel):
     name: str
-    events: List[Event] = []
+    events: list[Event] = []
 
 class CalendarMonth(BaseModel):
     year: int
     month: int
-    events: List[Event] = []
+    events: list[Event] = []

@@ -1,39 +1,58 @@
+import asyncio
 import logging
-from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-from aiogram.types import Update
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from typing import List
 
-from bot import bot, dp, notify_admins
-from config import settings
+from service.google_data import init_scheduler
+from service.models import Event
 
-logging.basicConfig(level=logging.INFO)
-templates = Jinja2Templates(directory="web")
+from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
+# Импортируем вашего бота и функцию уведомления из bot.py
+from bot import dp, bot, notify_admins
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    await notify_admins("✅ Бот запущен")
-    await bot.set_webhook(
-        url=settings.webhook(),
-        allowed_updates=dp.resolve_used_update_types(),
-        drop_pending_updates=True
+# Конфигурация
+scheduler = init_scheduler(SPREADSHEET_URL, GRID_CREDENTIALS_PATH)
+
+# --- FASTAPI APP ---
+app = FastAPI(title="Google Sheets Events API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+async def root():
+    return "Hello"
+
+@app.get("/schedule", response_model=List[Event])
+async def get_schedule():
+    events = scheduler.get_events_from_google_sheet()
+    return events
+
+# --- ФУНКЦИЯ ЗАПУСКА FASTAPI через uvicorn в asyncio ---
+async def start_api():
+    import uvicorn
+    config = uvicorn.Config(app, host="127.0.0.1", port=8000, log_level="info")
+    server = uvicorn.Server(config)
+    await server.serve()
+
+# --- ОСНОВНОЙ ЛАНЧЕР: запуск бота и API параллельно ---
+async def main():
+    # Отправляем уведомление администратору
+    await notify_admins("🤖 Бот и API сервер запущены!")
+    # Стартуем оба процесса параллельно: API и Telegram-бот
+    await asyncio.gather(
+        start_api(),
+        dp.start_polling(bot)
     )
-    yield
-    await bot.delete_webhook()
-    await notify_admins("🛑 Бот остановлен")
 
-app = FastAPI(title="MiniApp", lifespan=lifespan)
-app.mount("/static", StaticFiles(directory="web"), name="static")
 
-@app.get("/", response_class=HTMLResponse)
-async def index(r: Request):
-    return templates.TemplateResponse("index.html", {"request": r})
-
-@app.post("/webhook")
-async def telegram_webhook(r: Request):
-    print('Хуй хуй')
-    u = Update.model_validate(await r.json(), context={"bot": bot})
-    await dp.feed_update(bot, u)
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    asyncio.run(main())

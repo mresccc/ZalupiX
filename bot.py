@@ -6,22 +6,22 @@ from aiogram.filters import CommandStart
 from aiogram.types import (
     Message, KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
 )
-from config import settings
+from config import settings, BOT_TOKEN, WEBAPP_URL
 
 bot = Bot(
-    token=settings.TG_TOKEN,
+    token=BOT_TOKEN,
     default=DefaultBotProperties(parse_mode=ParseMode.HTML)
 )
 dp = Dispatcher()
 router = Router()
-
+print('FJSDAHFBJDSKJF[PDSFOJASDHLKBJFBKDofpadsjihlfkdks;afkas]')
 @router.message(CommandStart())
 async def start_cmd(m: Message):
     kb = ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(
                 text="🚀 Открыть Mini App",
-                web_app=WebAppInfo(url=settings.WEB_URL)
+                web_app=WebAppInfo(url=WEBAPP_URL)
             )]
         ],
         resize_keyboard=True
@@ -38,8 +38,8 @@ async def handle_web_app_data(m: Message):
 dp.include_router(router)
 
 async def   notify_admins(text: str):
-    for admin in settings.ADMIN_IDS:
-        try:
-            await bot.send_message(admin, text)
-        except Exception:
-            pass
+    
+    try:
+        await bot.send_message(477151236, text)
+    except Exception:
+        pass
