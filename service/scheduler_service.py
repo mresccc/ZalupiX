@@ -1,12 +1,17 @@
 import logging
 from typing import List, Optional
 
+from aiocache import Cache, cached
+
 from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
 from service.google_data import GridScheduler, init_scheduler
 from service.models import Event
 
 # Настройка логирования
 logger = logging.getLogger(__name__)
+
+# Инициализируем кэш
+cache = Cache(Cache.MEMORY)
 
 
 class SchedulerServiceError(Exception):
@@ -32,16 +37,25 @@ class SchedulerService:
             logger.info("Планировщик успешно инициализирован")
         return self._scheduler
 
-    def get_events(self) -> List[Event]:
-        """Получение всех событий из Google Sheets"""
+    @cached(ttl=600, cache=Cache.MEMORY)
+    async def get_cached_events(self) -> List[Event]:
+        """Получение событий с кэшированием"""
+        return await self._get_events_raw()
+
+    async def _get_events_raw(self) -> List[Event]:
+        """Получение событий без кэширования (внутренний метод)"""
         try:
             scheduler = self._get_scheduler()
-            events = scheduler.get_events_from_google_sheet()
+            events = await scheduler.get_events_from_google_sheet()
             logger.info(f"Получено {len(events)} событий")
             return events
         except Exception as e:
             logger.error(f"Ошибка при получении событий: {str(e)}")
             raise
+
+    async def get_events(self) -> List[Event]:
+        """Получение всех событий из Google Sheets"""
+        return await self.get_cached_events()
 
     def is_connected(self) -> bool:
         """Проверка подключения к Google Sheets"""
@@ -51,7 +65,8 @@ class SchedulerService:
         except Exception:
             return False
 
-    def refresh_events(self) -> List[Event]:
-        """Принудительное обновление событий"""
+    async def refresh_events(self) -> List[Event]:
+        """Принудительное обновление событий с очисткой кэша"""
         logger.info("Принудительное обновление событий")
-        return self.get_events()
+        await cache.clear()
+        return await self._get_events_raw()

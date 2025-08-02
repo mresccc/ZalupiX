@@ -63,7 +63,7 @@ class GridScheduler:
             print(f"Ошибка подключения к Google Sheets: {e}")
             return False
 
-    def get_events_from_google_sheet(self) -> list:
+    async def get_events_from_google_sheet(self) -> list:
         import re
 
         # self.connect()

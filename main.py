@@ -1,7 +1,9 @@
 import asyncio
 import logging
+
 from app import app
-from bot import notify_admins
+from bot import bot, dp, notify_admins
+
 
 # --- ФУНКЦИЯ ЗАПУСКА FASTAPI через uvicorn в asyncio ---
 async def start_api():
