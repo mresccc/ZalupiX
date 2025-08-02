@@ -7,3 +7,4 @@ orjson==3.11.1
 fastapi-cache2==0.2.1
 gspread==6.0.2
 polars==0.20.8
+aiocache
