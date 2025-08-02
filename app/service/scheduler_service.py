@@ -2,8 +2,8 @@ import logging
 from typing import List, Optional
 
 from aiocache import Cache, cached
-
 from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
+
 from service.google_data import GridScheduler, init_scheduler
 from service.models import Event
 
