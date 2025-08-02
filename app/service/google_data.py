@@ -41,7 +41,6 @@ class GridScheduler:
             self.credentials_path = os.path.join(
                 project_root, credentials_path or "credentials.json"
             )
-        print(self.credentials_path)
         self.gc: Client | None = None
         self.spreadsheet: Spreadsheet | None = None
 
@@ -82,7 +81,6 @@ class GridScheduler:
         if self.spreadsheet:
             worksheet = self.spreadsheet.worksheet("календарь new")
             data = worksheet.get_all_values(combine_merged_cells=True)
-            print(data)
             headers = data[3] if len(data) > 3 else []
             # Берем данные начиная с 4-й строки (пропускаем заголовки)
             rows = data[2:] if len(data) > 2 else []
