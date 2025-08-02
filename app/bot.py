@@ -1,3 +1,4 @@
+import asyncio
 from aiogram import Bot, Dispatcher, Router, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -41,3 +42,10 @@ async def notify_admins(text: str):
         await bot.send_message(477151236, text)
     except Exception:
         pass
+
+
+async def main():
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())

@@ -34,8 +34,8 @@ python3 -m uvicorn app:app --reload --host 0.0.0.0 --port 8000
 ## API Endpoints
 
 - `GET /health` - Проверка состояния API
-- `GET /schedule` - Получение расписания событий
-- `GET /schedule/refresh` - Принудительное обновление кэша
+- `GET /schedule` - Получение расписания событий (с кэшированием)
+- `GET /schedule?refresh=true` - Принудительное обновление кэша
 
 ## Документация API
 

@@ -4,8 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 import gspread
-
-from config import GRID_CREDENTIALS_PATH
+from config import GRID_CREDENTIALS_PATH, MONTHS
 
 from .models import Event
 
@@ -83,34 +82,17 @@ class GridScheduler:
             worksheet = self.spreadsheet.worksheet("календарь new")
             data = worksheet.get_all_values()
 
-            # --- 2. Справочник месяцев ---
-            month_map = {
-                "ЯНВАРЬ": "01",
-                "ФЕВРАЛЬ": "02",
-                "МАРТ": "03",
-                "АПРЕЛЬ": "04",
-                "МАЙ": "05",
-                "ИЮНЬ": "06",
-                "ИЮЛЬ": "07",
-                "АВГУСТ": "08",
-                "СЕНТЯБРЬ": "09",
-                "ОКТЯБРЬ": "10",
-                "НОЯБРЬ": "11",
-                "ДЕКАБРЬ": "12",
-            }
+            YEAR = datetime.now().year
 
-            YEAR = "2025"
-
-            raw_events = []
             events = []
             i = 0
             while i < len(data):
                 row = data[i]
                 # Поиск начала месяца
                 month = None
-                for key in month_map:
+                for key in MONTHS:
                     if key in row:
-                        month = month_map[key]
+                        month = MONTHS[key]
                         break
                 if not month:
                     i += 1
@@ -135,7 +117,7 @@ class GridScheduler:
                 j = i + 3
                 while j < len(data):
                     act_row = data[j]
-                    if any(m in act_row for m in month_map):
+                    if any(m in act_row for m in MONTHS):
                         break
                     activity = act_row[0].strip()
                     if not activity:
@@ -144,19 +126,14 @@ class GridScheduler:
                     for col, date in dates:
                         text = act_row[col].strip()
                         if text:
-                            raw_events.append(
-                                {"activity": activity, "date": date, "text": text}
+                            event = Event(
+                                project=activity,
+                                date=datetime.strptime(date, "%Y-%m-%d").date(),
+                                activity=text,
                             )
+                            events.append(event)
                     j += 1
                 i = j  # Перепрыгиваем к следующему блоку месяца
-
-            for raw_event in raw_events:
-                event = Event(
-                    activity=raw_event["activity"],
-                    date=datetime.strptime(raw_event["date"], "%Y-%m-%d").date(),
-                    text=raw_event["text"],
-                )
-                events.append(event)
             return events
 
 

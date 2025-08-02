@@ -1,11 +1,11 @@
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 
-from service.models import Event
+from schemas import HealthResponse, ScheduleResponse
 from service.scheduler_service import SchedulerService
 
 # Настройка логирования
@@ -60,25 +60,22 @@ def get_scheduler_service() -> SchedulerService:
     return scheduler_service
 
 
-@app.on_event("startup")
-async def startup_event():
-    """Инициализация приложения"""
-    logger.info("API сервер запущен")
+# Удаляем устаревший on_event, используем lifespan
 
 
 @app.get("/health")
 async def health_check(
     scheduler_service: SchedulerService = Depends(get_scheduler_service),
-):
+) -> HealthResponse:
     """Проверка состояния API"""
     try:
         logger.info("Выполняется health check")
         if scheduler_service.is_connected():
             logger.info("Google API подключен")
-            return {"status": "healthy", "google_api": "connected"}
+            return HealthResponse(status="healthy", google_api="connected")
         else:
             logger.warning("Google API отключен")
-            return {"status": "healthy", "google_api": "disconnected"}
+            return HealthResponse(status="healthy", google_api="disconnected")
     except Exception as e:
         logger.error(f"Health check failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Health check failed: {str(e)}")
@@ -86,29 +83,28 @@ async def health_check(
 
 @app.get("/schedule")
 async def get_schedule(
+    refresh: bool = Query(
+        default=False, description="Принудительное обновление кэша", examples=[False]
+    ),
     scheduler_service: SchedulerService = Depends(get_scheduler_service),
-) -> list[Event]:
+) -> ScheduleResponse:
     """Получение расписания событий"""
     try:
-        logger.info("Запрос расписания")
-        return await scheduler_service.get_events()
+        if refresh:
+            logger.info("Принудительное обновление расписания")
+            events = await scheduler_service.refresh_events()
+            logger.info(f"Обновлено {len(events)} событий")
+            return ScheduleResponse(events=events)
+        else:
+            logger.info("Запрос расписания")
+            events = await scheduler_service.get_events()
+            return ScheduleResponse(events=events)
     except Exception as e:
         logger.error(f"Failed to get schedule: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to get schedule: {str(e)}")
 
 
-@app.get("/schedule/refresh")
-async def refresh_schedule(
-    scheduler_service: SchedulerService = Depends(get_scheduler_service),
-) -> list[Event]:
-    """Принудительное обновление кэша расписания"""
-    try:
-        logger.info("Принудительное обновление расписания")
-        events = await scheduler_service.refresh_events()
-        logger.info(f"Обновлено {len(events)} событий")
-        return events
-    except Exception as e:
-        logger.error(f"Failed to refresh schedule: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Failed to refresh schedule: {str(e)}"
-        )
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)

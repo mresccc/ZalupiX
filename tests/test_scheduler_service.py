@@ -1,8 +1,8 @@
 from datetime import datetime
 from unittest.mock import Mock
 
-from service.models import Event
-from service.scheduler_service import (
+from app.service.models import Event
+from app.service.scheduler_service import (
     MockDataProvider,
     SchedulerService,
     create_mock_scheduler_service,
