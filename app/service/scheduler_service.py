@@ -70,3 +70,9 @@ class SchedulerService:
         logger.info("Принудительное обновление событий")
         await cache.clear()
         return await self._get_events_raw()
+
+    def add_event(self, events: List[Event]):
+        #TODO: реализовать добавление события в расписание
+        """Добавление события в расписание"""
+        scheduler = self._get_scheduler()
+        scheduler.add_event(events)

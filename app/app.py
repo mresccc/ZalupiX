@@ -105,6 +105,18 @@ async def get_schedule(
         raise HTTPException(status_code=500, detail=f"Failed to get schedule: {str(e)}")
 
 
+@app.post("/schedule/add")
+async def add_schedule(
+    schedule: ScheduleResponse,
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
+) -> ScheduleResponse:
+    #TODO: добавить валидацию данных
+    logger.info(f"Добавление события в расписание: {schedule}")
+    """Добавление события в расписание"""
+    scheduler_service.add_event(schedule.events)
+    return ScheduleResponse(events=[])
+
+
 if __name__ == "__main__":
     import uvicorn
 
