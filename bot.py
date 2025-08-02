@@ -1,44 +1,42 @@
-import logging
 from aiogram import Bot, Dispatcher, Router, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
-from aiogram.types import (
-    Message, KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
-)
-from config import settings, BOT_TOKEN, WEBAPP_URL
+from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
+from config import BOT_TOKEN, WEBAPP_URL
 
-bot = Bot(
-    token=BOT_TOKEN,
-    default=DefaultBotProperties(parse_mode=ParseMode.HTML)
-)
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 router = Router()
-print('FJSDAHFBJDSKJF[PDSFOJASDHLKBJFBKDofpadsjihlfkdks;afkas]')
+print("FJSDAHFBJDSKJF[PDSFOJASDHLKBJFBKDofpadsjihlfkdks;afkas]")
+
+
 @router.message(CommandStart())
 async def start_cmd(m: Message):
     kb = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(
-                text="🚀 Открыть Mini App",
-                web_app=WebAppInfo(url=WEBAPP_URL)
-            )]
+            [
+                KeyboardButton(
+                    text="🚀 Открыть Mini App", web_app=WebAppInfo(url=WEBAPP_URL)
+                )
+            ]
         ],
-        resize_keyboard=True
+        resize_keyboard=True,
     )
-    await m.answer(
-        "<b>Привет!</b> Жми кнопку – откроется Mini App.",
-        reply_markup=kb
-    )
+    await m.answer("<b>Привет!</b> Жми кнопку – откроется Mini App.", reply_markup=kb)
+
 
 @router.message(F.web_app_data)
 async def handle_web_app_data(m: Message):
-    await m.answer(f"⛳ Получены данные из Mini App: <code>{m.web_app_data.data}</code>")
+    await m.answer(
+        f"⛳ Получены данные из Mini App: <code>{m.web_app_data.data}</code>"
+    )
+
 
 dp.include_router(router)
 
-async def   notify_admins(text: str):
-    
+
+async def notify_admins(text: str):
     try:
         await bot.send_message(477151236, text)
     except Exception:

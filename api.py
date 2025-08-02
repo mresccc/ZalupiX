@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 from fastapi_cache import FastAPICache
@@ -62,7 +62,7 @@ async def startup_event():
 
 @app.get("/health")
 async def health_check(
-    scheduler_service: SchedulerService = Depends(get_scheduler_service)
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ):
     """Проверка состояния API"""
     try:
@@ -81,7 +81,7 @@ async def health_check(
 @app.get("/schedule")
 @cache(expire=600)  # Кэширование на 10 минут
 async def get_schedule(
-    scheduler_service: SchedulerService = Depends(get_scheduler_service)
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ) -> list[Event]:
     """Получение расписания событий"""
     try:
@@ -91,9 +91,10 @@ async def get_schedule(
         logger.error(f"Failed to get schedule: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to get schedule: {str(e)}")
 
+
 @app.get("/schedule/refresh")
 async def refresh_schedule(
-    scheduler_service: SchedulerService = Depends(get_scheduler_service)
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ) -> list[Event]:
     """Принудительное обновление кэша расписания"""
     try:

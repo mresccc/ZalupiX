@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 class SchedulerServiceError(Exception):
     """Исключение для ошибок сервиса планировщика"""
+
     pass
 
 
