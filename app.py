@@ -1,4 +1,5 @@
 import logging
+from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,6 +16,14 @@ logger = logging.getLogger(__name__)
 scheduler_service = SchedulerService()
 
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan менеджер для FastAPI"""
+    logger.info("🚀 FastAPI приложение запускается...")
+    yield
+    logger.info("🛑 FastAPI приложение завершает работу...")
+
+
 def create_app() -> FastAPI:
     """Создание и настройка FastAPI приложения"""
     app = FastAPI(
@@ -22,6 +31,7 @@ def create_app() -> FastAPI:
         description="API для работы с событиями из Google Sheets",
         version="1.0.0",
         default_response_class=ORJSONResponse,
+        lifespan=lifespan,
     )
 
     # Улучшенная настройка CORS

@@ -1,4 +1,5 @@
 import os
+
 from dotenv import load_dotenv
 
 # Загружаем переменные окружения
@@ -23,7 +24,7 @@ settings = Settings()
 
 # === ФАЙЛЫ И ПУТИ ===
 CREDS_FILE = "credentials.json"
-GRID_CREDENTIALS_PATH = "../credentials.json"
+GRID_CREDENTIALS_PATH = "credentials.json"
 
 # === ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ===
 CALENDAR_URL = os.getenv("CALENDAR_URL")

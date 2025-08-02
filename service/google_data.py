@@ -31,13 +31,14 @@ class GridScheduler:
             credentials_path: Путь к JSON файлу с credentials
         """
         self.spreadsheet_url = spreadsheet_url
-        # Если путь к credentials не абсолютный, ищем рядом со скриптом
+        # Если путь к credentials не абсолютный, ищем в корне проекта
         if credentials_path and os.path.isabs(credentials_path):
             self.credentials_path = credentials_path
         else:
-            script_dir = os.path.dirname(os.path.abspath(__file__))
+            # Ищем в корне проекта (родительская директория от service/)
+            project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             self.credentials_path = os.path.join(
-                script_dir, credentials_path or "../credentials.json"
+                project_root, credentials_path or "credentials.json"
             )
         print(self.credentials_path)
         self.gc = None
@@ -46,12 +47,19 @@ class GridScheduler:
     def connect(self) -> bool:
         """Подключение к Google Sheets"""
         if not self.spreadsheet_url:
+            print("Ошибка: не указан URL таблицы")
             return False
 
         try:
+            print("Попытка подключения к Google Sheets...")
+            print(f"URL: {self.spreadsheet_url}")
+            print(f"Credentials path: {self.credentials_path}")
+
             if os.path.exists(self.credentials_path):
+                print(f"Используем файл credentials: {self.credentials_path}")
                 self.gc = gspread.service_account(filename=self.credentials_path)
             else:
+                print("Файл credentials не найден, используем переменные окружения")
                 # Попробуем использовать переменные окружения
                 self.gc = gspread.service_account()
 
@@ -66,7 +74,11 @@ class GridScheduler:
     async def get_events_from_google_sheet(self) -> list:
         import re
 
-        # self.connect()
+        # Подключаемся к Google Sheets если еще не подключены
+        if not self.spreadsheet:
+            if not self.connect():
+                raise Exception("Не удалось подключиться к Google Sheets")
+
         if self.spreadsheet:
             worksheet = self.spreadsheet.worksheet("календарь new")
             data = worksheet.get_all_values()
