@@ -1,6 +1,31 @@
 import os
+from typing import List
 
 from dotenv import load_dotenv
+
+# CORS настройки
+CORS_ORIGINS: List[str] = [
+    "http://localhost:8001",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+# Добавляем production домены из переменных окружения
+if os.getenv("PRODUCTION_DOMAIN"):
+    CORS_ORIGINS.extend(
+        [
+            f"https://{os.getenv('PRODUCTION_DOMAIN')}",
+            f"http://{os.getenv('PRODUCTION_DOMAIN')}",
+        ]
+    )
+
+# Настройки сервера
+HOST = os.getenv("HOST", "127.0.0.1")
+PORT = int(os.getenv("PORT", "8001"))
+RELOAD = os.getenv("RELOAD", "True").lower() == "true"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 # Загружаем переменные окружения
 load_dotenv()
@@ -8,7 +33,7 @@ load_dotenv()
 
 class Settings:
     TG_TOKEN: str = os.getenv("TG_TOKEN", "")
-    WEB_URL: str = os.getenv("WEB_URL", "https://localhost:8000")
+    WEB_URL: str = os.getenv("WEB_URL", "https://localhost:8001")
     ADMIN_IDS: list[int] = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x]
 
     def webhook(self) -> str:

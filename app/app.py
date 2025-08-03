@@ -2,14 +2,15 @@ import logging
 from contextlib import asynccontextmanager
 from datetime import date
 
+from config import CORS_ORIGINS, DEBUG, HOST, PORT, RELOAD
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 from schemas import (
     HealthResponse,
     ScheduleResponse,
-    UserProfileUpdateRequest,
     UserProfileResponse,
+    UserProfileUpdateRequest,
 )
 from service.scheduler_service import SchedulerService
 from service.user_service import UserService
@@ -39,18 +40,15 @@ def create_app() -> FastAPI:
         version="1.0.0",
         default_response_class=ORJSONResponse,
         lifespan=lifespan,
+        docs_url=None if DEBUG else "/docs",
+        redoc_url=None if DEBUG else "/redoc",
+        openapi_url=None if DEBUG else "/openapi.json",
     )
 
     # Улучшенная настройка CORS
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=[
-            "http://localhost:8000",
-            "http://localhost:3000",
-            "http://127.0.0.1:3000",
-            "http://localhost:5173",
-            "http://127.0.0.1:5173",
-        ],
+        allow_origins=CORS_ORIGINS,
         allow_credentials=True,
         allow_methods=["GET", "POST", "OPTIONS"],
         allow_headers=["Content-Type", "Authorization", "Accept"],
@@ -67,6 +65,7 @@ app = create_app()
 def get_scheduler_service() -> SchedulerService:
     """Dependency для получения сервиса планировщика"""
     return scheduler_service
+
 
 def get_user_service() -> UserService:
     """Dependency для получения сервиса пользователя"""
@@ -102,9 +101,7 @@ async def get_schedule(
     start_date: date = Query(
         default=None, description="Начальная дата", examples=[None]
     ),
-    end_date: date = Query(
-        default=None, description="Конечная дата", examples=[None]
-    ),
+    end_date: date = Query(default=None, description="Конечная дата", examples=[None]),
     scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ) -> ScheduleResponse:
     """Получение расписания событий"""
@@ -143,9 +140,7 @@ async def get_user_profile(
 ) -> UserProfileResponse:
     """Получение профиля пользователя TODO"""
     # TODO: доделать получение профиля пользователя
-    return UserProfileResponse(
-        user_profile=user_service.get_user_profile(telegram_id)
-    )
+    return UserProfileResponse(user_profile=user_service.get_user_profile(telegram_id))
 
 
 @app.post("/user/update")
@@ -162,4 +157,4 @@ async def update_user_profile(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app:app", host=HOST, port=PORT, reload=RELOAD)

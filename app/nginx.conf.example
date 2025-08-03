@@ -1,0 +1,112 @@
+# Nginx конфигурация для проекта
+# example.com -> frontend (zlpx-front)
+# api.example.com -> backend (app)
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    
+    # Логирование
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+    
+    # Основные настройки
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
+    
+    # Gzip сжатие
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
+    
+    # Rate limiting для API
+    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
+    
+    # Frontend сервер (example.com)
+    server {
+        listen 80;
+        server_name example.com;
+        
+        # Корневая директория для статических файлов
+        root /path/to/your/frontend/dist;
+        index index.html;
+        
+        # Основная обработка запросов
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+        
+        # Статические файлы с кэшированием
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+            expires 1d;
+            add_header Cache-Control "public, max-age=86400";
+            add_header Vary Accept-Encoding;
+        }
+        
+        # HTML файлы без кэширования
+        location ~* \.html$ {
+            expires -1;
+            add_header Cache-Control "no-cache, no-store, must-revalidate";
+        }
+    }
+    
+    # Backend сервер (api.example.com)
+    server {
+        listen 80;
+        server_name api.example.com;
+        
+        # CORS заголовки для API
+        add_header 'Access-Control-Allow-Origin' 'https://example.com' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        
+        # Обработка preflight запросов
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' 'https://example.com';
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+            add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization';
+            add_header 'Access-Control-Max-Age' 1728000;
+            add_header 'Content-Type' 'text/plain; charset=utf-8';
+            add_header 'Content-Length' 0;
+            return 204;
+        }
+        
+        # Проксирование на backend
+        location / {
+            limit_req zone=api burst=20 nodelay;
+            proxy_pass http://localhost:8001;
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # Таймауты
+            proxy_connect_timeout 60s;
+            proxy_send_timeout 60s;
+            proxy_read_timeout 60s;
+        }
+        
+        # Health check endpoint
+        location /health {
+            proxy_pass http://localhost:8001/health;
+            access_log off;
+        }
+    }
+    
+    # Блокировка доступа к несуществующим доменам
+    server {
+        listen 80 default_server;
+        server_name _;
+        return 444;
+    }
+} 
