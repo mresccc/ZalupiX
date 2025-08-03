@@ -1,0 +1,18 @@
+[Unit]
+Description=ZalupiX FastAPI Backend
+After=network.target
+
+[Service]
+Type=exec
+User=your_user
+Group=your_group
+WorkingDirectory=/path/to/your/project/app
+Environment=PATH=/path/to/python/bin
+ExecStart=/path/to/venv/bin/uvicorn app:app --host 127.0.0.1 --port 8001 --workers 2
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target 
