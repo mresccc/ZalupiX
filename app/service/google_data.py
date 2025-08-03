@@ -311,8 +311,9 @@ class GridScheduler:
 
     def add_event(self, events: list[Event]):
         """Добавление события в расписание"""
-        #TODO: реализовать добавление события в расписание
+        # TODO: реализовать добавление события в расписание
         pass
+
 
 def init_scheduler(spreadsheet_url: str = None, credentials_path: str = None):
     """Инициализация планировщика"""

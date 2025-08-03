@@ -2,7 +2,7 @@ import logging
 from contextlib import asynccontextmanager
 from datetime import date
 
-from config import CORS_ORIGINS, DEBUG, HOST, PORT, RELOAD
+from config import CORS_ORIGINS, HOST, PORT, RELOAD
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
@@ -40,9 +40,6 @@ def create_app() -> FastAPI:
         version="1.0.0",
         default_response_class=ORJSONResponse,
         lifespan=lifespan,
-        docs_url=None if DEBUG else "/docs",
-        redoc_url=None if DEBUG else "/redoc",
-        openapi_url=None if DEBUG else "/openapi.json",
     )
 
     # Улучшенная настройка CORS
