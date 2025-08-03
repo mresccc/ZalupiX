@@ -1,6 +1,6 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from service.models import Event, UserProfile
 
 
@@ -24,6 +24,28 @@ class ScheduleResponse(BaseModel):
     events: list[Event] = Field(
         description="Список событий из Google Sheets", min_length=0
     )
+
+class ScheduleAddRequest(BaseModel):
+    
+    events: list[Event] = Field(
+        description="Список событий для добавления", min_items=1
+    )
+
+    @field_validator('events')
+    def validate_no_duplicates(cls, events):
+        seen = set()
+        for event in events:
+            key = (event.project, event.date, event.activity)
+            if key in seen:
+                raise ValueError(f'Дублированное событие: {key}')
+            seen.add(key)
+        return events        
+
+class ScheduleAddResponse(BaseModel):
+    events: list[Event] = Field(default_factory=list)
+    success: bool = True
+    message: str = "События успешно добавлены"
+    errors: Optional[list[str]] = None
 
 
 class HealthResponse(BaseModel):
