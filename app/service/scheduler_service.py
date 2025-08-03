@@ -3,6 +3,7 @@ from datetime import date
 from typing import List, Optional
 
 from aiocache import Cache, cached
+from fastapi import HTTPException
 from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
 
 from service.google_data import GridScheduler, init_scheduler
@@ -73,8 +74,70 @@ class SchedulerService:
         await cache.clear()
         return await self._get_events_raw()
 
-    def add_event(self, events: List[Event]):
-        #TODO: реализовать добавление события в расписание
-        """Добавление события в расписание"""
+    
+    async def add_events(self, events: list[Event]) -> list[Event]:
+        """Добавление событий с валидацией"""
         scheduler = self._get_scheduler()
-        scheduler.add_event(events)
+        added_events = []
+
+        for event in events:
+            try:
+                #Проверка конфликтов с существующими событиями
+                if await self._has_conflict(event):
+                    raise HTTPException(
+                        status_code=409,
+                        detail=f"Конфликт с существующим событием: {event.project} на {event.date}"
+                    )
+                
+                #Добавляем событие через планировщик
+                await scheduler.add_event(event)
+                added_events.append(event)
+                logger.info(f"Добавлено событие: {event.project} - {event.date} - {event.activity}")
+
+            except HTTPException:
+                raise
+
+            except Exception as e:
+                logger.error(f"Неожиданная ошибка при добавлении события {event}: {e}")
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Не удалось добавить событие: {str(e)}"
+                )
+        return added_events
+
+    async def _has_conflict(self, event: Event) -> bool:
+        """Проверка конфликтов с существующими событиями"""
+        try:
+            scheduler = self._get_scheduler()
+
+            #Получаем все события на указанную дату
+            existing_events = await scheduler.get_events_from_google_sheet(event.date)
+
+            for existing_event in existing_events:
+                #Проверяем только точное совпадение проекта, даты и активности
+                if (existing_event.project == event.project and
+                    existing_event.date == event.date and
+                    existing_event.activity == event.activity):
+                    logger.warning(f"Найден точный дубликат события: {event}")
+                    return True
+            return False
+        
+        except Exception as e:
+            logger.error(f"Ошибка при проверке конфликтов для события {event}: {e}")
+            # В случае ошибки считаем, что конфликтов нет
+            return False
+        
+    async def get_events_for_period(self, start_date: date, end_date: date) -> List[Event]:
+        """Получение событий за указанный период"""
+        try:
+            scheduler = self._get_scheduler()
+            events = await scheduler.get_events_for_period(start_date, end_date)
+            logger.info(f"Получено {len(events)} событий за период {start_date} - {end_date}")
+            return events
+        except Exception as e:
+            logger.error(f"Ошибка при получении событий за период: {e}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Не удалось получить события: {str(e)}"
+            )
+        
