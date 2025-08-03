@@ -12,6 +12,7 @@ from schemas import (
     UserProfileResponse,
 )
 from service.scheduler_service import SchedulerService
+from service.user_service import UserService
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -19,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 # Создаем сервис
 scheduler_service = SchedulerService()
+user_service = UserService()
 
 
 @asynccontextmanager
@@ -65,6 +67,10 @@ app = create_app()
 def get_scheduler_service() -> SchedulerService:
     """Dependency для получения сервиса планировщика"""
     return scheduler_service
+
+def get_user_service() -> UserService:
+    """Dependency для получения сервиса пользователя"""
+    return user_service
 
 
 # Удаляем устаревший on_event, используем lifespan
@@ -133,24 +139,24 @@ async def add_schedule(
 @app.get("/user/{telegram_id}")
 async def get_user_profile(
     telegram_id: int,
-    scheduler_service: SchedulerService = Depends(get_scheduler_service),
+    user_service: UserService = Depends(get_user_service),
 ) -> UserProfileResponse:
     """Получение профиля пользователя TODO"""
     # TODO: доделать получение профиля пользователя
     return UserProfileResponse(
-        user_profile=scheduler_service.get_user_profile(telegram_id)
+        user_profile=user_service.get_user_profile(telegram_id)
     )
 
 
 @app.post("/user/update")
 async def update_user_profile(
     update_request: UserProfileUpdateRequest,
-    scheduler_service: SchedulerService = Depends(get_scheduler_service),
+    user_service: UserService = Depends(get_user_service),
 ) -> bool:
     """Обновление профиля пользователя с указанием полей для изменения TODO"""
     logger.info(f"Обновление профиля пользователя: {update_request}")
-    # TODO: реализовать обновление профиля через scheduler_service
-    return True
+    # TODO: реализовать обновление профиля через user_service
+    return user_service.update_user_profile(update_request)
 
 
 if __name__ == "__main__":
