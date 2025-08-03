@@ -1,5 +1,6 @@
 import logging
 from contextlib import asynccontextmanager
+from datetime import date
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -92,6 +93,12 @@ async def get_schedule(
     refresh: bool = Query(
         default=False, description="Принудительное обновление кэша", examples=[False]
     ),
+    start_date: date = Query(
+        default=None, description="Начальная дата", examples=[None]
+    ),
+    end_date: date = Query(
+        default=None, description="Конечная дата", examples=[None]
+    ),
     scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ) -> ScheduleResponse:
     """Получение расписания событий"""
@@ -103,7 +110,7 @@ async def get_schedule(
             return ScheduleResponse(events=events)
         else:
             logger.info("Запрос расписания")
-            events = await scheduler_service.get_events()
+            events = await scheduler_service.get_events(start_date, end_date)
             return ScheduleResponse(events=events)
     except Exception as e:
         logger.error(f"Failed to get schedule: {str(e)}")
