@@ -1,26 +1,27 @@
 # service/models.py
-from datetime import date as dt
 from enum import Enum
-from pydantic import BaseModel, ConfigDict, Field, validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from pydantic import BaseModel, Field
+from datetime import date, datetime as date_type
 
 class Event(BaseModel):
     model_config = ConfigDict(from_attributes=True, str_strip_whitespace=True)
 
-    project: str = Field(description="Название проекта/активности", min_length=1, max_length=255)
-    date: date = Field(description="Дата события") # type: ignore
+    project: str = Field(description="Название проекта/активности", min_length=0, max_length=255)
+    date: date_type = Field(description="Дата события")
     activity: str = Field(description="Описание активности", min_length=1, max_length=500)
 
-    @validator('date')
+    @field_validator('date')
     def validate_date_not_past(cls, v):
-        if v < dt.today():
+        # Используйте date.today()
+        if v < date.today():
             raise ValueError("Дата события не может быть в прошлом")
         return v
-    
-    @validator('project', 'activity')
-    def validate_not_empty(cls, v):
-        if not v.strip():
-            raise ValueError("Поле не может быть пустым")
+
+    @field_validator('project', 'activity')
+    def allow_empty_project(cls, v):
+        
         return v.strip()
 
 class UserStatus(Enum):
