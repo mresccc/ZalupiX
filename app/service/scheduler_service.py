@@ -1,9 +1,10 @@
 import logging
+from datetime import date
 from typing import List, Optional
 
 from aiocache import Cache, cached
-
 from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
+
 from service.google_data import GridScheduler, init_scheduler
 from service.models import Event
 
@@ -38,9 +39,10 @@ class SchedulerService:
         return self._scheduler
 
     @cached(ttl=600, cache=Cache.MEMORY)
-    async def get_cached_events(self) -> List[Event]:
+    async def get_cached_events(self, start_date: date = None, end_date: date = None) -> List[Event]:
         """Получение событий с кэшированием"""
-        return await self._get_events_raw()
+        events = await self._get_events_raw()
+        return self._scheduler.filter_events(events, start_date, end_date)
 
     async def _get_events_raw(self) -> List[Event]:
         """Получение событий без кэширования (внутренний метод)"""
@@ -53,9 +55,9 @@ class SchedulerService:
             logger.error(f"Ошибка при получении событий: {str(e)}")
             raise
 
-    async def get_events(self) -> List[Event]:
+    async def get_events(self, start_date: date = None, end_date: date = None) -> List[Event]:
         """Получение всех событий из Google Sheets"""
-        return await self.get_cached_events()
+        return await self.get_cached_events(start_date, end_date)
 
     def is_connected(self) -> bool:
         """Проверка подключения к Google Sheets"""
@@ -70,3 +72,9 @@ class SchedulerService:
         logger.info("Принудительное обновление событий")
         await cache.clear()
         return await self._get_events_raw()
+
+    def add_event(self, events: List[Event]):
+        #TODO: реализовать добавление события в расписание
+        """Добавление события в расписание"""
+        scheduler = self._get_scheduler()
+        scheduler.add_event(events)
