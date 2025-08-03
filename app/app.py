@@ -4,7 +4,12 @@ from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
-from schemas import HealthResponse, ScheduleResponse
+from schemas import (
+    HealthResponse,
+    ScheduleResponse,
+    UserProfileUpdateRequest,
+    UserProfileResponse,
+)
 from service.scheduler_service import SchedulerService
 
 # Настройка логирования
@@ -110,11 +115,35 @@ async def add_schedule(
     schedule: ScheduleResponse,
     scheduler_service: SchedulerService = Depends(get_scheduler_service),
 ) -> ScheduleResponse:
-    #TODO: добавить валидацию данных
+    """Добавление события в расписание TODO"""
+    # TODO: добавить валидацию данных
     logger.info(f"Добавление события в расписание: {schedule}")
-    """Добавление события в расписание"""
+
     scheduler_service.add_event(schedule.events)
     return ScheduleResponse(events=[])
+
+
+@app.get("/user/{telegram_id}")
+async def get_user_profile(
+    telegram_id: int,
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
+) -> UserProfileResponse:
+    """Получение профиля пользователя TODO"""
+    # TODO: доделать получение профиля пользователя
+    return UserProfileResponse(
+        user_profile=scheduler_service.get_user_profile(telegram_id)
+    )
+
+
+@app.post("/user/update")
+async def update_user_profile(
+    update_request: UserProfileUpdateRequest,
+    scheduler_service: SchedulerService = Depends(get_scheduler_service),
+) -> bool:
+    """Обновление профиля пользователя с указанием полей для изменения TODO"""
+    logger.info(f"Обновление профиля пользователя: {update_request}")
+    # TODO: реализовать обновление профиля через scheduler_service
+    return True
 
 
 if __name__ == "__main__":
