@@ -85,7 +85,7 @@ class GridScheduler:
             # Берем данные начиная с 4-й строки (пропускаем заголовки)
             rows = data[2:] if len(data) > 2 else []
 
-            return self.parse_calendar(pl.DataFrame(rows, schema=headers))
+            return self.parse_calendar(pl.DataFrame(rows, schema=headers, orient="row"))
 
     def filter_events(
         self, events: list[Event], start_date: date = None, end_date: date = None

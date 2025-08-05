@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from datetime import date
 
 from config import CORS_ORIGINS, HOST, PORT, RELOAD
-from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 from schemas import (
@@ -149,6 +149,47 @@ async def update_user_profile(
     logger.info(f"Обновление профиля пользователя: {update_request}")
     # TODO: реализовать обновление профиля через user_service
     return user_service.update_user_profile(update_request)
+
+
+@app.post("/auth/telegram")
+async def telegram_auth(request: Request) -> dict:
+    """Аутентификация через Telegram Mini App"""
+    try:
+        data = await request.json()
+        init_data = data.get("init_data")
+
+        if not init_data:
+            raise HTTPException(status_code=400, detail="init_data is required")
+
+        # TODO: Добавить валидацию init_data с помощью BOT_TOKEN
+        # Пока возвращаем успешный ответ
+        logger.info("Telegram аутентификация успешна")
+        return {"success": True, "message": "Telegram auth successful"}
+
+    except Exception as e:
+        logger.error(f"Telegram auth failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Telegram auth failed: {str(e)}")
+
+
+@app.get("/auth/telegram/user")
+async def get_telegram_user(request: Request) -> dict:
+    """Получение данных пользователя Telegram"""
+    try:
+        # Получаем данные из заголовков или query параметров
+        user_id = request.headers.get("X-Telegram-User-ID")
+
+        if not user_id:
+            raise HTTPException(status_code=400, detail="Telegram user ID is required")
+
+        # TODO: Получить данные пользователя из базы данных
+        logger.info(f"Получение данных пользователя Telegram: {user_id}")
+        return {"user_id": user_id, "status": "authenticated"}
+
+    except Exception as e:
+        logger.error(f"Failed to get Telegram user: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Failed to get Telegram user: {str(e)}"
+        )
 
 
 if __name__ == "__main__":
