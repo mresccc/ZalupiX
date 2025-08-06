@@ -1,10 +1,12 @@
 import asyncio
-from aiogram import Bot, Dispatcher, Router, F
+
+from aiogram import Bot, Dispatcher, F, Router
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
-from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup, WebAppInfo
-from config import BOT_TOKEN, WEBAPP_URL
+from aiogram.types import KeyboardButton, Message, ReplyKeyboardMarkup, WebAppInfo
+
+from app.config import BOT_TOKEN, WEBAPP_URL
 
 bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
@@ -46,6 +48,7 @@ async def notify_admins(text: str):
 
 async def main():
     await dp.start_polling(bot)
+
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -5,10 +5,10 @@ from pathlib import Path
 
 import gspread
 import polars as pl
-from config import GRID_CREDENTIALS_PATH, MONTHS
 from gspread import Client, Spreadsheet
 
-from .models import Event
+from app.config import GRID_CREDENTIALS_PATH, MONTHS
+from app.service.models import Event
 
 # Добавляем родительскую директорию в sys.path если её нет
 current_dir = Path(__file__).parent.parent
@@ -85,7 +85,7 @@ class GridScheduler:
             # Берем данные начиная с 4-й строки (пропускаем заголовки)
             rows = data[2:] if len(data) > 2 else []
 
-            return self.parse_calendar(pl.DataFrame(rows, schema=headers))
+            return self.parse_calendar(pl.DataFrame(rows, schema=headers, orient="row"))
 
     def filter_events(
         self, events: list[Event], start_date: date = None, end_date: date = None

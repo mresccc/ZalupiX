@@ -1,7 +1,8 @@
 from typing import Any, Dict, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
-from service.models import Event, UserProfile
+
+from app.service.models import Event, UserProfile
 
 
 class ScheduleResponse(BaseModel):
@@ -25,21 +26,22 @@ class ScheduleResponse(BaseModel):
         description="Список событий из Google Sheets", min_length=0
     )
 
+
 class ScheduleAddRequest(BaseModel):
-    
     events: list[Event] = Field(
         description="Список событий для добавления", min_items=1
     )
 
-    @field_validator('events')
+    @field_validator("events")
     def validate_no_duplicates(cls, events):
         seen = set()
         for event in events:
             key = (event.project, event.date, event.activity)
             if key in seen:
-                raise ValueError(f'Дублированное событие: {key}')
+                raise ValueError(f"Дублированное событие: {key}")
             seen.add(key)
-        return events        
+        return events
+
 
 class ScheduleAddResponse(BaseModel):
     events: list[Event] = Field(default_factory=list)
@@ -94,6 +96,7 @@ class UserProfileRequest(BaseModel):
     """Схема запроса для эндпоинта /user"""
 
     telegram_id: int = Field(description="Telegram ID")
+
 
 class UserProfileUpdateRequest(BaseModel):
     """Схема запроса для частичного обновления профиля пользователя"""
