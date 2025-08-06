@@ -1,12 +1,16 @@
+import hashlib
+import hmac
+import json
 import logging
 from contextlib import asynccontextmanager
 from datetime import date
+from urllib.parse import parse_qs, unquote
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
 
-from app.config import CORS_ORIGINS
+from app.config import BOT_TOKEN, CORS_ORIGINS
 from app.container import Container
 from app.repository.user import UserRepository
 from app.schemas import (
@@ -27,6 +31,54 @@ logger = logging.getLogger(__name__)
 container = Container()
 container.config.from_dict({})
 container.wire(modules=[__name__])
+
+
+def validate_telegram_init_data(init_data: str, bot_token: str) -> dict:
+    """Валидация init_data от Telegram Mini App"""
+    try:
+        # Парсим init_data
+        parsed_data = parse_qs(init_data)
+
+        # Извлекаем hash
+        received_hash = parsed_data.get("hash", [None])[0]
+        if not received_hash:
+            raise ValueError("Hash не найден в init_data")
+
+        # Удаляем hash из данных для проверки
+        data_check_string_parts = []
+        for key, value in parsed_data.items():
+            if key != "hash":
+                data_check_string_parts.append(f"{key}={value[0]}")
+
+        # Сортируем параметры
+        data_check_string_parts.sort()
+        data_check_string = "\n".join(data_check_string_parts)
+
+        # Создаем secret key
+        secret_key = hmac.new(
+            "WebAppData".encode(), bot_token.encode(), hashlib.sha256
+        ).digest()
+
+        # Вычисляем hash
+        calculated_hash = hmac.new(
+            secret_key, data_check_string.encode(), hashlib.sha256
+        ).hexdigest()
+
+        # Проверяем hash
+        if calculated_hash != received_hash:
+            raise ValueError("Неверный hash")
+
+        # Парсим данные пользователя
+        user_data = {}
+        if "user" in parsed_data:
+            user_data = json.loads(unquote(parsed_data["user"][0]))
+
+        return user_data
+
+    except Exception as e:
+        logger.error(f"Ошибка валидации init_data: {str(e)}")
+        raise ValueError(f"Ошибка валидации: {str(e)}")
+
 
 # Создаем сервис
 scheduler_service = SchedulerService()
@@ -222,7 +274,10 @@ async def update_user_profile(
 
 
 @app.post("/auth/telegram")
-async def telegram_auth(request: Request) -> dict:
+async def telegram_auth(
+    request: Request,
+    user_repository: UserRepository = Depends(container.user_repository),
+) -> UserProfileResponse:
     """Аутентификация через Telegram Mini App"""
     try:
         data = await request.json()
@@ -231,35 +286,38 @@ async def telegram_auth(request: Request) -> dict:
         if not init_data:
             raise HTTPException(status_code=400, detail="init_data is required")
 
-        # TODO: Добавить валидацию init_data с помощью BOT_TOKEN
-        # Пока возвращаем успешный ответ
-        logger.info("Telegram аутентификация успешна")
-        return {"success": True, "message": "Telegram auth successful"}
+        if not BOT_TOKEN:
+            raise HTTPException(status_code=500, detail="BOT_TOKEN не настроен")
 
+        # Валидируем init_data с помощью BOT_TOKEN
+        try:
+            user_data = validate_telegram_init_data(init_data, BOT_TOKEN)
+            telegram_id = user_data.get("id")
+
+            if not telegram_id:
+                raise HTTPException(status_code=400, detail="Telegram ID не найден")
+
+        except ValueError as e:
+            raise HTTPException(
+                status_code=401, detail=f"Неверные данные аутентификации: {str(e)}"
+            )
+
+        # Проверяем, что пользователь существует в базе данных
+        user_profile = user_repository.get_user_by_telegram_id(telegram_id)
+        if not user_profile:
+            raise HTTPException(
+                status_code=404,
+                detail="Пользователь не найден в базе данных. Обратитесь к администратору.",
+            )
+
+        logger.info(f"Telegram аутентификация успешна для пользователя {telegram_id}")
+        return UserProfileResponse(user_profile=user_profile)
+
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Telegram auth failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Telegram auth failed: {str(e)}")
-
-
-@app.get("/auth/telegram/user")
-async def get_telegram_user(request: Request) -> dict:
-    """Получение данных пользователя Telegram"""
-    try:
-        # Получаем данные из заголовков или query параметров
-        user_id = request.headers.get("X-Telegram-User-ID")
-
-        if not user_id:
-            raise HTTPException(status_code=400, detail="Telegram user ID is required")
-
-        # TODO: Получить данные пользователя из базы данных
-        logger.info(f"Получение данных пользователя Telegram: {user_id}")
-        return {"user_id": user_id, "status": "authenticated"}
-
-    except Exception as e:
-        logger.error(f"Failed to get Telegram user: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Failed to get Telegram user: {str(e)}"
-        )
 
 
 if __name__ == "__main__":
