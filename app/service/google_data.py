@@ -5,10 +5,10 @@ from pathlib import Path
 
 import gspread
 import polars as pl
-from config import GRID_CREDENTIALS_PATH, MONTHS
 from gspread import Client, Spreadsheet
 
-from .models import Event
+from app.config import GRID_CREDENTIALS_PATH, MONTHS
+from app.service.models import Event
 
 # Добавляем родительскую директорию в sys.path если её нет
 current_dir = Path(__file__).parent.parent

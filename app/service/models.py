@@ -21,24 +21,24 @@ class Event(BaseModel):
         return v.strip()
 
 
-class UserStatus(Enum):
-    INACTIVE = 0
-    WORK = 1
-    ACTIVE = 2
-    GRADUATED = 3
+class UserStatus(str, Enum):
+    INACTIVE = "inactive"
+    WORK = "work"
+    ACTIVE = "active"
+    GRADUATED = "graduated"
 
 
-class UserDriverLicense(Enum):
-    NO = 0
-    YES = 1
-    YES_AND_CAR = 2
+class UserDriverLicense(str, Enum):
+    NO = "no"
+    YES = "yes"
+    YES_AND_CAR = "yes_and_car"
 
 
-class UserPrinter(Enum):
-    NO = 0
-    BLACK = 1
-    COLOR = 2
-    BLACK_AND_COLOR = 3
+class UserPrinter(str, Enum):
+    NO = "no"
+    BLACK = "black"
+    COLOR = "color"
+    BLACK_AND_COLOR = "black_and_color"
 
 
 class UserProfile(BaseModel):
@@ -59,7 +59,7 @@ class UserProfile(BaseModel):
         description="Есть ли у тебя водительские права и/или машина?"
     )
     date_of_birth: date_type = Field(description="Дата Рождения")
-    has_printer: bool = Field(description="Если ли у тебя принтер?")
+    has_printer: UserPrinter = Field(description="Если ли у тебя принтер?")
     can_host_night: bool = Field(
         description="Можем ли мы проводить ночь креатива/ночь оформления у тебя дома?"
     )
@@ -69,6 +69,9 @@ class UserProfile(BaseModel):
         return date_type.today().year - self.year_of_admission
 
     # last_update: datetime = Field(description="Время последнего обновления")
+
+
+# UserProfileUpdateRequest теперь импортируется из schemas.py
 
 
 class Activity(BaseModel):

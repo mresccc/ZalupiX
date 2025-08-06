@@ -3,11 +3,11 @@ from datetime import date
 from typing import List, Optional
 
 from aiocache import Cache, cached
-from config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
 from fastapi import HTTPException
 
-from service.google_data import GridScheduler, init_scheduler
-from service.models import Event
+from app.config import GRID_CREDENTIALS_PATH, SPREADSHEET_URL
+from app.service.google_data import GridScheduler, init_scheduler
+from app.service.models import Event
 
 # Настройка логирования
 logger = logging.getLogger(__name__)

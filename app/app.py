@@ -2,26 +2,34 @@ import logging
 from contextlib import asynccontextmanager
 from datetime import date
 
-from config import CORS_ORIGINS, HOST, PORT, RELOAD
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import ORJSONResponse
-from schemas import (
+
+from app.config import CORS_ORIGINS
+from app.container import Container
+from app.repository.user import UserRepository
+from app.schemas import (
     HealthResponse,
     ScheduleResponse,
     UserProfileResponse,
     UserProfileUpdateRequest,
 )
-from service.scheduler_service import SchedulerService
-from service.user_service import UserService
+from app.service.models import UserProfile
+from app.service.scheduler_service import SchedulerService
+from app.service.user_service import UserService
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Создаем контейнер зависимостей
+container = Container()
+container.config.from_dict({})
+container.wire(modules=[__name__])
+
 # Создаем сервис
 scheduler_service = SchedulerService()
-user_service = UserService()
 
 
 @asynccontextmanager
@@ -30,6 +38,9 @@ async def lifespan(app: FastAPI):
     logger.info("🚀 FastAPI приложение запускается...")
     yield
     logger.info("🛑 FastAPI приложение завершает работу...")
+    # Закрываем движок БД
+    if _engine:
+        await _engine.dispose()
 
 
 def create_app() -> FastAPI:
@@ -51,6 +62,9 @@ def create_app() -> FastAPI:
         allow_headers=["Content-Type", "Authorization", "Accept"],
     )
 
+    # Настройка dependency injection
+    app.container = container
+
     return app
 
 
@@ -64,9 +78,50 @@ def get_scheduler_service() -> SchedulerService:
     return scheduler_service
 
 
-def get_user_service() -> UserService:
+# Глобальные переменные для движка и фабрики сессий
+_engine = None
+_session_factory = None
+
+
+def get_engine():
+    """Получение движка БД (синглтон)"""
+    global _engine
+    if _engine is None:
+        from sqlalchemy.ext.asyncio import create_async_engine
+
+        _engine = create_async_engine(
+            "sqlite+aiosqlite:///./zalupix.db", echo=False, future=True
+        )
+    return _engine
+
+
+def get_session_factory():
+    """Получение фабрики сессий (синглтон)"""
+    global _session_factory
+    if _session_factory is None:
+        from sqlalchemy.ext.asyncio import async_sessionmaker
+
+        _session_factory = async_sessionmaker(get_engine(), expire_on_commit=False)
+    return _session_factory
+
+
+async def get_db_session():
+    """Dependency для получения сессии БД"""
+    session_factory = get_session_factory()
+    async with session_factory() as session:
+        try:
+            yield session
+        except Exception:
+            await session.rollback()
+            raise
+        finally:
+            await session.close()
+
+
+def get_user_service(db_session=Depends(get_db_session)) -> UserService:
     """Dependency для получения сервиса пользователя"""
-    return user_service
+    repository = UserRepository(db_session)
+    return UserService(repository)
 
 
 # Удаляем устаревший on_event, используем lifespan
@@ -136,8 +191,21 @@ async def get_user_profile(
     user_service: UserService = Depends(get_user_service),
 ) -> UserProfileResponse:
     """Получение профиля пользователя TODO"""
-    # TODO: доделать получение профиля пользователя
-    return UserProfileResponse(user_profile=user_service.get_user_profile(telegram_id))
+    user_profile = await user_service.get_user_profile(telegram_id)
+    if user_profile is None:
+        raise HTTPException(status_code=404, detail="Пользователь не найден")
+    return UserProfileResponse(user_profile=user_profile)
+
+
+@app.post("/user/create")
+async def create_user_profile(
+    user_profile: UserProfile,
+    user_service: UserService = Depends(get_user_service),
+) -> UserProfileResponse:
+    """Создание нового профиля пользователя"""
+    logger.info(f"Создание профиля пользователя: {user_profile}")
+    result = await user_service.create_user_profile(user_profile)
+    return UserProfileResponse(user_profile=result)
 
 
 @app.post("/user/update")
@@ -145,10 +213,12 @@ async def update_user_profile(
     update_request: UserProfileUpdateRequest,
     user_service: UserService = Depends(get_user_service),
 ) -> bool:
-    """Обновление профиля пользователя с указанием полей для изменения TODO"""
+    """Обновление профиля пользователя с указанием полей для изменения"""
     logger.info(f"Обновление профиля пользователя: {update_request}")
-    # TODO: реализовать обновление профиля через user_service
-    return user_service.update_user_profile(update_request)
+    result = await user_service.update_user_profile(
+        update_request.telegram_id, update_request
+    )
+    return result is not None
 
 
 @app.post("/auth/telegram")
@@ -193,6 +263,4 @@ async def get_telegram_user(request: Request) -> dict:
 
 
 if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run("app:app", host=HOST, port=PORT, reload=RELOAD)
+    print("Запустите приложение командой: python run.py")
