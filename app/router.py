@@ -5,6 +5,7 @@ from loguru import logger
 
 from app.config import BOT_TOKEN
 from app.dependencies import (
+    get_metro_service,
     get_scheduler_service,
     get_user_repository,
     get_user_service,
@@ -12,11 +13,13 @@ from app.dependencies import (
 from app.repository.user import UserRepository
 from app.schemas import (
     HealthResponse,
+    MetroResponse,
     ScheduleResponse,
     TelegramAuthRequest,
     UserProfileResponse,
     UserProfileUpdateRequest,
 )
+from app.service.metro_service import MetroService
 from app.service.models import UserProfile
 from app.service.scheduler_service import SchedulerService
 from app.service.user_service import UserService
@@ -178,3 +181,26 @@ async def telegram_auth(
     except Exception as e:
         logger.error(f"Telegram auth failed: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Telegram auth failed: {str(e)}")
+
+
+@router.get("/metro")
+async def get_metro(
+    language: str = Query(
+        default="ru",
+        description="Язык для названий (ru, en, cn, all)",
+        pattern="^(ru|en|cn|all)$",
+    ),
+    include_location: bool = Query(
+        default=True,
+        description="Включать ли координаты станций",
+    ),
+    metro_service: MetroService = Depends(get_metro_service),
+) -> MetroResponse:
+    """Получение данных о метро с настройками сериализации"""
+    metro_data = metro_service.get_metro()
+
+    return MetroResponse.from_metro_data(
+        metro_data,
+        language=language,
+        include_location=include_location,
+    )

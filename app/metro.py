@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from typing import List, Optional
+from typing import List, Literal, Optional, Union
 
 import orjson
 from pydantic import BaseModel, Field
+
+# Поддерживаемые языки
+Language = Literal["ru", "en", "cn", "all"]
 
 PydanticConfig = {
     # Иммутабельность - защита от случайных изменений данных
@@ -61,6 +64,20 @@ class StationName(BaseModel):
         None, min_length=1, max_length=100, description="Название на китайском"
     )
 
+    def get_name(self, language: Language = "ru") -> str:
+        """Получить название на указанном языке"""
+        name = getattr(self, language, None)
+        if name is None:
+            return self.ru  # fallback на русский
+        return name
+
+    def to_json(self, language: Language = "ru") -> Union[str, dict]:
+        """Сериализация с выбором языка"""
+        if language == "all":
+            return self.model_dump()
+        else:
+            return self.get_name(language)
+
 
 class Station(BaseModel):
     """Модель станции метро"""
@@ -70,6 +87,19 @@ class Station(BaseModel):
     id: int = Field(gt=0, description="Уникальный ID станции")
     name: StationName
     location: Optional[Location] = Field(None, description="Координаты станции")
+
+    def to_json(
+        self,
+        language: Language = "ru",
+        include_location: bool = True,
+    ) -> dict:
+        """Сериализация с настройками"""
+        result = {"id": self.id, "name": self.name.to_json(language)}
+
+        if include_location and self.location:
+            result["location"] = self.location.model_dump()
+
+        return result
 
 
 class LineName(BaseModel):
@@ -84,6 +114,20 @@ class LineName(BaseModel):
         None, min_length=1, max_length=100, description="Название ветки на английском"
     )
 
+    def get_name(self, language: Language = "ru") -> str:
+        """Получить название на указанном языке"""
+        name = getattr(self, language, None)
+        if name is None:
+            return self.ru  # fallback на русский
+        return name
+
+    def to_json(self, language: Language = "ru") -> Union[str, dict]:
+        """Сериализация с выбором языка"""
+        if language == "all":
+            return self.model_dump()
+        else:
+            return self.get_name(language)
+
 
 class MetroLine(BaseModel):
     """Модель ветки метро"""
@@ -97,51 +141,38 @@ class MetroLine(BaseModel):
     name: LineName
     stations: List[Station] = Field(min_length=1, description="Список станций")
 
+    def to_json(
+        self,
+        language: Language = "ru",
+        include_location: bool = True,
+    ) -> dict:
+        """Сериализация с настройками"""
+        return {
+            "line_id": self.line_id,
+            "color": self.color,
+            "name": self.name.to_json(language),
+            "stations": [
+                station.to_json(language, include_location) for station in self.stations
+            ],
+        }
+
 
 class MetroData(BaseModel):
-    """Модель всех данных метро с синглтон паттерном"""
+    """Модель всех данных метро"""
 
     model_config = PydanticConfig
 
     lines: List[MetroLine] = Field(min_length=1, description="Список веток метро")
 
-    # Синглтон инстанс
-    _instance: Optional["MetroData"] = None
-
-    @classmethod
-    def get_instance(
-        cls, auto_load: bool = True, file_path: str = "metro_grouped.json"
-    ) -> Optional["MetroData"]:
-        """
-        Получить единственный экземпляр данных метро
-
-        Args:
-            auto_load: Автоматически загрузить данные из файла, если их нет
-            file_path: Путь к файлу для автозагрузки
-        """
-        if cls._instance is None and auto_load:
-            # Автоматически загружаем данные
-            cls._instance = cls.load_from_file(file_path)
-
-        return cls._instance
-
-    @classmethod
-    def load_from_file(cls, json_file_path: str) -> Optional["MetroData"]:
-        """Загружает данные метро из JSON файла с валидацией и устанавливает синглтон"""
-        try:
-            with open(json_file_path, "rb") as f:
-                data = orjson.loads(f.read())
-
-            # Преобразуем в Pydantic модели
-            metro_data = cls(lines=data)
-
-            # Устанавливаем синглтон
-            cls._instance = metro_data
-
-            return metro_data
-        except Exception as e:
-            print(f"Ошибка при загрузке данных: {e}")
-            return None
+    def to_json(
+        self,
+        language: Language = "ru",
+        include_location: bool = True,
+    ) -> dict:
+        """Сериализация с настройками"""
+        return {
+            "lines": [line.to_json(language, include_location) for line in self.lines]
+        }
 
 
 def parse_metro_data(json_file_path):
@@ -258,7 +289,11 @@ if __name__ == "__main__":
     print("\n" + "=" * 50)
     print("Пример чтения данных с валидацией:")
 
-    metro_data = MetroData.load_from_file("metro_grouped.json")
+    from app.config import METRO_DATA_PATH
+    from app.service.metro_service import MetroService
+
+    metro_service = MetroService(METRO_DATA_PATH)
+    metro_data = metro_service.get_metro_data()
     if metro_data:
         print(f"Загружено {len(metro_data.lines)} веток")
         if metro_data.lines:
@@ -321,3 +356,67 @@ if __name__ == "__main__":
         print(f"До очистки: '{test_name}'")
         print(f"После очистки: '{test_name.strip()}'")
 
+    # Демонстрация новых возможностей сериализации
+    print("\n" + "=" * 50)
+    print("Демонстрация новых возможностей сериализации:")
+
+    if metro_data and metro_data.lines:
+        first_line = metro_data.lines[0]
+        first_station = first_line.stations[0]
+
+        print("\n1. Сериализация с выбором языка (русский):")
+        station_json_ru = first_station.to_json(language="ru", include_location=False)
+        print(orjson.dumps(station_json_ru, option=orjson.OPT_INDENT_2).decode("utf-8"))
+
+        print("\n2. Сериализация с выбором языка (английский):")
+        station_json_en = first_station.to_json(language="en", include_location=False)
+        print(orjson.dumps(station_json_en, option=orjson.OPT_INDENT_2).decode("utf-8"))
+
+        print("\n3. Сериализация без координат:")
+        station_json_no_location = first_station.to_json(
+            language="ru", include_location=False
+        )
+        print(
+            orjson.dumps(station_json_no_location, option=orjson.OPT_INDENT_2).decode(
+                "utf-8"
+            )
+        )
+
+        print("\n4. Сериализация с координатами:")
+        station_json_with_location = first_station.to_json(
+            language="ru", include_location=True
+        )
+        print(
+            orjson.dumps(station_json_with_location, option=orjson.OPT_INDENT_2).decode(
+                "utf-8"
+            )
+        )
+
+        print("\n5. Сериализация с полными названиями на всех языках:")
+        station_json_all_names = first_station.to_json(
+            language="ru", include_all_names=True
+        )
+        print(
+            orjson.dumps(station_json_all_names, option=orjson.OPT_INDENT_2).decode(
+                "utf-8"
+            )
+        )
+
+        print("\n6. Сохранение в файл с настройками:")
+        # Сохраняем упрощенную версию без координат на английском
+        metro_service.save_to_file(
+            metro_data,
+            "app/data/metro_simplified_en.json",
+            language="en",
+            include_location=False,
+        )
+        print("Сохранен файл metro_simplified_en.json")
+
+        # Сохраняем полную версию на русском
+        metro_service.save_to_file(
+            metro_data,
+            "app/data/metro_full_ru.json",
+            language="ru",
+            include_location=True,
+        )
+        print("Сохранен файл metro_full_ru.json")

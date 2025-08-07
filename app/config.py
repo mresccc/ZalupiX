@@ -57,6 +57,15 @@ settings = Settings()
 CREDS_FILE = "credentials.json"
 GRID_CREDENTIALS_PATH = "credentials.json"
 
+# Пути к данным
+DATA_DIR = os.getenv("DATA_DIR", "app/data")
+METRO_DATA_FILE = os.getenv("METRO_DATA_FILE", "metro_grouped.json")
+DATABASE_FILE = os.getenv("DATABASE_FILE", "zalupix.db")
+
+# Полные пути
+METRO_DATA_PATH = os.path.join(DATA_DIR, METRO_DATA_FILE)
+DATABASE_PATH = os.path.join(DATA_DIR, DATABASE_FILE)
+
 # === ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ===
 CALENDAR_URL = os.getenv("CALENDAR_URL")
 SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")

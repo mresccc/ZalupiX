@@ -2,7 +2,9 @@ from dependency_injector import containers, providers
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
+from app.config import DATABASE_PATH
 from app.repository.user import UserRepository
+from app.service.metro_service import MetroService
 from app.service.scheduler_service import SchedulerService
 from app.service.user_service import UserService
 
@@ -14,7 +16,7 @@ class Container(containers.DeclarativeContainer):
     config = providers.Configuration()
 
     # База данных
-    database_url = providers.Singleton(lambda: "sqlite+aiosqlite:///./zalupix.db")
+    database_url = providers.Singleton(lambda: f"sqlite+aiosqlite:///{DATABASE_PATH}")
 
     # Асинхронный движок SQLAlchemy
     engine = providers.Singleton(
@@ -46,6 +48,9 @@ class Container(containers.DeclarativeContainer):
 
     # Сервис планировщика
     scheduler_service = providers.Singleton(SchedulerService)
+
+    # Сервис метро
+    metro_service = providers.Singleton(MetroService)
 
 
 # Создаем экземпляр контейнера
@@ -82,3 +87,8 @@ def get_user_service(
 ) -> UserService:
     """Dependency для получения сервиса пользователя"""
     return UserService(repository)
+
+
+def get_metro_service() -> MetroService:
+    """Dependency для получения сервиса метро"""
+    return container.metro_service()

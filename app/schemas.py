@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -7,7 +7,7 @@ from app.service.models import Event, UserProfile
 
 class TelegramAuthRequest(BaseModel):
     """Схема запроса для аутентификации через Telegram Mini App"""
-    
+
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
@@ -15,7 +15,7 @@ class TelegramAuthRequest(BaseModel):
             }
         }
     )
-    
+
     init_data: str = Field(description="Init data от Telegram Mini App")
 
 
@@ -136,3 +136,38 @@ class UserProfileUpdateRequest(BaseModel):
     fields: Dict[str, Any] = Field(
         description="Словарь с полями для обновления", min_length=1
     )
+
+
+class MetroResponse(BaseModel):
+    """Схема ответа для эндпоинта /metro"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "lines": [
+                    {
+                        "line_id": 1,
+                        "color": "#d41317",
+                        "name": {"name": "Сокольническая линия"},
+                        "stations": [
+                            {
+                                "id": 1,
+                                "name": {"name": "Бульвар Рокоссовского"},
+                                "location": {"lat": 55.814789, "lon": 37.733928},
+                            }
+                        ],
+                    }
+                ]
+            }
+        }
+    )
+
+    lines: List[Dict[str, Any]] = Field(description="Список веток метро")
+
+    @classmethod
+    def from_metro_data(cls, metro_data, **kwargs):
+        """Создать ответ из MetroData с настройками сериализации"""
+        if metro_data is None:
+            return cls(lines=[])
+        serialized_data = metro_data.to_json(**kwargs)
+        return cls(**serialized_data)
