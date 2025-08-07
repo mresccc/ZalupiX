@@ -41,6 +41,7 @@ class Settings:
     TG_TOKEN: str = os.getenv("TG_TOKEN", "")
     WEB_URL: str = os.getenv("WEB_URL", "https://localhost:8001")
     ADMIN_IDS: list[int] = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x]
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./zalupix.db")
 
     def webhook(self) -> str:
         return f"{self.WEB_URL}/webhook"

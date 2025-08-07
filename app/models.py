@@ -1,30 +1,14 @@
-from enum import Enum
+from typing import Optional
 
-from sqlalchemy import Boolean, Column, Date, Integer, String
+from sqlalchemy import JSON, Boolean, Integer, String
 from sqlalchemy import Enum as SQLEnum
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-Base = declarative_base()
-
-
-class UserStatusEnum(str, Enum):
-    INACTIVE = "inactive"
-    WORK = "work"
-    ACTIVE = "active"
-    GRADUATED = "graduated"
+from app.enums import UserDriverLicenseEnum, UserPrinterEnum, UserStatusEnum
 
 
-class UserDriverLicenseEnum(str, Enum):
-    NO = "no"
-    YES = "yes"
-    YES_AND_CAR = "yes_and_car"
-
-
-class UserPrinterEnum(str, Enum):
-    NO = "no"
-    BLACK = "black"
-    COLOR = "color"
-    BLACK_AND_COLOR = "black_and_color"
+class Base(DeclarativeBase):
+    pass
 
 
 class UserProfileModel(Base):
@@ -32,17 +16,31 @@ class UserProfileModel(Base):
 
     __tablename__ = "user_profiles"
 
-    id = Column(Integer, primary_key=True, index=True)
-    telegram_id = Column(Integer, unique=True, index=True, nullable=False)
-    telegram_nickname = Column(String, nullable=False)
-    vk_nickname = Column(String, nullable=False)
-    status = Column(SQLEnum(UserStatusEnum), nullable=False)
-    full_name = Column(String, nullable=False)
-    phone_number = Column(String, nullable=False)
-    live_metro_station = Column(String, nullable=False)  # JSON строка
-    study_metro_station = Column(String, nullable=False)  # JSON строка
-    year_of_admission = Column(Integer, nullable=False)
-    has_driver_license = Column(SQLEnum(UserDriverLicenseEnum), nullable=False)
-    date_of_birth = Column(Date, nullable=False)
-    has_printer = Column(SQLEnum(UserPrinterEnum), nullable=False)
-    can_host_night = Column(Boolean, nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    telegram_id: Mapped[int] = mapped_column(
+        Integer, unique=True, index=True, nullable=False
+    )
+    telegram_nickname: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    vk_nickname: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    status: Mapped[UserStatusEnum] = mapped_column(
+        SQLEnum(UserStatusEnum), default=UserStatusEnum.INACTIVE
+    )
+    full_name: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    phone_number: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    live_metro_station: Mapped[Optional[str]] = mapped_column(
+        JSON, nullable=True
+    )  # JSON строка
+    study_metro_station: Mapped[Optional[str]] = mapped_column(
+        JSON, nullable=True
+    )  # JSON строка
+    year_of_admission: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    has_driver_license: Mapped[UserDriverLicenseEnum] = mapped_column(
+        SQLEnum(UserDriverLicenseEnum), default=UserDriverLicenseEnum.NO
+    )
+    date_of_birth: Mapped[Optional[str]] = mapped_column(
+        String, nullable=True
+    )  # Простая строка
+    has_printer: Mapped[UserPrinterEnum] = mapped_column(
+        SQLEnum(UserPrinterEnum), default=UserPrinterEnum.NO
+    )
+    can_host_night: Mapped[bool] = mapped_column(Boolean, default=False)
