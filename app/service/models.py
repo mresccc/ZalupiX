@@ -1,8 +1,9 @@
 # service/models.py
 from datetime import date as date_type
-from enum import Enum
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+from app.enums import UserDriverLicenseEnum, UserPrinterEnum, UserStatusEnum
 
 
 class Event(BaseModel):
@@ -21,45 +22,25 @@ class Event(BaseModel):
         return v.strip()
 
 
-class UserStatus(str, Enum):
-    INACTIVE = "inactive"
-    WORK = "work"
-    ACTIVE = "active"
-    GRADUATED = "graduated"
-
-
-class UserDriverLicense(str, Enum):
-    NO = "no"
-    YES = "yes"
-    YES_AND_CAR = "yes_and_car"
-
-
-class UserPrinter(str, Enum):
-    NO = "no"
-    BLACK = "black"
-    COLOR = "color"
-    BLACK_AND_COLOR = "black_and_color"
-
-
 class UserProfile(BaseModel):
     telegram_id: int = Field(description="Telegram ID")
     telegram_nickname: str = Field(description="Ник в ТГ")
     vk_nickname: str = Field(description="Ник в ВК")
-    status: UserStatus = Field(description="Статус")
+    status: UserStatusEnum = Field(description="Статус")
     full_name: str = Field(description="ФИО")
     phone_number: str = Field(description="Номер телефона")
-    live_metro_station: list[str] = Field(
-        description="Станция метро, на которой ты живешь"
+    live_metro_station: list[int] = Field(
+        description="Станция метро, на которой ты живешь",
     )
-    study_metro_station: list[str] = Field(
+    study_metro_station: list[int] = Field(
         description="Станция метро, на которой ты учишься/работаешь"
     )
     year_of_admission: int = Field(description="Год поступления в СтС")
-    has_driver_license: UserDriverLicense = Field(
+    has_driver_license: UserDriverLicenseEnum = Field(
         description="Есть ли у тебя водительские права и/или машина?"
     )
-    date_of_birth: date_type = Field(description="Дата Рождения")
-    has_printer: UserPrinter = Field(description="Если ли у тебя принтер?")
+    date_of_birth: date_type | None = Field(description="Дата Рождения")
+    has_printer: UserPrinterEnum = Field(description="Если ли у тебя принтер?")
     can_host_night: bool = Field(
         description="Можем ли мы проводить ночь креатива/ночь оформления у тебя дома?"
     )
