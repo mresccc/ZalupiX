@@ -138,6 +138,85 @@ class UserProfileUpdateRequest(BaseModel):
     )
 
 
+class MetroOptimizationContract(BaseModel):
+    """Контракт для оптимизации данных метро"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "language": "ru",
+                "include_location": True,
+                "use_numeric_keys": True,
+            }
+        }
+    )
+
+    language: str = Field(
+        default="ru",
+        description="Язык для названий (ru, en, cn, all)",
+        pattern="^(ru|en|cn|all)$",
+    )
+    include_location: bool = Field(
+        default=True, description="Включать ли координаты станций"
+    )
+    use_numeric_keys: bool = Field(
+        default=False, description="Использовать числовые ключи вместо строковых"
+    )
+
+
+class OptimizedMetroLine(BaseModel):
+    """Оптимизированная модель ветки метро"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "1": 1,  # line_id
+                "2": "#d41317",  # color
+                "3": "Сокольническая линия",  # name
+                "4": [  # stations
+                    {
+                        "1": 1,  # id
+                        "2": "Бульвар Рокоссовского",  # name
+                        "3": {"lat": 55.814789, "lon": 37.733928},  # location
+                    }
+                ],
+            }
+        }
+    )
+
+    # Числовые ключи для оптимизации
+    data: Dict[str, Any] = Field(description="Оптимизированные данные ветки")
+
+
+class OptimizedMetroResponse(BaseModel):
+    """Оптимизированный ответ для эндпоинта /metro"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "lines": [
+                    {
+                        "1": 1,  # line_id
+                        "2": "#d41317",  # color
+                        "3": "Сокольническая линия",  # name
+                        "4": [  # stations
+                            {
+                                "1": 1,  # id
+                                "2": "Бульвар Рокоссовского",  # name
+                                "3": {"lat": 55.814789, "lon": 37.733928},  # location
+                            }
+                        ],
+                    }
+                ]
+            }
+        }
+    )
+
+    lines: List[Dict[str, Any]] = Field(
+        description="Список оптимизированных веток метро"
+    )
+
+
 class MetroResponse(BaseModel):
     """Схема ответа для эндпоинта /metro"""
 
@@ -163,11 +242,3 @@ class MetroResponse(BaseModel):
     )
 
     lines: List[Dict[str, Any]] = Field(description="Список веток метро")
-
-    @classmethod
-    def from_metro_data(cls, metro_data, **kwargs):
-        """Создать ответ из MetroData с настройками сериализации"""
-        if metro_data is None:
-            return cls(lines=[])
-        serialized_data = metro_data.to_json(**kwargs)
-        return cls(**serialized_data)

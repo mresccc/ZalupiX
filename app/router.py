@@ -1,4 +1,5 @@
 from datetime import date
+from typing import Any, Dict, List, Union
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from loguru import logger
@@ -10,10 +11,10 @@ from app.dependencies import (
     get_user_repository,
     get_user_service,
 )
+from app.metro import MetroLine
 from app.repository.user import UserRepository
 from app.schemas import (
     HealthResponse,
-    MetroResponse,
     ScheduleResponse,
     TelegramAuthRequest,
     UserProfileResponse,
@@ -194,13 +195,20 @@ async def get_metro(
         default=True,
         description="Включать ли координаты станций",
     ),
+    use_numeric_keys: bool = Query(
+        default=False,
+        description="Использовать числовые ключи вместо строковых",
+    ),
     metro_service: MetroService = Depends(get_metro_service),
-) -> MetroResponse:
+) -> Union[List[MetroLine], List[Dict[str, Any]]]:
     """Получение данных о метро с настройками сериализации"""
-    metro_data = metro_service.get_metro()
-
-    return MetroResponse.from_metro_data(
-        metro_data,
-        language=language,
-        include_location=include_location,
-    )
+    if use_numeric_keys:
+        return metro_service.get_optimized_metro_data(
+            language=language,
+            include_location=include_location,
+        )
+    else:
+        return metro_service.get_metro(
+            language=language,
+            include_location=include_location,
+        )
