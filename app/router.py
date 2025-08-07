@@ -167,7 +167,7 @@ async def telegram_auth(
                 )
 
         # Проверяем, что пользователь существует в базе данных
-        user_profile = user_repository.get_user_by_telegram_id(telegram_id)
+        user_profile = await user_repository.get_user_by_telegram_id(telegram_id)
         if not user_profile:
             raise HTTPException(
                 status_code=404,
