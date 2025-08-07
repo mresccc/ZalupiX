@@ -1,5 +1,6 @@
 # service/models.py
 from datetime import date as date_type
+from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -44,6 +45,37 @@ class UserProfile(BaseModel):
     can_host_night: bool = Field(
         description="Можем ли мы проводить ночь креатива/ночь оформления у тебя дома?"
     )
+
+    @field_validator("date_of_birth", mode="before")
+    @classmethod
+    def validate_date_of_birth(cls, v):
+        if v is None:
+            return v
+        
+        # Если уже date объект, возвращаем как есть
+        if isinstance(v, date_type):
+            return v
+        
+        # Если строка, пытаемся парсить
+        if isinstance(v, str):
+            v = v.strip()
+            
+            # Пробуем формат DD.MM.YYYY
+            try:
+                return datetime.strptime(v, "%d.%m.%Y").date()
+            except ValueError:
+                pass
+            
+            # Пробуем формат YYYY-MM-DD
+            try:
+                return datetime.strptime(v, "%Y-%m-%d").date()
+            except ValueError:
+                pass
+            
+            # Если ничего не подошло, возвращаем как есть (Pydantic выдаст ошибку)
+            return v
+        
+        return v
 
     @property
     def course_number(self) -> int:
