@@ -5,6 +5,20 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from app.service.models import Event, UserProfile
 
 
+class TelegramAuthRequest(BaseModel):
+    """Схема запроса для аутентификации через Telegram Mini App"""
+    
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "init_data": "user=%7B%22id%22%3A123456789%2C%22first_name%22%3A%22Test%22%7D&auth_date=1234567890&hash=test_hash"
+            }
+        }
+    )
+    
+    init_data: str = Field(description="Init data от Telegram Mini App")
+
+
 class ScheduleResponse(BaseModel):
     """Схема ответа для эндпоинта /schedule"""
 

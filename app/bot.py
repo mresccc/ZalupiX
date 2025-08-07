@@ -11,7 +11,6 @@ from app.config import BOT_TOKEN, WEBAPP_URL
 bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 router = Router()
-print("FJSDAHFBJDSKJF[PDSFOJASDHLKBJFBKDofpadsjihlfkdks;afkas]")
 
 
 @router.message(CommandStart())

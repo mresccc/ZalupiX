@@ -1,0 +1,5464 @@
+[
+  {
+    "line_id": 1,
+    "color": "#d41317",
+    "name": {
+      "ru": "Сокольническая линия",
+      "en": "Sokolnicheskaya line"
+    },
+    "stations": [
+      {
+        "id": 1,
+        "name": {
+          "ru": "Бульвар Рокоссовского",
+          "en": "Bulvar Rokossovskogo",
+          "cn": "罗科索夫斯基林荫路"
+        },
+        "location": {
+          "lat": 55.814789,
+          "lon": 37.733928
+        }
+      },
+      {
+        "id": 8,
+        "name": {
+          "ru": "Черкизовская",
+          "en": "Cherkizovskaya",
+          "cn": "切尔基佐沃"
+        },
+        "location": {
+          "lat": 55.803671,
+          "lon": 37.744927
+        }
+      },
+      {
+        "id": 9,
+        "name": {
+          "ru": "Преображенская площадь",
+          "en": "Preobrazhenskaya Ploschad",
+          "cn": "显圣广场"
+        },
+        "location": {
+          "lat": 55.796167,
+          "lon": 37.715022
+        }
+      },
+      {
+        "id": 10,
+        "name": {
+          "ru": "Сокольники",
+          "en": "Sokolniki",
+          "cn": "驯隼人村庄"
+        },
+        "location": {
+          "lat": 55.788991,
+          "lon": 37.67988
+        }
+      },
+      {
+        "id": 11,
+        "name": {
+          "ru": "Красносельская",
+          "en": "Krasnoselskaya",
+          "cn": "红村"
+        },
+        "location": {
+          "lat": 55.779818,
+          "lon": 37.666225
+        }
+      },
+      {
+        "id": 12,
+        "name": {
+          "ru": "Комсомольская",
+          "en": "Komsomolskaya",
+          "cn": "共青团广场"
+        },
+        "location": {
+          "lat": 55.775712,
+          "lon": 37.656165
+        }
+      },
+      {
+        "id": 13,
+        "name": {
+          "ru": "Красные Ворота",
+          "en": "Krasniye Vorota",
+          "cn": "红门"
+        },
+        "location": {
+          "lat": 55.768659,
+          "lon": 37.64922
+        }
+      },
+      {
+        "id": 14,
+        "name": {
+          "ru": "Чистые пруды",
+          "en": "Chistiye prudi",
+          "cn": "清塘"
+        },
+        "location": {
+          "lat": 55.764926,
+          "lon": 37.638387
+        }
+      },
+      {
+        "id": 15,
+        "name": {
+          "ru": "Лубянка",
+          "en": "Lubyanka",
+          "cn": "卢比扬卡"
+        },
+        "location": {
+          "lat": 55.759456,
+          "lon": 37.626789
+        }
+      },
+      {
+        "id": 16,
+        "name": {
+          "ru": "Охотный Ряд",
+          "en": "Okhotny Ryad",
+          "cn": "猎人商行"
+        },
+        "location": {
+          "lat": 55.756964,
+          "lon": 37.615524
+        }
+      },
+      {
+        "id": 17,
+        "name": {
+          "ru": "Библиотека им. Ленина",
+          "en": "Biblioteka Imeni Lenina",
+          "cn": "列宁图书馆"
+        },
+        "location": {
+          "lat": 55.752257,
+          "lon": 37.611024
+        }
+      },
+      {
+        "id": 18,
+        "name": {
+          "ru": "Кропоткинская",
+          "en": "Kropotkinskaya",
+          "cn": "克鲁泡特金站"
+        },
+        "location": {
+          "lat": 55.744998,
+          "lon": 37.601586
+        }
+      },
+      {
+        "id": 19,
+        "name": {
+          "ru": "Парк культуры",
+          "en": "Park Kultury",
+          "cn": "文化公园"
+        },
+        "location": {
+          "lat": 55.735819,
+          "lon": 37.594683
+        }
+      },
+      {
+        "id": 20,
+        "name": {
+          "ru": "Фрунзенская",
+          "en": "Frunzenskaya",
+          "cn": "伏龙芝站"
+        },
+        "location": {
+          "lat": 55.727313,
+          "lon": 37.580463
+        }
+      },
+      {
+        "id": 21,
+        "name": {
+          "ru": "Спортивная",
+          "en": "Sportivnaya",
+          "cn": "运动站"
+        },
+        "location": {
+          "lat": 55.723247,
+          "lon": 37.564105
+        }
+      },
+      {
+        "id": 22,
+        "name": {
+          "ru": "Воробьёвы горы",
+          "en": "Vorobyovy Gory",
+          "cn": "麻雀山"
+        },
+        "location": {
+          "lat": 55.710438,
+          "lon": 37.559317
+        }
+      },
+      {
+        "id": 23,
+        "name": {
+          "ru": "Университет",
+          "en": "Universitet",
+          "cn": "大学站"
+        },
+        "location": {
+          "lat": 55.691707,
+          "lon": 37.534935
+        }
+      },
+      {
+        "id": 24,
+        "name": {
+          "ru": "Проспект Вернадского",
+          "en": "Prospekt Vernadskogo",
+          "cn": "维尔纳茨基大道"
+        },
+        "location": {
+          "lat": 55.67691,
+          "lon": 37.505831
+        }
+      },
+      {
+        "id": 26,
+        "name": {
+          "ru": "Юго-Западная",
+          "en": "Yugo-Zapadnaya",
+          "cn": "西南站"
+        },
+        "location": {
+          "lat": 55.663629,
+          "lon": 37.483095
+        }
+      },
+      {
+        "id": 33,
+        "name": {
+          "ru": "Тропарёво",
+          "en": "Troparevo",
+          "cn": "特罗帕廖沃"
+        },
+        "location": {
+          "lat": 55.644627,
+          "lon": 37.471919
+        }
+      },
+      {
+        "id": 34,
+        "name": {
+          "ru": "Румянцево",
+          "en": "Rumyantsevo",
+          "cn": "鲁缅采沃"
+        },
+        "location": {
+          "lat": 55.633028,
+          "lon": 37.441395
+        }
+      },
+      {
+        "id": 35,
+        "name": {
+          "ru": "Саларьево",
+          "en": "Salaryevo",
+          "cn": "萨拉里耶沃"
+        },
+        "location": {
+          "lat": 55.621811,
+          "lon": 37.424048
+        }
+      },
+      {
+        "id": 36,
+        "name": {
+          "ru": "Филатов Луг",
+          "en": "Filatov Lug",
+          "cn": "菲拉特草甸"
+        },
+        "location": {
+          "lat": 55.601177,
+          "lon": 37.407995
+        }
+      },
+      {
+        "id": 37,
+        "name": {
+          "ru": "Прокшино",
+          "en": "Prokshino",
+          "cn": "普罗克石诺"
+        },
+        "location": {
+          "lat": 55.586456,
+          "lon": 37.43322
+        }
+      },
+      {
+        "id": 38,
+        "name": {
+          "ru": "Ольховая",
+          "en": "Olkhovaya",
+          "cn": "赤杨路"
+        },
+        "location": {
+          "lat": 55.56898,
+          "lon": 37.459047
+        }
+      },
+      {
+        "id": 39,
+        "name": {
+          "ru": "Новомосковская",
+          "en": "Kommunarka",
+          "cn": "新莫斯科站"
+        },
+        "location": {
+          "lat": 55.55968,
+          "lon": 37.469441
+        }
+      },
+      {
+        "id": 638,
+        "name": {
+          "ru": "Потапово",
+          "en": "Potapovo",
+          "cn": "波塔普沃"
+        },
+        "location": {
+          "lat": 55.553329,
+          "lon": 37.493208
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 2,
+    "color": "#4aaf50",
+    "name": {
+      "ru": "Замоскворецкая линия",
+      "en": "Zamoskvoretskaya line"
+    },
+    "stations": [
+      {
+        "id": 2,
+        "name": {
+          "ru": "Ховрино",
+          "en": "Khovrino",
+          "cn": "霍夫林诺"
+        },
+        "location": {
+          "lat": 55.878273,
+          "lon": 37.480768
+        }
+      },
+      {
+        "id": 6,
+        "name": {
+          "ru": "Беломорская",
+          "en": "Belomorskaya",
+          "cn": "白海街"
+        },
+        "location": {
+          "lat": 55.865369,
+          "lon": 37.475692
+        }
+      },
+      {
+        "id": 7,
+        "name": {
+          "ru": "Речной вокзал",
+          "en": "Rechnoy Vokzal",
+          "cn": "河运码头"
+        },
+        "location": {
+          "lat": 55.854891,
+          "lon": 37.476231
+        }
+      },
+      {
+        "id": 25,
+        "name": {
+          "ru": "Водный стадион",
+          "en": "Vodniy Stadion",
+          "cn": "水运馆"
+        },
+        "location": {
+          "lat": 55.839881,
+          "lon": 37.486769
+        }
+      },
+      {
+        "id": 40,
+        "name": {
+          "ru": "Войковская",
+          "en": "Voykovskaya",
+          "cn": "沃伊科夫站"
+        },
+        "location": {
+          "lat": 55.818923,
+          "lon": 37.497791
+        }
+      },
+      {
+        "id": 41,
+        "name": {
+          "ru": "Сокол",
+          "en": "Sokol",
+          "cn": "隼鸟"
+        },
+        "location": {
+          "lat": 55.805042,
+          "lon": 37.514787
+        }
+      },
+      {
+        "id": 42,
+        "name": {
+          "ru": "Аэропорт",
+          "en": "Aeroport",
+          "cn": "机场"
+        },
+        "location": {
+          "lat": 55.800979,
+          "lon": 37.531765
+        }
+      },
+      {
+        "id": 43,
+        "name": {
+          "ru": "Динамо",
+          "en": "Dinamo",
+          "cn": "迪纳摩体育场"
+        },
+        "location": {
+          "lat": 55.789704,
+          "lon": 37.558212
+        }
+      },
+      {
+        "id": 44,
+        "name": {
+          "ru": "Белорусская",
+          "en": "Belorusskaya",
+          "cn": "白俄罗斯火车站"
+        },
+        "location": {
+          "lat": 55.777388,
+          "lon": 37.582206
+        }
+      },
+      {
+        "id": 45,
+        "name": {
+          "ru": "Маяковская",
+          "en": "Mayakovskaya",
+          "cn": "马雅可夫斯基广场"
+        },
+        "location": {
+          "lat": 55.76996,
+          "lon": 37.595914
+        }
+      },
+      {
+        "id": 46,
+        "name": {
+          "ru": "Тверская",
+          "en": "Tverskaya",
+          "cn": "特维尔大街"
+        },
+        "location": {
+          "lat": 55.764455,
+          "lon": 37.605939
+        }
+      },
+      {
+        "id": 47,
+        "name": {
+          "ru": "Театральная",
+          "en": "Teatralnaya",
+          "cn": "剧院广场"
+        },
+        "location": {
+          "lat": 55.757967,
+          "lon": 37.619001
+        }
+      },
+      {
+        "id": 48,
+        "name": {
+          "ru": "Новокузнецкая",
+          "en": "Novokuznetskaya",
+          "cn": "新库兹涅茨克站"
+        },
+        "location": {
+          "lat": 55.74185,
+          "lon": 37.629295
+        }
+      },
+      {
+        "id": 49,
+        "name": {
+          "ru": "Павелецкая",
+          "en": "Paveletskaya",
+          "cn": "帕韦列茨火车站"
+        },
+        "location": {
+          "lat": 55.729797,
+          "lon": 37.638952
+        }
+      },
+      {
+        "id": 88,
+        "name": {
+          "ru": "Автозаводская",
+          "en": "Avtozavodskaya",
+          "cn": "汽车厂"
+        },
+        "location": {
+          "lat": 55.707553,
+          "lon": 37.657654
+        }
+      },
+      {
+        "id": 89,
+        "name": {
+          "ru": "Технопарк",
+          "en": "Tekhnopark",
+          "cn": "科技园"
+        },
+        "location": {
+          "lat": 55.693931,
+          "lon": 37.66442
+        }
+      },
+      {
+        "id": 92,
+        "name": {
+          "ru": "Коломенская",
+          "en": "Kolomenskaya",
+          "cn": "科罗缅斯克沙皇村"
+        },
+        "location": {
+          "lat": 55.678407,
+          "lon": 37.663827
+        }
+      },
+      {
+        "id": 95,
+        "name": {
+          "ru": "Каширская",
+          "en": "Kashirskaya",
+          "cn": "卡希拉公路"
+        },
+        "location": {
+          "lat": 55.655107,
+          "lon": 37.648798
+        }
+      },
+      {
+        "id": 98,
+        "name": {
+          "ru": "Кантемировская",
+          "en": "Kantemirovskaya",
+          "cn": "坎捷米罗夫坦克师路"
+        },
+        "location": {
+          "lat": 55.636107,
+          "lon": 37.656218
+        }
+      },
+      {
+        "id": 101,
+        "name": {
+          "ru": "Царицыно",
+          "en": "Tsaritsyno",
+          "cn": "女沙皇村"
+        },
+        "location": {
+          "lat": 55.621653,
+          "lon": 37.669028
+        }
+      },
+      {
+        "id": 116,
+        "name": {
+          "ru": "Орехово",
+          "en": "Orekhovo",
+          "cn": "榛树村"
+        },
+        "location": {
+          "lat": 55.612884,
+          "lon": 37.695331
+        }
+      },
+      {
+        "id": 142,
+        "name": {
+          "ru": "Домодедовская",
+          "en": "Domodedovskaya",
+          "cn": "多莫杰多沃站"
+        },
+        "location": {
+          "lat": 55.610814,
+          "lon": 37.718552
+        }
+      },
+      {
+        "id": 147,
+        "name": {
+          "ru": "Красногвардейская",
+          "en": "Krasnogvardeyskaya",
+          "cn": "赤卫队站"
+        },
+        "location": {
+          "lat": 55.613605,
+          "lon": 37.744055
+        }
+      },
+      {
+        "id": 148,
+        "name": {
+          "ru": "Алма-Атинская",
+          "en": "Alma-Atinskaya",
+          "cn": "阿拉木图站"
+        },
+        "location": {
+          "lat": 55.63282,
+          "lon": 37.765911
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 3,
+    "color": "#0072ba",
+    "name": {
+      "ru": "Арбатско-Покровская линия",
+      "en": "Arbatsko-Pokrovskaya Line"
+    },
+    "stations": [
+      {
+        "id": 90,
+        "name": {
+          "ru": "Пятницкое шоссе",
+          "en": "Pyatnitskoe Shosse",
+          "cn": "星期五村公路"
+        },
+        "location": {
+          "lat": 55.855967,
+          "lon": 37.354132
+        }
+      },
+      {
+        "id": 91,
+        "name": {
+          "ru": "Митино",
+          "en": "Mitino",
+          "cn": "米金诺"
+        },
+        "location": {
+          "lat": 55.845734,
+          "lon": 37.362154
+        }
+      },
+      {
+        "id": 93,
+        "name": {
+          "ru": "Волоколамская",
+          "en": "Volokolamskaya",
+          "cn": "沃洛科拉姆斯克公路"
+        },
+        "location": {
+          "lat": 55.835508,
+          "lon": 37.382034
+        }
+      },
+      {
+        "id": 94,
+        "name": {
+          "ru": "Мякинино",
+          "en": "Myakinino",
+          "cn": "米亚金宁诺"
+        },
+        "location": {
+          "lat": 55.82489,
+          "lon": 37.385331
+        }
+      },
+      {
+        "id": 96,
+        "name": {
+          "ru": "Строгино",
+          "en": "Strogino",
+          "cn": "斯特罗金诺"
+        },
+        "location": {
+          "lat": 55.803691,
+          "lon": 37.403118
+        }
+      },
+      {
+        "id": 97,
+        "name": {
+          "ru": "Крылатское",
+          "en": "Krylatskoe",
+          "cn": "克雷拉茨岗"
+        },
+        "location": {
+          "lat": 55.756842,
+          "lon": 37.408139
+        }
+      },
+      {
+        "id": 99,
+        "name": {
+          "ru": "Молодёжная",
+          "en": "Molodezhnaya",
+          "cn": "青年路"
+        },
+        "location": {
+          "lat": 55.740867,
+          "lon": 37.416619
+        }
+      },
+      {
+        "id": 100,
+        "name": {
+          "ru": "Кунцевская",
+          "en": "Kuntsevskaya",
+          "cn": "昆采沃站"
+        },
+        "location": {
+          "lat": 55.730603,
+          "lon": 37.445437
+        }
+      },
+      {
+        "id": 102,
+        "name": {
+          "ru": "Славянский бульвар",
+          "en": "Slavyanskiy Bulvar",
+          "cn": "斯拉夫林荫路"
+        },
+        "location": {
+          "lat": 55.729574,
+          "lon": 37.470572
+        }
+      },
+      {
+        "id": 111,
+        "name": {
+          "ru": "Парк Победы",
+          "en": "Park Pobedy",
+          "cn": "胜利公园"
+        },
+        "location": {
+          "lat": 55.736934,
+          "lon": 37.516009
+        }
+      },
+      {
+        "id": 112,
+        "name": {
+          "ru": "Киевская",
+          "en": "Kievskaya",
+          "cn": "基辅火车站"
+        },
+        "location": {
+          "lat": 55.743923,
+          "lon": 37.568102
+        }
+      },
+      {
+        "id": 115,
+        "name": {
+          "ru": "Смоленская",
+          "en": "Smolenskaya",
+          "cn": "斯摩棱斯克广场"
+        },
+        "location": {
+          "lat": 55.747748,
+          "lon": 37.583832
+        }
+      },
+      {
+        "id": 117,
+        "name": {
+          "ru": "Арбатская",
+          "en": "Arbatskaya",
+          "cn": "阿尔巴特"
+        },
+        "location": {
+          "lat": 55.752536,
+          "lon": 37.604196
+        }
+      },
+      {
+        "id": 118,
+        "name": {
+          "ru": "Площадь Революции",
+          "en": "Ploschad Revolyutsii",
+          "cn": "革命广场"
+        },
+        "location": {
+          "lat": 55.756802,
+          "lon": 37.62272
+        }
+      },
+      {
+        "id": 119,
+        "name": {
+          "ru": "Курская",
+          "en": "Kurskaya",
+          "cn": "库尔斯克火车站"
+        },
+        "location": {
+          "lat": 55.758524,
+          "lon": 37.65876
+        }
+      },
+      {
+        "id": 120,
+        "name": {
+          "ru": "Бауманская",
+          "en": "Baumanskaya",
+          "cn": "鲍曼站"
+        },
+        "location": {
+          "lat": 55.772406,
+          "lon": 37.679035
+        }
+      },
+      {
+        "id": 121,
+        "name": {
+          "ru": "Электрозаводская",
+          "en": "Elektrozavodskaya",
+          "cn": "电器厂"
+        },
+        "location": {
+          "lat": 55.782066,
+          "lon": 37.705284
+        }
+      },
+      {
+        "id": 122,
+        "name": {
+          "ru": "Семёновская",
+          "en": "Semenovskaya",
+          "cn": "谢苗诺夫广场"
+        },
+        "location": {
+          "lat": 55.783195,
+          "lon": 37.719423
+        }
+      },
+      {
+        "id": 123,
+        "name": {
+          "ru": "Партизанская",
+          "en": "Partizanskaya",
+          "cn": "游击队站"
+        },
+        "location": {
+          "lat": 55.788478,
+          "lon": 37.749665
+        }
+      },
+      {
+        "id": 124,
+        "name": {
+          "ru": "Измайловская",
+          "en": "Izmaylovskaya",
+          "cn": "伊兹迈洛沃公园"
+        },
+        "location": {
+          "lat": 55.787802,
+          "lon": 37.779903
+        }
+      },
+      {
+        "id": 125,
+        "name": {
+          "ru": "Первомайская",
+          "en": "Pervomayskaya",
+          "cn": "五一路"
+        },
+        "location": {
+          "lat": 55.79579,
+          "lon": 37.798935
+        }
+      },
+      {
+        "id": 126,
+        "name": {
+          "ru": "Щёлковская",
+          "en": "Schelkovskaya",
+          "cn": "晓尔科沃公路"
+        },
+        "location": {
+          "lat": 55.810383,
+          "lon": 37.798293
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 4,
+    "color": "#1ebcef",
+    "name": {
+      "ru": "Филёвская линия",
+      "en": "Filevskaya line"
+    },
+    "stations": [
+      {
+        "id": 127,
+        "name": {
+          "ru": "Кунцевская",
+          "en": "Kuntsevskaya",
+          "cn": "昆采沃站"
+        },
+        "location": {
+          "lat": 55.730675,
+          "lon": 37.445477
+        }
+      },
+      {
+        "id": 128,
+        "name": {
+          "ru": "Пионерская",
+          "en": "Pionerskaya",
+          "cn": "少先队站"
+        },
+        "location": {
+          "lat": 55.736059,
+          "lon": 37.467458
+        }
+      },
+      {
+        "id": 129,
+        "name": {
+          "ru": "Филёвский парк",
+          "en": "Filevsky Park",
+          "cn": "菲利公园"
+        },
+        "location": {
+          "lat": 55.73944,
+          "lon": 37.48302
+        }
+      },
+      {
+        "id": 133,
+        "name": {
+          "ru": "Багратионовская",
+          "en": "Bagrationovskaya",
+          "cn": "巴格拉季昂上将站"
+        },
+        "location": {
+          "lat": 55.74366,
+          "lon": 37.497393
+        }
+      },
+      {
+        "id": 136,
+        "name": {
+          "ru": "Фили",
+          "en": "Fili",
+          "cn": "菲利"
+        },
+        "location": {
+          "lat": 55.746725,
+          "lon": 37.514093
+        }
+      },
+      {
+        "id": 137,
+        "name": {
+          "ru": "Кутузовская",
+          "en": "Kutuzovskaya",
+          "cn": "库图佐夫大街"
+        },
+        "location": {
+          "lat": 55.73948,
+          "lon": 37.534731
+        }
+      },
+      {
+        "id": 138,
+        "name": {
+          "ru": "Студенческая",
+          "en": "Studencheskaya",
+          "cn": "大学生路"
+        },
+        "location": {
+          "lat": 55.738902,
+          "lon": 37.548298
+        }
+      },
+      {
+        "id": 139,
+        "name": {
+          "ru": "Москва-Сити",
+          "en": "Moskva-City",
+          "cn": "莫斯科CBD"
+        },
+        "location": {
+          "lat": 55.748112,
+          "lon": 37.53299
+        }
+      },
+      {
+        "id": 140,
+        "name": {
+          "ru": "Деловой центр",
+          "en": "Delovoy Tsentr",
+          "cn": "核心商务区"
+        },
+        "location": {
+          "lat": 55.748358,
+          "lon": 37.544207
+        }
+      },
+      {
+        "id": 141,
+        "name": {
+          "ru": "Киевская",
+          "en": "Kievskaya",
+          "cn": "基辅火车站"
+        },
+        "location": {
+          "lat": 55.743113,
+          "lon": 37.564751
+        }
+      },
+      {
+        "id": 151,
+        "name": {
+          "ru": "Смоленская",
+          "en": "Smolenskaya",
+          "cn": "斯摩棱斯克广场"
+        },
+        "location": {
+          "lat": 55.747952,
+          "lon": 37.583806
+        }
+      },
+      {
+        "id": 152,
+        "name": {
+          "ru": "Арбатская",
+          "en": "Arbatskaya",
+          "cn": "阿尔巴特"
+        },
+        "location": {
+          "lat": 55.752386,
+          "lon": 37.603279
+        }
+      },
+      {
+        "id": 153,
+        "name": {
+          "ru": "Александровский сад",
+          "en": "Aleksandrovsky Sad",
+          "cn": "亚历山大花园"
+        },
+        "location": {
+          "lat": 55.752308,
+          "lon": 37.609498
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 5,
+    "color": "#ef7d00",
+    "name": {
+      "ru": "Калужско-Рижская линия",
+      "en": "Kaluzhsko-Rizhskaya Line"
+    },
+    "stations": [
+      {
+        "id": 149,
+        "name": {
+          "ru": "Медведково",
+          "en": "Medvedkovo",
+          "cn": "梅德维德克沃"
+        },
+        "location": {
+          "lat": 55.886008,
+          "lon": 37.661087
+        }
+      },
+      {
+        "id": 150,
+        "name": {
+          "ru": "Бабушкинская",
+          "en": "Babushkinskaya",
+          "cn": "巴布什金站"
+        },
+        "location": {
+          "lat": 55.868448,
+          "lon": 37.663208
+        }
+      },
+      {
+        "id": 154,
+        "name": {
+          "ru": "Свиблово",
+          "en": "Sviblovo",
+          "cn": "斯维布洛沃"
+        },
+        "location": {
+          "lat": 55.854369,
+          "lon": 37.651411
+        }
+      },
+      {
+        "id": 155,
+        "name": {
+          "ru": "Ботанический сад",
+          "en": "Botanicheskiy Sad",
+          "cn": "植物园"
+        },
+        "location": {
+          "lat": 55.84592,
+          "lon": 37.638406
+        }
+      },
+      {
+        "id": 156,
+        "name": {
+          "ru": "ВДНХ",
+          "en": "VDNKha",
+          "cn": "国经成就展"
+        },
+        "location": {
+          "lat": 55.822422,
+          "lon": 37.641568
+        }
+      },
+      {
+        "id": 157,
+        "name": {
+          "ru": "Алексеевская",
+          "en": "Alekseevskaya",
+          "cn": "阿列克谢村庄"
+        },
+        "location": {
+          "lat": 55.807893,
+          "lon": 37.638795
+        }
+      },
+      {
+        "id": 158,
+        "name": {
+          "ru": "Рижская",
+          "en": "Rizhskaya",
+          "cn": "里加火车站"
+        },
+        "location": {
+          "lat": 55.792608,
+          "lon": 37.635978
+        }
+      },
+      {
+        "id": 159,
+        "name": {
+          "ru": "Проспект Мира",
+          "en": "Prospekt Mira",
+          "cn": "和平大街"
+        },
+        "location": {
+          "lat": 55.779724,
+          "lon": 37.633533
+        }
+      },
+      {
+        "id": 160,
+        "name": {
+          "ru": "Сухаревская",
+          "en": "Sukharevskaya",
+          "cn": "苏哈列夫广场"
+        },
+        "location": {
+          "lat": 55.772245,
+          "lon": 37.632071
+        }
+      },
+      {
+        "id": 162,
+        "name": {
+          "ru": "Тургеневская",
+          "en": "Turgenevskaya",
+          "cn": "屠格涅夫广场"
+        },
+        "location": {
+          "lat": 55.765484,
+          "lon": 37.636496
+        }
+      },
+      {
+        "id": 166,
+        "name": {
+          "ru": "Китай-город",
+          "en": "Kitay-gorod",
+          "cn": "基泰城"
+        },
+        "location": {
+          "lat": 55.756731,
+          "lon": 37.630883
+        }
+      },
+      {
+        "id": 169,
+        "name": {
+          "ru": "Третьяковская",
+          "en": "Tretyakovskaya",
+          "cn": "特列季亚科夫画廊"
+        },
+        "location": {
+          "lat": 55.740683,
+          "lon": 37.625617
+        }
+      },
+      {
+        "id": 172,
+        "name": {
+          "ru": "Октябрьская",
+          "en": "Oktyabrskaya",
+          "cn": "十月广场"
+        },
+        "location": {
+          "lat": 55.731328,
+          "lon": 37.612624
+        }
+      },
+      {
+        "id": 175,
+        "name": {
+          "ru": "Шаболовская",
+          "en": "Shabolovskaya",
+          "cn": "纱博罗夫卡路"
+        },
+        "location": {
+          "lat": 55.718744,
+          "lon": 37.60774
+        }
+      },
+      {
+        "id": 178,
+        "name": {
+          "ru": "Ленинский проспект",
+          "en": "Leninskiy prospekt",
+          "cn": "列宁大街"
+        },
+        "location": {
+          "lat": 55.708419,
+          "lon": 37.587532
+        }
+      },
+      {
+        "id": 179,
+        "name": {
+          "ru": "Академическая",
+          "en": "Akademicheskaya",
+          "cn": "科学园站"
+        },
+        "location": {
+          "lat": 55.686993,
+          "lon": 37.572165
+        }
+      },
+      {
+        "id": 180,
+        "name": {
+          "ru": "Профсоюзная",
+          "en": "Profsoyuznaya",
+          "cn": "工会路"
+        },
+        "location": {
+          "lat": 55.677298,
+          "lon": 37.561834
+        }
+      },
+      {
+        "id": 181,
+        "name": {
+          "ru": "Новые Черёмушки",
+          "en": "Novie Cheryomushki",
+          "cn": "新稠李花村"
+        },
+        "location": {
+          "lat": 55.671235,
+          "lon": 37.555321
+        }
+      },
+      {
+        "id": 182,
+        "name": {
+          "ru": "Калужская",
+          "en": "Kaluzhskaya",
+          "cn": "卡卢加公路"
+        },
+        "location": {
+          "lat": 55.655313,
+          "lon": 37.539222
+        }
+      },
+      {
+        "id": 183,
+        "name": {
+          "ru": "Беляево",
+          "en": "Belyaevo",
+          "cn": "别利亚耶沃"
+        },
+        "location": {
+          "lat": 55.641868,
+          "lon": 37.525412
+        }
+      },
+      {
+        "id": 184,
+        "name": {
+          "ru": "Коньково",
+          "en": "Konkovo",
+          "cn": "御马村"
+        },
+        "location": {
+          "lat": 55.634333,
+          "lon": 37.51896
+        }
+      },
+      {
+        "id": 185,
+        "name": {
+          "ru": "Тёплый Стан",
+          "en": "Tyopliy Stan",
+          "cn": " 大车店"
+        },
+        "location": {
+          "lat": 55.619857,
+          "lon": 37.505166
+        }
+      },
+      {
+        "id": 186,
+        "name": {
+          "ru": "Ясенево",
+          "en": "Yasenevo",
+          "cn": "亚先涅沃"
+        },
+        "location": {
+          "lat": 55.605517,
+          "lon": 37.534881
+        }
+      },
+      {
+        "id": 187,
+        "name": {
+          "ru": "Новоясеневская",
+          "en": "Novoyasenevskaya",
+          "cn": " 新亚先涅沃站"
+        },
+        "location": {
+          "lat": 55.601509,
+          "lon": 37.552851
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 8,
+    "color": "#943e90",
+    "name": {
+      "ru": "Таганско-Краснопресненская линия",
+      "en": "Tagansko-Krasnopresnenskaya line"
+    },
+    "stations": [
+      {
+        "id": 191,
+        "name": {
+          "ru": "Планерная",
+          "en": "Planernaya",
+          "cn": "滑翔路"
+        },
+        "location": {
+          "lat": 55.861784,
+          "lon": 37.436163
+        }
+      },
+      {
+        "id": 193,
+        "name": {
+          "ru": "Сходненская",
+          "en": "Skhodnenskaya",
+          "cn": "斯霍德妮娅河站"
+        },
+        "location": {
+          "lat": 55.851427,
+          "lon": 37.438593
+        }
+      },
+      {
+        "id": 194,
+        "name": {
+          "ru": "Тушинская",
+          "en": "Tushinskaya",
+          "cn": "图申诺村"
+        },
+        "location": {
+          "lat": 55.825615,
+          "lon": 37.436026
+        }
+      },
+      {
+        "id": 196,
+        "name": {
+          "ru": "Спартак",
+          "en": "Spartak",
+          "cn": "斯巴达克体育场"
+        },
+        "location": {
+          "lat": 55.817523,
+          "lon": 37.43463
+        }
+      },
+      {
+        "id": 197,
+        "name": {
+          "ru": "Щукинская",
+          "en": "Schukinskaya",
+          "cn": "休金诺站"
+        },
+        "location": {
+          "lat": 55.809145,
+          "lon": 37.46265
+        }
+      },
+      {
+        "id": 199,
+        "name": {
+          "ru": "Октябрьское поле",
+          "en": "Oktyabrskoe Pole",
+          "cn": "十月练兵场"
+        },
+        "location": {
+          "lat": 55.793962,
+          "lon": 37.492258
+        }
+      },
+      {
+        "id": 200,
+        "name": {
+          "ru": "Полежаевская",
+          "en": "Polezhaevskaya",
+          "cn": "波列扎耶夫站"
+        },
+        "location": {
+          "lat": 55.777621,
+          "lon": 37.521656
+        }
+      },
+      {
+        "id": 201,
+        "name": {
+          "ru": "Беговая",
+          "en": "Begovaya",
+          "cn": "赛马站"
+        },
+        "location": {
+          "lat": 55.773401,
+          "lon": 37.544531
+        }
+      },
+      {
+        "id": 202,
+        "name": {
+          "ru": "Улица 1905 года",
+          "en": "Ulitsa 1905 Goda",
+          "cn": " 1905年大街站"
+        },
+        "location": {
+          "lat": 55.765435,
+          "lon": 37.560437
+        }
+      },
+      {
+        "id": 203,
+        "name": {
+          "ru": "Баррикадная",
+          "en": "Barrikadnaya",
+          "cn": "街垒路"
+        },
+        "location": {
+          "lat": 55.760822,
+          "lon": 37.581581
+        }
+      },
+      {
+        "id": 204,
+        "name": {
+          "ru": "Пушкинская",
+          "en": "Pushkinskaya",
+          "cn": "普希金广场"
+        },
+        "location": {
+          "lat": 55.76561,
+          "lon": 37.60814
+        }
+      },
+      {
+        "id": 206,
+        "name": {
+          "ru": "Кузнецкий мост",
+          "en": "Kuznetsky Most",
+          "cn": "铁匠大桥街"
+        },
+        "location": {
+          "lat": 55.761602,
+          "lon": 37.624196
+        }
+      },
+      {
+        "id": 207,
+        "name": {
+          "ru": "Китай-город",
+          "en": "Kitay-gorod",
+          "cn": "基泰城"
+        },
+        "location": {
+          "lat": 55.756272,
+          "lon": 37.629987
+        }
+      },
+      {
+        "id": 208,
+        "name": {
+          "ru": "Таганская",
+          "en": "Taganskaya",
+          "cn": "塔甘卡"
+        },
+        "location": {
+          "lat": 55.739308,
+          "lon": 37.652958
+        }
+      },
+      {
+        "id": 210,
+        "name": {
+          "ru": "Пролетарская",
+          "en": "Proletarskaya",
+          "cn": "无产者站"
+        },
+        "location": {
+          "lat": 55.731764,
+          "lon": 37.664368
+        }
+      },
+      {
+        "id": 212,
+        "name": {
+          "ru": "Волгоградский проспект",
+          "en": "Volgogradsky Prospekt",
+          "cn": "伏尔加格勒大道"
+        },
+        "location": {
+          "lat": 55.725654,
+          "lon": 37.685042
+        }
+      },
+      {
+        "id": 213,
+        "name": {
+          "ru": "Текстильщики",
+          "en": "Tekstilschiki",
+          "cn": "纺织工人站"
+        },
+        "location": {
+          "lat": 55.708588,
+          "lon": 37.728853
+        }
+      },
+      {
+        "id": 214,
+        "name": {
+          "ru": "Кузьминки",
+          "en": "Kuzminki",
+          "cn": "库济明基"
+        },
+        "location": {
+          "lat": 55.705308,
+          "lon": 37.763751
+        }
+      },
+      {
+        "id": 215,
+        "name": {
+          "ru": "Рязанский проспект",
+          "en": "Ryazanskiy Prospekt",
+          "cn": "梁赞大道"
+        },
+        "location": {
+          "lat": 55.716275,
+          "lon": 37.792694
+        }
+      },
+      {
+        "id": 216,
+        "name": {
+          "ru": "Выхино",
+          "en": "Vykhino",
+          "cn": "维欣诺"
+        },
+        "location": {
+          "lat": 55.715758,
+          "lon": 37.819001
+        }
+      },
+      {
+        "id": 217,
+        "name": {
+          "ru": "Лермонтовский проспект",
+          "en": "Lermontovsky Prospekt",
+          "cn": "莱蒙托夫大道"
+        },
+        "location": {
+          "lat": 55.700753,
+          "lon": 37.854255
+        }
+      },
+      {
+        "id": 219,
+        "name": {
+          "ru": "Жулебино",
+          "en": "Zhulebino",
+          "cn": "茹列宾诺"
+        },
+        "location": {
+          "lat": 55.683938,
+          "lon": 37.855332
+        }
+      },
+      {
+        "id": 220,
+        "name": {
+          "ru": "Котельники",
+          "en": "Kotelniki",
+          "cn": "科捷利尼基"
+        },
+        "location": {
+          "lat": 55.6739,
+          "lon": 37.859129
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 6,
+    "color": "#915133",
+    "name": {
+      "ru": "Кольцевая линия",
+      "en": "Koltsevaya line"
+    },
+    "stations": [
+      {
+        "id": 161,
+        "name": {
+          "ru": "Проспект Мира",
+          "en": "Prospekt Mira",
+          "cn": "和平大街"
+        },
+        "location": {
+          "lat": 55.781762,
+          "lon": 37.633345
+        }
+      },
+      {
+        "id": 163,
+        "name": {
+          "ru": "Комсомольская",
+          "en": "Komsomolskaya",
+          "cn": "共青团广场"
+        },
+        "location": {
+          "lat": 55.774508,
+          "lon": 37.655979
+        }
+      },
+      {
+        "id": 164,
+        "name": {
+          "ru": "Курская",
+          "en": "Kurskaya",
+          "cn": "库尔斯克火车站"
+        },
+        "location": {
+          "lat": 55.755992,
+          "lon": 37.658759
+        }
+      },
+      {
+        "id": 165,
+        "name": {
+          "ru": "Таганская",
+          "en": "Taganskaya",
+          "cn": "塔甘卡"
+        },
+        "location": {
+          "lat": 55.742499,
+          "lon": 37.653242
+        }
+      },
+      {
+        "id": 167,
+        "name": {
+          "ru": "Павелецкая",
+          "en": "Paveletskaya",
+          "cn": "帕韦列茨火车站"
+        },
+        "location": {
+          "lat": 55.731524,
+          "lon": 37.635997
+        }
+      },
+      {
+        "id": 168,
+        "name": {
+          "ru": "Добрынинская",
+          "en": "Dobryninskaya",
+          "cn": "多勃雷宁站"
+        },
+        "location": {
+          "lat": 55.729083,
+          "lon": 37.622869
+        }
+      },
+      {
+        "id": 170,
+        "name": {
+          "ru": "Октябрьская",
+          "en": "Oktyabrskaya",
+          "cn": "十月广场"
+        },
+        "location": {
+          "lat": 55.729349,
+          "lon": 37.611311
+        }
+      },
+      {
+        "id": 171,
+        "name": {
+          "ru": "Парк культуры",
+          "en": "Park Kultury",
+          "cn": "文化公园"
+        },
+        "location": {
+          "lat": 55.735108,
+          "lon": 37.593387
+        }
+      },
+      {
+        "id": 173,
+        "name": {
+          "ru": "Киевская",
+          "en": "Kievskaya",
+          "cn": "基辅火车站"
+        },
+        "location": {
+          "lat": 55.742989,
+          "lon": 37.564488
+        }
+      },
+      {
+        "id": 174,
+        "name": {
+          "ru": "Краснопресненская",
+          "en": "Krasnopresnenskaya",
+          "cn": "红普列斯妮娅"
+        },
+        "location": {
+          "lat": 55.760329,
+          "lon": 37.57697
+        }
+      },
+      {
+        "id": 176,
+        "name": {
+          "ru": "Белорусская",
+          "en": "Belorusskaya",
+          "cn": "白俄罗斯火车站"
+        },
+        "location": {
+          "lat": 55.775317,
+          "lon": 37.58278
+        }
+      },
+      {
+        "id": 177,
+        "name": {
+          "ru": "Новослободская",
+          "en": "Novoslobodskaya",
+          "cn": "新自由镇"
+        },
+        "location": {
+          "lat": 55.779503,
+          "lon": 37.601021
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 7,
+    "color": "#adabac",
+    "name": {
+      "ru": "Серпуховско-Тимирязевская линия",
+      "en": "Serpukhovksko-Timiryazevskaya line"
+    },
+    "stations": [
+      {
+        "id": 188,
+        "name": {
+          "ru": "Алтуфьево",
+          "en": "Altufyevo",
+          "cn": "阿尔图非耶沃公路"
+        },
+        "location": {
+          "lat": 55.899293,
+          "lon": 37.586432
+        }
+      },
+      {
+        "id": 189,
+        "name": {
+          "ru": "Бибирево",
+          "en": "Bibirevo",
+          "cn": "碧比列沃"
+        },
+        "location": {
+          "lat": 55.88404,
+          "lon": 37.604711
+        }
+      },
+      {
+        "id": 190,
+        "name": {
+          "ru": "Отрадное",
+          "en": "Otradnoe",
+          "cn": " 可喜”集体农庄"
+        },
+        "location": {
+          "lat": 55.862542,
+          "lon": 37.604393
+        }
+      },
+      {
+        "id": 192,
+        "name": {
+          "ru": "Владыкино",
+          "en": "Vladykino",
+          "cn": "弗拉德金诺"
+        },
+        "location": {
+          "lat": 55.848399,
+          "lon": 37.590437
+        }
+      },
+      {
+        "id": 195,
+        "name": {
+          "ru": "Петровско-Разумовская",
+          "en": "Petrovsko-Razumovskaya",
+          "cn": "农业大学"
+        },
+        "location": {
+          "lat": 55.836665,
+          "lon": 37.575827
+        }
+      },
+      {
+        "id": 198,
+        "name": {
+          "ru": "Тимирязевская",
+          "en": "Timiryazevskaya",
+          "cn": "季米里亚泽夫站"
+        },
+        "location": {
+          "lat": 55.818659,
+          "lon": 37.574511
+        }
+      },
+      {
+        "id": 205,
+        "name": {
+          "ru": "Дмитровская",
+          "en": "Dmitrovskaya",
+          "cn": "德米特罗夫公路"
+        },
+        "location": {
+          "lat": 55.807873,
+          "lon": 37.580249
+        }
+      },
+      {
+        "id": 209,
+        "name": {
+          "ru": "Савёловская",
+          "en": "Savyolovskaya",
+          "cn": "萨维奥洛沃火车站"
+        },
+        "location": {
+          "lat": 55.794244,
+          "lon": 37.588822
+        }
+      },
+      {
+        "id": 211,
+        "name": {
+          "ru": "Менделеевская",
+          "en": "Mendeleevskaya",
+          "cn": "门捷列夫化工大学"
+        },
+        "location": {
+          "lat": 55.781511,
+          "lon": 37.598608
+        }
+      },
+      {
+        "id": 218,
+        "name": {
+          "ru": "Цветной бульвар",
+          "en": "Tsvetnoy Bulvar",
+          "cn": "花市林荫路"
+        },
+        "location": {
+          "lat": 55.77174,
+          "lon": 37.620712
+        }
+      },
+      {
+        "id": 221,
+        "name": {
+          "ru": "Чеховская",
+          "en": "Chekhovskaya",
+          "cn": "契诃夫站"
+        },
+        "location": {
+          "lat": 55.766051,
+          "lon": 37.608183
+        }
+      },
+      {
+        "id": 222,
+        "name": {
+          "ru": "Боровицкая",
+          "en": "Borovitskaya",
+          "cn": "博罗维茨基站"
+        },
+        "location": {
+          "lat": 55.750526,
+          "lon": 37.609171
+        }
+      },
+      {
+        "id": 223,
+        "name": {
+          "ru": "Полянка",
+          "en": "Polyanka",
+          "cn": "波梁卡"
+        },
+        "location": {
+          "lat": 55.7368,
+          "lon": 37.618621
+        }
+      },
+      {
+        "id": 224,
+        "name": {
+          "ru": "Серпуховская",
+          "en": "Serpukhovskaya",
+          "cn": "谢尔普霍夫路"
+        },
+        "location": {
+          "lat": 55.726855,
+          "lon": 37.62484
+        }
+      },
+      {
+        "id": 225,
+        "name": {
+          "ru": "Тульская",
+          "en": "Tulskaya",
+          "cn": "图拉路"
+        },
+        "location": {
+          "lat": 55.70783,
+          "lon": 37.622461
+        }
+      },
+      {
+        "id": 226,
+        "name": {
+          "ru": "Нагатинская",
+          "en": "Nagatinskaya",
+          "cn": "纳加金诺站"
+        },
+        "location": {
+          "lat": 55.682151,
+          "lon": 37.620931
+        }
+      },
+      {
+        "id": 227,
+        "name": {
+          "ru": "Нагорная",
+          "en": "Nagornaya",
+          "cn": "纳戈尔诺站"
+        },
+        "location": {
+          "lat": 55.672805,
+          "lon": 37.610955
+        }
+      },
+      {
+        "id": 228,
+        "name": {
+          "ru": "Нахимовский проспект",
+          "en": "Nakhimovskiy prospekt",
+          "cn": "纳希莫夫海军上将大道"
+        },
+        "location": {
+          "lat": 55.663502,
+          "lon": 37.606176
+        }
+      },
+      {
+        "id": 229,
+        "name": {
+          "ru": "Севастопольская",
+          "en": "Sevastopolskaya",
+          "cn": "塞瓦斯托波尔站"
+        },
+        "location": {
+          "lat": 55.651325,
+          "lon": 37.598403
+        }
+      },
+      {
+        "id": 230,
+        "name": {
+          "ru": "Чертановская",
+          "en": "Chertanovskaya",
+          "cn": "切尔坦诺沃站"
+        },
+        "location": {
+          "lat": 55.639985,
+          "lon": 37.607977
+        }
+      },
+      {
+        "id": 231,
+        "name": {
+          "ru": "Южная",
+          "en": "Yuzhnaya",
+          "cn": "南站"
+        },
+        "location": {
+          "lat": 55.622278,
+          "lon": 37.608975
+        }
+      },
+      {
+        "id": 232,
+        "name": {
+          "ru": "Пражская",
+          "en": "Prazhskaya",
+          "cn": "布拉格站"
+        },
+        "location": {
+          "lat": 55.611707,
+          "lon": 37.603215
+        }
+      },
+      {
+        "id": 233,
+        "name": {
+          "ru": "Улица Академика Янгеля",
+          "en": "Ulitsa Akademika Yangelya",
+          "cn": "扬格利院士街"
+        },
+        "location": {
+          "lat": 55.594294,
+          "lon": 37.601029
+        }
+      },
+      {
+        "id": 234,
+        "name": {
+          "ru": "Аннино",
+          "en": "Annino",
+          "cn": "安宁诺"
+        },
+        "location": {
+          "lat": 55.5832,
+          "lon": 37.59674
+        }
+      },
+      {
+        "id": 235,
+        "name": {
+          "ru": "Бульвар Дмитрия Донского",
+          "en": "Bulvar Dmitriya Donskogo",
+          "cn": "德米特里大公林荫路"
+        },
+        "location": {
+          "lat": 55.569406,
+          "lon": 37.576543
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 10,
+    "color": "#b4cc04",
+    "name": {
+      "ru": "Люблинско-Дмитровская линия",
+      "en": "Lyublinsko-Dmitrovskaya line"
+    },
+    "stations": [
+      {
+        "id": 579,
+        "name": {
+          "ru": "Физтех",
+          "en": "Fiztekh",
+          "cn": "物理技术学院"
+        },
+        "location": {
+          "lat": 55.920787,
+          "lon": 37.546117
+        }
+      },
+      {
+        "id": 578,
+        "name": {
+          "ru": "Лианозово",
+          "en": "Lianozovo",
+          "cn": "利亚诺佐沃"
+        },
+        "location": {
+          "lat": 55.897318,
+          "lon": 37.543962
+        }
+      },
+      {
+        "id": 577,
+        "name": {
+          "ru": "Яхромская",
+          "en": "Yakhromskaya",
+          "cn": "亚赫罗马路"
+        },
+        "location": {
+          "lat": 55.881055,
+          "lon": 37.544946
+        }
+      },
+      {
+        "id": 244,
+        "name": {
+          "ru": "Селигерская",
+          "en": "Seligerskaya",
+          "cn": "谢利格尔路"
+        },
+        "location": {
+          "lat": 55.86482,
+          "lon": 37.54833
+        }
+      },
+      {
+        "id": 245,
+        "name": {
+          "ru": "Верхние Лихоборы",
+          "en": "Verkhnie Likhobory",
+          "cn": "上幽暗密林"
+        },
+        "location": {
+          "lat": 55.85565,
+          "lon": 37.56111
+        }
+      },
+      {
+        "id": 246,
+        "name": {
+          "ru": "Окружная",
+          "en": "Okruzhnaya",
+          "cn": "环线换乘站"
+        },
+        "location": {
+          "lat": 55.844002,
+          "lon": 37.575951
+        }
+      },
+      {
+        "id": 247,
+        "name": {
+          "ru": "Петровско-Разумовская",
+          "en": "Petrovsko-Razumovskaya",
+          "cn": "农业大学"
+        },
+        "location": {
+          "lat": 55.833491,
+          "lon": 37.572943
+        }
+      },
+      {
+        "id": 248,
+        "name": {
+          "ru": "Фонвизинская",
+          "en": "Fonvizinskaya",
+          "cn": "冯维辛路"
+        },
+        "location": {
+          "lat": 55.8226,
+          "lon": 37.58806
+        }
+      },
+      {
+        "id": 249,
+        "name": {
+          "ru": "Бутырская",
+          "en": "Butyrskaya",
+          "cn": "布特尔站"
+        },
+        "location": {
+          "lat": 55.81315,
+          "lon": 37.60278
+        }
+      },
+      {
+        "id": 250,
+        "name": {
+          "ru": "Марьина Роща",
+          "en": "Maryina Roscha",
+          "cn": "玛丽亚丛林"
+        },
+        "location": {
+          "lat": 55.793505,
+          "lon": 37.616813
+        }
+      },
+      {
+        "id": 251,
+        "name": {
+          "ru": "Достоевская",
+          "en": "Dostoevskaya",
+          "cn": "陀思妥耶夫斯基站"
+        },
+        "location": {
+          "lat": 55.781608,
+          "lon": 37.613911
+        }
+      },
+      {
+        "id": 252,
+        "name": {
+          "ru": "Трубная",
+          "en": "Trubnaya",
+          "cn": "管道广场"
+        },
+        "location": {
+          "lat": 55.767817,
+          "lon": 37.621819
+        }
+      },
+      {
+        "id": 253,
+        "name": {
+          "ru": "Сретенский бульвар",
+          "en": "Sretenskiy bulvar",
+          "cn": "迎接圣母像林荫路"
+        },
+        "location": {
+          "lat": 55.766086,
+          "lon": 37.637091
+        }
+      },
+      {
+        "id": 255,
+        "name": {
+          "ru": "Чкаловская",
+          "en": "Chkalovskaya",
+          "cn": "栔卡洛夫站"
+        },
+        "location": {
+          "lat": 55.756058,
+          "lon": 37.659424
+        }
+      },
+      {
+        "id": 257,
+        "name": {
+          "ru": "Римская",
+          "en": "Rimskaya",
+          "cn": "罗马站"
+        },
+        "location": {
+          "lat": 55.746431,
+          "lon": 37.678889
+        }
+      },
+      {
+        "id": 259,
+        "name": {
+          "ru": "Крестьянская застава",
+          "en": "Krestyanskaya zastava",
+          "cn": "农民关卡广场"
+        },
+        "location": {
+          "lat": 55.732304,
+          "lon": 37.66549
+        }
+      },
+      {
+        "id": 261,
+        "name": {
+          "ru": "Дубровка",
+          "en": "Dubrovka",
+          "cn": "橡林"
+        },
+        "location": {
+          "lat": 55.717828,
+          "lon": 37.676163
+        }
+      },
+      {
+        "id": 263,
+        "name": {
+          "ru": "Кожуховская",
+          "en": "Kozhukhovskaya",
+          "cn": "科茹霍夫站"
+        },
+        "location": {
+          "lat": 55.706209,
+          "lon": 37.685374
+        }
+      },
+      {
+        "id": 265,
+        "name": {
+          "ru": "Печатники",
+          "en": "Pechatniki",
+          "cn": "佩恰特尼基"
+        },
+        "location": {
+          "lat": 55.692663,
+          "lon": 37.727813
+        }
+      },
+      {
+        "id": 267,
+        "name": {
+          "ru": "Волжская",
+          "en": "Volzhskaya",
+          "cn": "伏尔加站"
+        },
+        "location": {
+          "lat": 55.690228,
+          "lon": 37.755294
+        }
+      },
+      {
+        "id": 268,
+        "name": {
+          "ru": "Люблино",
+          "en": "Lyublino",
+          "cn": "柳布林诺"
+        },
+        "location": {
+          "lat": 55.67449,
+          "lon": 37.760995
+        }
+      },
+      {
+        "id": 270,
+        "name": {
+          "ru": "Братиславская",
+          "en": "Bratislavskaya",
+          "cn": "布拉提斯拉瓦站"
+        },
+        "location": {
+          "lat": 55.660114,
+          "lon": 37.752622
+        }
+      },
+      {
+        "id": 272,
+        "name": {
+          "ru": "Марьино",
+          "en": "Maryino",
+          "cn": "玛丽诺"
+        },
+        "location": {
+          "lat": 55.651296,
+          "lon": 37.743716
+        }
+      },
+      {
+        "id": 273,
+        "name": {
+          "ru": "Борисово",
+          "en": "Borisovo",
+          "cn": "博里索沃"
+        },
+        "location": {
+          "lat": 55.632344,
+          "lon": 37.743383
+        }
+      },
+      {
+        "id": 274,
+        "name": {
+          "ru": "Шипиловская",
+          "en": "Shipilovskaya",
+          "cn": "西皮洛沃站"
+        },
+        "location": {
+          "lat": 55.620317,
+          "lon": 37.743106
+        }
+      },
+      {
+        "id": 275,
+        "name": {
+          "ru": "Зябликово",
+          "en": "Zyablikovo",
+          "cn": "燕雀村"
+        },
+        "location": {
+          "lat": 55.613529,
+          "lon": 37.74561
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 9,
+    "color": "#ffdd00",
+    "name": {
+      "ru": "Калининская линия",
+      "en": "Kalininskaya line"
+    },
+    "stations": [
+      {
+        "id": 236,
+        "name": {
+          "ru": "Новокосино",
+          "en": "Novokosino",
+          "cn": "新科西诺"
+        },
+        "location": {
+          "lat": 55.746082,
+          "lon": 37.865791
+        }
+      },
+      {
+        "id": 237,
+        "name": {
+          "ru": "Новогиреево",
+          "en": "Novogireevo",
+          "cn": "新吉列耶沃"
+        },
+        "location": {
+          "lat": 55.751429,
+          "lon": 37.81846
+        }
+      },
+      {
+        "id": 238,
+        "name": {
+          "ru": "Перово",
+          "en": "Perovo",
+          "cn": "佩罗沃"
+        },
+        "location": {
+          "lat": 55.751201,
+          "lon": 37.784381
+        }
+      },
+      {
+        "id": 239,
+        "name": {
+          "ru": "Шоссе Энтузиастов",
+          "en": "Shosse Entuziastov",
+          "cn": "积极分子公路"
+        },
+        "location": {
+          "lat": 55.758407,
+          "lon": 37.751538
+        }
+      },
+      {
+        "id": 240,
+        "name": {
+          "ru": "Авиамоторная",
+          "en": "Aviamotornaya",
+          "cn": "航空发动机学院"
+        },
+        "location": {
+          "lat": 55.751553,
+          "lon": 37.716347
+        }
+      },
+      {
+        "id": 241,
+        "name": {
+          "ru": "Площадь Ильича",
+          "en": "Ploschad Ilyicha",
+          "cn": "伊里奇广场"
+        },
+        "location": {
+          "lat": 55.747278,
+          "lon": 37.680783
+        }
+      },
+      {
+        "id": 242,
+        "name": {
+          "ru": "Марксистская",
+          "en": "Marksistskaya",
+          "cn": "马克思主义者大街"
+        },
+        "location": {
+          "lat": 55.740642,
+          "lon": 37.656423
+        }
+      },
+      {
+        "id": 243,
+        "name": {
+          "ru": "Третьяковская",
+          "en": "Tretyakovskaya",
+          "cn": "特列季亚科夫画廊"
+        },
+        "location": {
+          "lat": 55.740683,
+          "lon": 37.625617
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 11,
+    "color": "#87cccf",
+    "name": {
+      "ru": "Большая кольцевая линия",
+      "en": "Bolshaya Koltsevaya line"
+    },
+    "stations": [
+      {
+        "id": 402,
+        "name": {
+          "ru": "Савёловская",
+          "en": "Savyolovskaya",
+          "cn": "萨维奥洛沃火车站"
+        },
+        "location": {
+          "lat": 55.792807,
+          "lon": 37.586122
+        }
+      },
+      {
+        "id": 500,
+        "name": {
+          "ru": "Марьина Роща",
+          "en": "Maryina Roscha",
+          "cn": "玛丽亚丛林"
+        },
+        "location": {
+          "lat": 55.797024,
+          "lon": 37.616531
+        }
+      },
+      {
+        "id": 499,
+        "name": {
+          "ru": "Рижская",
+          "en": "Rizhskaya",
+          "cn": "里加火车站"
+        },
+        "location": {
+          "lat": 55.792009,
+          "lon": 37.633867
+        }
+      },
+      {
+        "id": 498,
+        "name": {
+          "ru": "Сокольники",
+          "en": "Sokolniki",
+          "cn": "驯隼人村庄"
+        },
+        "location": {
+          "lat": 55.788991,
+          "lon": 37.67988
+        }
+      },
+      {
+        "id": 408,
+        "name": {
+          "ru": "Электрозаводская",
+          "en": "Elektrozavodskaya",
+          "cn": "电器厂"
+        },
+        "location": {
+          "lat": 55.780918,
+          "lon": 37.703951
+        }
+      },
+      {
+        "id": 392,
+        "name": {
+          "ru": "Лефортово",
+          "en": "Lefortovo",
+          "cn": "莱福特村庄"
+        },
+        "location": {
+          "lat": 55.764303,
+          "lon": 37.705508
+        }
+      },
+      {
+        "id": 393,
+        "name": {
+          "ru": "Авиамоторная",
+          "en": "Aviamotornaya",
+          "cn": "航空发动机学院"
+        },
+        "location": {
+          "lat": 55.753305,
+          "lon": 37.719643
+        }
+      },
+      {
+        "id": 493,
+        "name": {
+          "ru": "Нижегородская",
+          "en": "Nizhegorodskaya",
+          "cn": "下诺夫哥罗德路"
+        },
+        "location": {
+          "lat": 55.73199,
+          "lon": 37.729275
+        }
+      },
+      {
+        "id": 494,
+        "name": {
+          "ru": "Текстильщики",
+          "en": "Tekstilschiki",
+          "cn": "纺织工人站"
+        },
+        "location": {
+          "lat": 55.707281,
+          "lon": 37.728376
+        }
+      },
+      {
+        "id": 495,
+        "name": {
+          "ru": "Печатники",
+          "en": "Pechatniki",
+          "cn": "佩恰特尼基"
+        },
+        "location": {
+          "lat": 55.693645,
+          "lon": 37.726304
+        }
+      },
+      {
+        "id": 496,
+        "name": {
+          "ru": "Нагатинский Затон",
+          "en": "Nagatinskiy zaton",
+          "cn": "纳加金诺河湾"
+        },
+        "location": {
+          "lat": 55.684341,
+          "lon": 37.704649
+        }
+      },
+      {
+        "id": 497,
+        "name": {
+          "ru": "Кленовый бульвар",
+          "en": "Klenoviy Bulvar",
+          "cn": "枫树林荫路"
+        },
+        "location": {
+          "lat": 55.674344,
+          "lon": 37.681166
+        }
+      },
+      {
+        "id": 271,
+        "name": {
+          "ru": "Каширская",
+          "en": "Kashirskaya",
+          "cn": "卡希拉公路"
+        },
+        "location": {
+          "lat": 55.654322,
+          "lon": 37.647279
+        }
+      },
+      {
+        "id": 269,
+        "name": {
+          "ru": "Варшавская",
+          "en": "Varshavskaya",
+          "cn": "华沙公路"
+        },
+        "location": {
+          "lat": 55.653075,
+          "lon": 37.61792
+        }
+      },
+      {
+        "id": 266,
+        "name": {
+          "ru": "Каховская",
+          "en": "Kahovskaya",
+          "cn": "卡霍夫卡路"
+        },
+        "location": {
+          "lat": 55.652922,
+          "lon": 37.596397
+        }
+      },
+      {
+        "id": 430,
+        "name": {
+          "ru": "Зюзино",
+          "en": "Zyuzino",
+          "cn": "久津诺"
+        },
+        "location": {
+          "lat": 55.655717,
+          "lon": 37.57369
+        }
+      },
+      {
+        "id": 429,
+        "name": {
+          "ru": "Воронцовская",
+          "en": "Vorontsovskaya",
+          "cn": "沃龙佐夫庄园"
+        },
+        "location": {
+          "lat": 55.658845,
+          "lon": 37.539446
+        }
+      },
+      {
+        "id": 428,
+        "name": {
+          "ru": "Новаторская",
+          "en": "Novatorskaya  ",
+          "cn": "创新者路"
+        },
+        "location": {
+          "lat": 55.669823,
+          "lon": 37.52218
+        }
+      },
+      {
+        "id": 427,
+        "name": {
+          "ru": "Проспект Вернадского",
+          "en": "Prospekt Vernadskogo",
+          "cn": "维尔纳茨基大道"
+        },
+        "location": {
+          "lat": 55.678519,
+          "lon": 37.503747
+        }
+      },
+      {
+        "id": 426,
+        "name": {
+          "ru": "Мичуринский проспект",
+          "en": "Michurinskiy Prospekt",
+          "cn": "米丘林大道"
+        },
+        "location": {
+          "lat": 55.688203,
+          "lon": 37.485304
+        }
+      },
+      {
+        "id": 425,
+        "name": {
+          "ru": "Аминьевская",
+          "en": "Aminyevskaya",
+          "cn": "阿米尼沃公路"
+        },
+        "location": {
+          "lat": 55.697189,
+          "lon": 37.464931
+        }
+      },
+      {
+        "id": 424,
+        "name": {
+          "ru": "Давыдково",
+          "en": "Davydkovo",
+          "cn": "大卫德卡沃"
+        },
+        "location": {
+          "lat": 55.71468,
+          "lon": 37.451934
+        }
+      },
+      {
+        "id": 423,
+        "name": {
+          "ru": "Кунцевская",
+          "en": "Kuntsevskaya",
+          "cn": "昆采沃站"
+        },
+        "location": {
+          "lat": 55.728707,
+          "lon": 37.445985
+        }
+      },
+      {
+        "id": 422,
+        "name": {
+          "ru": "Терехово",
+          "en": "Terekhovo",
+          "cn": "捷列霍沃"
+        },
+        "location": {
+          "lat": 55.748108,
+          "lon": 37.459738
+        }
+      },
+      {
+        "id": 410,
+        "name": {
+          "ru": "Мнёвники",
+          "en": "Mnyovniki",
+          "cn": "江鳕渔坞"
+        },
+        "location": {
+          "lat": 55.761148,
+          "lon": 37.47139
+        }
+      },
+      {
+        "id": 409,
+        "name": {
+          "ru": "Народное Ополчение",
+          "en": "Narodnoe Opolchenie",
+          "cn": "民兵路"
+        },
+        "location": {
+          "lat": 55.775697,
+          "lon": 37.485071
+        }
+      },
+      {
+        "id": 405,
+        "name": {
+          "ru": "Хорошёвская",
+          "en": "Khoroshyovskaya",
+          "cn": "霍罗绍沃公路"
+        },
+        "location": {
+          "lat": 55.776915,
+          "lon": 37.516803
+        }
+      },
+      {
+        "id": 404,
+        "name": {
+          "ru": "ЦСКА",
+          "en": "CSKA",
+          "cn": "中央陆军体育俱乐部"
+        },
+        "location": {
+          "lat": 55.785736,
+          "lon": 37.532015
+        }
+      },
+      {
+        "id": 403,
+        "name": {
+          "ru": "Петровский парк",
+          "en": "Petrovsky park",
+          "cn": "彼得村行宫公园"
+        },
+        "location": {
+          "lat": 55.790566,
+          "lon": 37.555893
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 15,
+    "color": "#e94282",
+    "name": {
+      "ru": "МЦД-2",
+      "en": "D-2"
+    },
+    "stations": [
+      {
+        "id": 325,
+        "name": {
+          "ru": "Нахабино",
+          "en": "Nakhabino",
+          "cn": "纳哈比诺"
+        },
+        "location": {
+          "lat": 55.841667,
+          "lon": 37.184831
+        }
+      },
+      {
+        "id": 326,
+        "name": {
+          "ru": "Аникеевка",
+          "en": "Anikeevka",
+          "cn": "阿尼克叶夫卡"
+        },
+        "location": {
+          "lat": 55.832005,
+          "lon": 37.21991
+        }
+      },
+      {
+        "id": 327,
+        "name": {
+          "ru": "Опалиха",
+          "en": "Opalikha",
+          "cn": "奥帕利哈"
+        },
+        "location": {
+          "lat": 55.82341,
+          "lon": 37.246466
+        }
+      },
+      {
+        "id": 328,
+        "name": {
+          "ru": "Красногорская",
+          "en": "Krasnogorskaya",
+          "cn": "克拉斯诺戈尔斯克站"
+        },
+        "location": {
+          "lat": 55.814738,
+          "lon": 37.303322
+        }
+      },
+      {
+        "id": 329,
+        "name": {
+          "ru": "Павшино",
+          "en": "Pavshino",
+          "cn": "帕夫希诺"
+        },
+        "location": {
+          "lat": 55.814958,
+          "lon": 37.339891
+        }
+      },
+      {
+        "id": 330,
+        "name": {
+          "ru": "Пенягино",
+          "en": "Penyagino",
+          "cn": "佩尼亚吉诺"
+        },
+        "location": {
+          "lat": 55.822871,
+          "lon": 37.361018
+        }
+      },
+      {
+        "id": 331,
+        "name": {
+          "ru": "Волоколамская",
+          "en": "Volokolamskaya",
+          "cn": "沃洛科拉姆斯克公路"
+        },
+        "location": {
+          "lat": 55.832296,
+          "lon": 37.383902
+        }
+      },
+      {
+        "id": 332,
+        "name": {
+          "ru": "Трикотажная",
+          "en": "Trikotazhnya",
+          "cn": "针织厂路"
+        },
+        "location": {
+          "lat": 55.833079,
+          "lon": 37.399032
+        }
+      },
+      {
+        "id": 333,
+        "name": {
+          "ru": "Тушинская",
+          "en": "Tushinskaya",
+          "cn": "图申诺站"
+        },
+        "location": {
+          "lat": 55.827283,
+          "lon": 37.440529
+        }
+      },
+      {
+        "id": 334,
+        "name": {
+          "ru": "Щукинская",
+          "en": "Schukinskaya",
+          "cn": "休金诺站"
+        },
+        "location": {
+          "lat": 55.81125,
+          "lon": 37.460331
+        }
+      },
+      {
+        "id": 335,
+        "name": {
+          "ru": "Стрешнево",
+          "en": "Streshnevo",
+          "cn": "斯特列什涅沃"
+        },
+        "location": {
+          "lat": 55.815369,
+          "lon": 37.487877
+        }
+      },
+      {
+        "id": 336,
+        "name": {
+          "ru": "Красный Балтиец",
+          "en": "Krasniy Baltiets",
+          "cn": "红色波罗的海人"
+        },
+        "location": {
+          "lat": 55.815559,
+          "lon": 37.526197
+        }
+      },
+      {
+        "id": 337,
+        "name": {
+          "ru": "Гражданская",
+          "en": "Grazhdanskaya",
+          "cn": "公民站"
+        },
+        "location": {
+          "lat": 55.805419,
+          "lon": 37.554045
+        }
+      },
+      {
+        "id": 339,
+        "name": {
+          "ru": "Дмитровская",
+          "en": "Dmitrovskaya",
+          "cn": "德米特罗夫公路"
+        },
+        "location": {
+          "lat": 55.808688,
+          "lon": 37.583252
+        }
+      },
+      {
+        "id": 501,
+        "name": {
+          "ru": "Марьина Роща",
+          "en": "Maryina Roscha",
+          "cn": "玛丽亚丛林"
+        },
+        "location": {
+          "lat": 55.800821,
+          "lon": 37.619137
+        }
+      },
+      {
+        "id": 341,
+        "name": {
+          "ru": "Рижская",
+          "en": "Rizhskaya",
+          "cn": "里加火车站"
+        },
+        "location": {
+          "lat": 55.794038,
+          "lon": 37.638741
+        }
+      },
+      {
+        "id": 343,
+        "name": {
+          "ru": "Площадь трёх вокзалов",
+          "en": "Ploschad Tryokh Vokzalov",
+          "cn": "三站广场"
+        },
+        "location": {
+          "lat": 55.776122,
+          "lon": 37.651446
+        }
+      },
+      {
+        "id": 344,
+        "name": {
+          "ru": "Курская",
+          "en": "Kurskaya",
+          "cn": "库尔斯克火车站"
+        },
+        "location": {
+          "lat": 55.758462,
+          "lon": 37.662306
+        }
+      },
+      {
+        "id": 346,
+        "name": {
+          "ru": "Москва-Товарная",
+          "en": "Moskva-Tovarnaya",
+          "cn": "莫斯科货运站"
+        },
+        "location": {
+          "lat": 55.745297,
+          "lon": 37.689102
+        }
+      },
+      {
+        "id": 348,
+        "name": {
+          "ru": "Калитники",
+          "en": "Kalitniki",
+          "cn": "卡利特尼基"
+        },
+        "location": {
+          "lat": 55.733909,
+          "lon": 37.702455
+        }
+      },
+      {
+        "id": 350,
+        "name": {
+          "ru": "Новохохловская",
+          "en": "Novokhokhlovskaya",
+          "cn": "新霍赫罗夫路"
+        },
+        "location": {
+          "lat": 55.724417,
+          "lon": 37.713625
+        }
+      },
+      {
+        "id": 352,
+        "name": {
+          "ru": "Текстильщики",
+          "en": "Tekstilschiki",
+          "cn": "纺织工人站"
+        },
+        "location": {
+          "lat": 55.708101,
+          "lon": 37.729593
+        }
+      },
+      {
+        "id": 445,
+        "name": {
+          "ru": "Печатники",
+          "en": "Pechatniki",
+          "cn": "佩恰特尼基"
+        },
+        "location": {
+          "lat": 55.693024,
+          "lon": 37.732101
+        }
+      },
+      {
+        "id": 354,
+        "name": {
+          "ru": "Люблино",
+          "en": "Lyublino",
+          "cn": "柳布林诺"
+        },
+        "location": {
+          "lat": 55.685123,
+          "lon": 37.734066
+        }
+      },
+      {
+        "id": 356,
+        "name": {
+          "ru": "Депо",
+          "en": "Depo",
+          "cn": "机车库"
+        },
+        "location": {
+          "lat": 55.674019,
+          "lon": 37.728027
+        }
+      },
+      {
+        "id": 358,
+        "name": {
+          "ru": "Перерва",
+          "en": "Pererva",
+          "cn": "佩列尔瓦"
+        },
+        "location": {
+          "lat": 55.661325,
+          "lon": 37.717035
+        }
+      },
+      {
+        "id": 360,
+        "name": {
+          "ru": "Курьяново",
+          "en": "Kuryanovo",
+          "cn": "库里亚诺沃"
+        },
+        "location": {
+          "lat": 55.649425,
+          "lon": 37.700874
+        }
+      },
+      {
+        "id": 362,
+        "name": {
+          "ru": "Москворечье",
+          "en": "Moskvorechye",
+          "cn": "莫斯科河畔"
+        },
+        "location": {
+          "lat": 55.641173,
+          "lon": 37.690119
+        }
+      },
+      {
+        "id": 363,
+        "name": {
+          "ru": "Царицыно",
+          "en": "Tsaritsyno",
+          "cn": "女沙皇村"
+        },
+        "location": {
+          "lat": 55.618848,
+          "lon": 37.669586
+        }
+      },
+      {
+        "id": 365,
+        "name": {
+          "ru": "Покровское",
+          "en": "Pokrovskoe",
+          "cn": "圣母帡幪节站"
+        },
+        "location": {
+          "lat": 55.602506,
+          "lon": 37.631691
+        }
+      },
+      {
+        "id": 367,
+        "name": {
+          "ru": "Красный Строитель",
+          "en": "Krasniy Stroitel",
+          "cn": "红色建筑工"
+        },
+        "location": {
+          "lat": 55.589724,
+          "lon": 37.615151
+        }
+      },
+      {
+        "id": 369,
+        "name": {
+          "ru": "Битца",
+          "en": "Bitsa",
+          "cn": "比察河"
+        },
+        "location": {
+          "lat": 55.571288,
+          "lon": 37.611674
+        }
+      },
+      {
+        "id": 371,
+        "name": {
+          "ru": "Бутово",
+          "en": "Butovo",
+          "cn": "布托沃"
+        },
+        "location": {
+          "lat": 55.5411,
+          "lon": 37.570634
+        }
+      },
+      {
+        "id": 373,
+        "name": {
+          "ru": "Щербинка",
+          "en": "Scherbinka",
+          "cn": "谢尔宾卡"
+        },
+        "location": {
+          "lat": 55.510322,
+          "lon": 37.562323
+        }
+      },
+      {
+        "id": 374,
+        "name": {
+          "ru": "Остафьево",
+          "en": "Ostafievo",
+          "cn": "奥斯塔夫耶沃庄园"
+        },
+        "location": {
+          "lat": 55.490312,
+          "lon": 37.556388
+        }
+      },
+      {
+        "id": 376,
+        "name": {
+          "ru": "Силикатная",
+          "en": "Silikatnaya",
+          "cn": "硅酸盐站"
+        },
+        "location": {
+          "lat": 55.470427,
+          "lon": 37.555356
+        }
+      },
+      {
+        "id": 378,
+        "name": {
+          "ru": "Подольск",
+          "en": "Podolsk",
+          "cn": "波多利斯克"
+        },
+        "location": {
+          "lat": 55.432363,
+          "lon": 37.565744
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 13,
+    "color": "#ffdd00",
+    "name": {
+      "ru": "Солнцевская линия",
+      "en": "Solntsevskaya line"
+    },
+    "stations": [
+      {
+        "id": 407,
+        "name": {
+          "ru": "Деловой центр",
+          "en": "Delovoy Tsentr",
+          "cn": "核心商务区"
+        },
+        "location": {
+          "lat": 55.749036,
+          "lon": 37.537593
+        }
+      },
+      {
+        "id": 289,
+        "name": {
+          "ru": "Парк Победы",
+          "en": "Park Pobedy",
+          "cn": "胜利公园"
+        },
+        "location": {
+          "lat": 55.736445,
+          "lon": 37.51598
+        }
+      },
+      {
+        "id": 291,
+        "name": {
+          "ru": "Минская",
+          "en": "Minskaya",
+          "cn": "明斯克路"
+        },
+        "location": {
+          "lat": 55.723947,
+          "lon": 37.497872
+        }
+      },
+      {
+        "id": 293,
+        "name": {
+          "ru": "Ломоносовский проспект",
+          "en": "Lomonosovskiy prospekt",
+          "cn": "罗蒙诺索夫大道"
+        },
+        "location": {
+          "lat": 55.70706,
+          "lon": 37.516063
+        }
+      },
+      {
+        "id": 294,
+        "name": {
+          "ru": "Раменки",
+          "en": "Ramenki",
+          "cn": "拉缅基"
+        },
+        "location": {
+          "lat": 55.697691,
+          "lon": 37.498725
+        }
+      },
+      {
+        "id": 296,
+        "name": {
+          "ru": "Мичуринский проспект",
+          "en": "Michurinskiy Prospekt",
+          "cn": "米丘林大道"
+        },
+        "location": {
+          "lat": 55.6887,
+          "lon": 37.485
+        }
+      },
+      {
+        "id": 298,
+        "name": {
+          "ru": "Озёрная",
+          "en": "Ozyornaya",
+          "cn": "湖泊广场"
+        },
+        "location": {
+          "lat": 55.6697,
+          "lon": 37.4495
+        }
+      },
+      {
+        "id": 300,
+        "name": {
+          "ru": "Говорово",
+          "en": "Govorovo",
+          "cn": "果沃罗沃"
+        },
+        "location": {
+          "lat": 55.6588,
+          "lon": 37.4174
+        }
+      },
+      {
+        "id": 303,
+        "name": {
+          "ru": "Солнцево",
+          "en": "Solntsevo",
+          "cn": "太阳区"
+        },
+        "location": {
+          "lat": 55.649,
+          "lon": 37.3911
+        }
+      },
+      {
+        "id": 305,
+        "name": {
+          "ru": "Боровское шоссе",
+          "en": "Borovskoe shosse",
+          "cn": "博罗夫斯克公路"
+        },
+        "location": {
+          "lat": 55.647,
+          "lon": 37.3702
+        }
+      },
+      {
+        "id": 306,
+        "name": {
+          "ru": "Новопеределкино",
+          "en": "Novoperedelkino",
+          "cn": "作家新村"
+        },
+        "location": {
+          "lat": 55.6385,
+          "lon": 37.3545
+        }
+      },
+      {
+        "id": 308,
+        "name": {
+          "ru": "Рассказовка",
+          "en": "Rasskazovka",
+          "cn": "故事村"
+        },
+        "location": {
+          "lat": 55.633968,
+          "lon": 37.334747
+        }
+      },
+      {
+        "id": 580,
+        "name": {
+          "ru": "Пыхтино",
+          "en": "Pykhtino",
+          "cn": "皮赫蒂诺"
+        },
+        "location": {
+          "lat": 55.625047,
+          "lon": 37.297768
+        }
+      },
+      {
+        "id": 581,
+        "name": {
+          "ru": "Аэропорт Внуково",
+          "en": "Aeroport Vnukovo",
+          "cn": "伏努科沃机场"
+        },
+        "location": {
+          "lat": 55.606303,
+          "lon": 37.289016
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 12,
+    "color": "#bac8e8",
+    "name": {
+      "ru": "Бутовская линия",
+      "en": "Butovskaya line"
+    },
+    "stations": [
+      {
+        "id": 277,
+        "name": {
+          "ru": "Битцевский парк",
+          "en": "Bitsevsky Park",
+          "cn": "比察公园"
+        },
+        "location": {
+          "lat": 55.600268,
+          "lon": 37.556238
+        }
+      },
+      {
+        "id": 278,
+        "name": {
+          "ru": "Лесопарковая",
+          "en": "Lesoparkovaya",
+          "cn": "森林公园"
+        },
+        "location": {
+          "lat": 55.581567,
+          "lon": 37.578136
+        }
+      },
+      {
+        "id": 279,
+        "name": {
+          "ru": "Улица Старокачаловская",
+          "en": "Ulitsa Starokachalovskaya",
+          "cn": "旧卡恰洛夫街"
+        },
+        "location": {
+          "lat": 55.567972,
+          "lon": 37.576552
+        }
+      },
+      {
+        "id": 280,
+        "name": {
+          "ru": "Улица Скобелевская",
+          "en": "Ulitsa Skobelevskaya",
+          "cn": "斯科别列夫街"
+        },
+        "location": {
+          "lat": 55.547754,
+          "lon": 37.553229
+        }
+      },
+      {
+        "id": 281,
+        "name": {
+          "ru": "Бульвар Адмирала Ушакова",
+          "en": "Bulvar Admirala Ushakova",
+          "cn": "乌沙科夫海军上将林荫路"
+        },
+        "location": {
+          "lat": 55.544953,
+          "lon": 37.541286
+        }
+      },
+      {
+        "id": 282,
+        "name": {
+          "ru": "Улица Горчакова",
+          "en": "Ulitsa Gorchakova",
+          "cn": "戈尔恰科夫街"
+        },
+        "location": {
+          "lat": 55.542111,
+          "lon": 37.531991
+        }
+      },
+      {
+        "id": 283,
+        "name": {
+          "ru": "Бунинская Аллея",
+          "en": "Buninskaya Alleya",
+          "cn": "蒲宁路"
+        },
+        "location": {
+          "lat": 55.537594,
+          "lon": 37.514559
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 14,
+    "color": "#f7a600",
+    "name": {
+      "ru": "МЦД-1",
+      "en": "D-1"
+    },
+    "stations": [
+      {
+        "id": 290,
+        "name": {
+          "ru": "Лобня",
+          "en": "Lobnya",
+          "cn": "洛布尼亚"
+        },
+        "location": {
+          "lat": 56.013572,
+          "lon": 37.484647
+        }
+      },
+      {
+        "id": 292,
+        "name": {
+          "ru": "Шереметьевская",
+          "en": "Sheremetesvkaya",
+          "cn": "谢列梅捷沃站"
+        },
+        "location": {
+          "lat": 55.983877,
+          "lon": 37.498678
+        }
+      },
+      {
+        "id": 295,
+        "name": {
+          "ru": "Хлебниково",
+          "en": "Khlebnikovo",
+          "cn": "赫列勃尼科沃"
+        },
+        "location": {
+          "lat": 55.970941,
+          "lon": 37.504466
+        }
+      },
+      {
+        "id": 297,
+        "name": {
+          "ru": "Водники",
+          "en": "Vodniki",
+          "cn": "水工村"
+        },
+        "location": {
+          "lat": 55.952478,
+          "lon": 37.512469
+        }
+      },
+      {
+        "id": 299,
+        "name": {
+          "ru": "Долгопрудная",
+          "en": "Dolgoprudnaya",
+          "cn": "多尔戈普鲁德内"
+        },
+        "location": {
+          "lat": 55.938911,
+          "lon": 37.520482
+        }
+      },
+      {
+        "id": 301,
+        "name": {
+          "ru": "Новодачная",
+          "en": "Novodachnaya",
+          "cn": "工人新村站"
+        },
+        "location": {
+          "lat": 55.924474,
+          "lon": 37.527789
+        }
+      },
+      {
+        "id": 302,
+        "name": {
+          "ru": "Марк",
+          "en": "Mark",
+          "cn": "马克站"
+        },
+        "location": {
+          "lat": 55.904553,
+          "lon": 37.538054
+        }
+      },
+      {
+        "id": 304,
+        "name": {
+          "ru": "Лианозово",
+          "en": "Lianozovo",
+          "cn": "利亚诺佐沃"
+        },
+        "location": {
+          "lat": 55.898567,
+          "lon": 37.549822
+        }
+      },
+      {
+        "id": 307,
+        "name": {
+          "ru": "Бескудниково",
+          "en": "Beskudnikovo",
+          "cn": "别斯库德尼科沃"
+        },
+        "location": {
+          "lat": 55.879818,
+          "lon": 37.567929
+        }
+      },
+      {
+        "id": 309,
+        "name": {
+          "ru": "Дегунино",
+          "en": "Degunino",
+          "cn": "杰古尼诺"
+        },
+        "location": {
+          "lat": 55.8656,
+          "lon": 37.573056
+        }
+      },
+      {
+        "id": 310,
+        "name": {
+          "ru": "Окружная",
+          "en": "Okruzhnaya",
+          "cn": "环线换乘站"
+        },
+        "location": {
+          "lat": 55.847908,
+          "lon": 37.574237
+        }
+      },
+      {
+        "id": 311,
+        "name": {
+          "ru": "Тимирязевская",
+          "en": "Timiryazevskaya",
+          "cn": "季米里亚泽夫站"
+        },
+        "location": {
+          "lat": 55.819312,
+          "lon": 37.575798
+        }
+      },
+      {
+        "id": 312,
+        "name": {
+          "ru": "Савёловская",
+          "en": "Savyolovskaya",
+          "cn": "萨维奥洛沃火车站"
+        },
+        "location": {
+          "lat": 55.79507,
+          "lon": 37.589218
+        }
+      },
+      {
+        "id": 313,
+        "name": {
+          "ru": "Белорусская",
+          "en": "Belorusskaya",
+          "cn": "白俄罗斯火车站"
+        },
+        "location": {
+          "lat": 55.776879,
+          "lon": 37.580318
+        }
+      },
+      {
+        "id": 314,
+        "name": {
+          "ru": "Беговая",
+          "en": "Begovaya",
+          "cn": "赛马站"
+        },
+        "location": {
+          "lat": 55.77329,
+          "lon": 37.550397
+        }
+      },
+      {
+        "id": 315,
+        "name": {
+          "ru": "Тестовская (Москва-Сити)",
+          "en": "Testovskaya (Moskva-City)",
+          "cn": "捷斯托沃 (莫斯科CBD)"
+        },
+        "location": {
+          "lat": 55.753775,
+          "lon": 37.531411
+        }
+      },
+      {
+        "id": 316,
+        "name": {
+          "ru": "Фили",
+          "en": "Fili",
+          "cn": "菲利"
+        },
+        "location": {
+          "lat": 55.744191,
+          "lon": 37.51472
+        }
+      },
+      {
+        "id": 317,
+        "name": {
+          "ru": "Славянский бульвар",
+          "en": "Slavyanskiy Bulvar",
+          "cn": "斯拉夫林荫路"
+        },
+        "location": {
+          "lat": 55.730431,
+          "lon": 37.472512
+        }
+      },
+      {
+        "id": 318,
+        "name": {
+          "ru": "Кунцевская",
+          "en": "Kuntsevskaya",
+          "cn": "昆采沃站"
+        },
+        "location": {
+          "lat": 55.726898,
+          "lon": 37.449064
+        }
+      },
+      {
+        "id": 319,
+        "name": {
+          "ru": "Рабочий посёлок",
+          "en": "Rabochiy Poselok",
+          "cn": "工人村"
+        },
+        "location": {
+          "lat": 55.726822,
+          "lon": 37.418391
+        }
+      },
+      {
+        "id": 320,
+        "name": {
+          "ru": "Сетунь",
+          "en": "Setun",
+          "cn": "谢通河"
+        },
+        "location": {
+          "lat": 55.723629,
+          "lon": 37.397248
+        }
+      },
+      {
+        "id": 321,
+        "name": {
+          "ru": "Немчиновка",
+          "en": "Nemchinovka",
+          "cn": "涅姆奇诺夫卡"
+        },
+        "location": {
+          "lat": 55.714272,
+          "lon": 37.370907
+        }
+      },
+      {
+        "id": 322,
+        "name": {
+          "ru": "Сколково",
+          "en": "Skolkovo",
+          "cn": "斯科尔科沃创新中心"
+        },
+        "location": {
+          "lat": 55.696372,
+          "lon": 37.337605
+        }
+      },
+      {
+        "id": 323,
+        "name": {
+          "ru": "Баковка",
+          "en": "Bakovka",
+          "cn": "巴科夫卡"
+        },
+        "location": {
+          "lat": 55.682523,
+          "lon": 37.314601
+        }
+      },
+      {
+        "id": 324,
+        "name": {
+          "ru": "Одинцово",
+          "en": "Odintsovo",
+          "cn": "奥金佐沃"
+        },
+        "location": {
+          "lat": 55.672419,
+          "lon": 37.282651
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 16,
+    "color": "#d41317",
+    "name": {
+      "ru": "МЦК",
+      "en": "MCC"
+    },
+    "stations": [
+      {
+        "id": 338,
+        "name": {
+          "ru": "Ботанический сад",
+          "en": "Botanicheskiy Sad",
+          "cn": "植物园"
+        },
+        "location": {
+          "lat": 55.845905,
+          "lon": 37.639822
+        }
+      },
+      {
+        "id": 340,
+        "name": {
+          "ru": "Ростокино",
+          "en": "Rostokino",
+          "cn": "罗斯托金诺"
+        },
+        "location": {
+          "lat": 55.839224,
+          "lon": 37.668399
+        }
+      },
+      {
+        "id": 342,
+        "name": {
+          "ru": "Белокаменная",
+          "en": "Belokamennaya",
+          "cn": "白石站"
+        },
+        "location": {
+          "lat": 55.829572,
+          "lon": 37.702115
+        }
+      },
+      {
+        "id": 345,
+        "name": {
+          "ru": "Бульвар Рокоссовского",
+          "en": "Bulvar Rokossovskogo",
+          "cn": "罗科索夫斯基林荫路"
+        },
+        "location": {
+          "lat": 55.815857,
+          "lon": 37.73764
+        }
+      },
+      {
+        "id": 347,
+        "name": {
+          "ru": "Локомотив",
+          "en": "Lokomotiv",
+          "cn": "火车头"
+        },
+        "location": {
+          "lat": 55.802781,
+          "lon": 37.745954
+        }
+      },
+      {
+        "id": 349,
+        "name": {
+          "ru": "Измайлово",
+          "en": "Izmaylovo",
+          "cn": "伊兹迈洛沃"
+        },
+        "location": {
+          "lat": 55.789115,
+          "lon": 37.74312
+        }
+      },
+      {
+        "id": 351,
+        "name": {
+          "ru": "Соколиная гора",
+          "en": "Sokolinaya gora",
+          "cn": "游隼山"
+        },
+        "location": {
+          "lat": 55.769914,
+          "lon": 37.745385
+        }
+      },
+      {
+        "id": 353,
+        "name": {
+          "ru": "Шоссе Энтузиастов",
+          "en": "Shosse Entuziastov",
+          "cn": "积极分子公路"
+        },
+        "location": {
+          "lat": 55.758878,
+          "lon": 37.746307
+        }
+      },
+      {
+        "id": 355,
+        "name": {
+          "ru": "Андроновка",
+          "en": "Andronovka",
+          "cn": "安德罗诺夫卡"
+        },
+        "location": {
+          "lat": 55.746319,
+          "lon": 37.736842
+        }
+      },
+      {
+        "id": 357,
+        "name": {
+          "ru": "Нижегородская",
+          "en": "Nizhegorodskaya",
+          "cn": "下诺夫哥罗德路"
+        },
+        "location": {
+          "lat": 55.732469,
+          "lon": 37.728326
+        }
+      },
+      {
+        "id": 359,
+        "name": {
+          "ru": "Новохохловская",
+          "en": "Novokhokhlovskaya",
+          "cn": "新霍赫罗夫路"
+        },
+        "location": {
+          "lat": 55.724191,
+          "lon": 37.716879
+        }
+      },
+      {
+        "id": 361,
+        "name": {
+          "ru": "Угрешская",
+          "en": "Ugreshskaya",
+          "cn": "乌格雷沙路"
+        },
+        "location": {
+          "lat": 55.717944,
+          "lon": 37.695555
+        }
+      },
+      {
+        "id": 364,
+        "name": {
+          "ru": "Дубровка",
+          "en": "Dubrovka",
+          "cn": "橡林"
+        },
+        "location": {
+          "lat": 55.712386,
+          "lon": 37.676574
+        }
+      },
+      {
+        "id": 366,
+        "name": {
+          "ru": "Автозаводская",
+          "en": "Avtozavodskaya",
+          "cn": "汽车厂"
+        },
+        "location": {
+          "lat": 55.705483,
+          "lon": 37.661617
+        }
+      },
+      {
+        "id": 368,
+        "name": {
+          "ru": "ЗИЛ",
+          "en": "ZIL",
+          "cn": "吉尔"
+        },
+        "location": {
+          "lat": 55.698665,
+          "lon": 37.649265
+        }
+      },
+      {
+        "id": 370,
+        "name": {
+          "ru": "Верхние Котлы",
+          "en": "Verkhnie Kotly",
+          "cn": "上科特利村"
+        },
+        "location": {
+          "lat": 55.689987,
+          "lon": 37.618048
+        }
+      },
+      {
+        "id": 372,
+        "name": {
+          "ru": "Крымская",
+          "en": "Krymskaya",
+          "cn": "克里米亚站"
+        },
+        "location": {
+          "lat": 55.689898,
+          "lon": 37.605455
+        }
+      },
+      {
+        "id": 375,
+        "name": {
+          "ru": "Площадь Гагарина",
+          "en": "Ploschad Gagarina",
+          "cn": "加加林广场"
+        },
+        "location": {
+          "lat": 55.707088,
+          "lon": 37.58609
+        }
+      },
+      {
+        "id": 377,
+        "name": {
+          "ru": "Лужники",
+          "en": "Luzhniki",
+          "cn": "卢日尼基体育场"
+        },
+        "location": {
+          "lat": 55.720926,
+          "lon": 37.560156
+        }
+      },
+      {
+        "id": 379,
+        "name": {
+          "ru": "Кутузовская",
+          "en": "Kutuzovskaya",
+          "cn": "库图佐夫大街"
+        },
+        "location": {
+          "lat": 55.740081,
+          "lon": 37.533772
+        }
+      },
+      {
+        "id": 380,
+        "name": {
+          "ru": "Москва-Сити",
+          "en": "Moskva-City",
+          "cn": "莫斯科CBD"
+        },
+        "location": {
+          "lat": 55.747099,
+          "lon": 37.532078
+        }
+      },
+      {
+        "id": 381,
+        "name": {
+          "ru": "Шелепиха",
+          "en": "Shelepikha",
+          "cn": "谢列彼哈"
+        },
+        "location": {
+          "lat": 55.756786,
+          "lon": 37.526043
+        }
+      },
+      {
+        "id": 382,
+        "name": {
+          "ru": "Хорошёво",
+          "en": "Khoroshyovo",
+          "cn": "霍洛绍沃公路"
+        },
+        "location": {
+          "lat": 55.777319,
+          "lon": 37.50705
+        }
+      },
+      {
+        "id": 383,
+        "name": {
+          "ru": "Зорге",
+          "en": "Zorge",
+          "cn": "佐尔格路"
+        },
+        "location": {
+          "lat": 55.789016,
+          "lon": 37.502651
+        }
+      },
+      {
+        "id": 384,
+        "name": {
+          "ru": "Панфиловская",
+          "en": "Panfilovskaya",
+          "cn": "潘菲洛夫少将路"
+        },
+        "location": {
+          "lat": 55.798019,
+          "lon": 37.499821
+        }
+      },
+      {
+        "id": 385,
+        "name": {
+          "ru": "Стрешнево",
+          "en": "Streshnevo",
+          "cn": "斯特列什涅沃"
+        },
+        "location": {
+          "lat": 55.813693,
+          "lon": 37.48708
+        }
+      },
+      {
+        "id": 386,
+        "name": {
+          "ru": "Балтийская",
+          "en": "Baltiyskaya",
+          "cn": "波罗的海站"
+        },
+        "location": {
+          "lat": 55.825148,
+          "lon": 37.494728
+        }
+      },
+      {
+        "id": 387,
+        "name": {
+          "ru": "Коптево",
+          "en": "Koptevo",
+          "cn": "科普捷沃"
+        },
+        "location": {
+          "lat": 55.840081,
+          "lon": 37.52068
+        }
+      },
+      {
+        "id": 388,
+        "name": {
+          "ru": "Лихоборы",
+          "en": "Likhobory",
+          "cn": "利霍波里"
+        },
+        "location": {
+          "lat": 55.847165,
+          "lon": 37.55164
+        }
+      },
+      {
+        "id": 389,
+        "name": {
+          "ru": "Окружная",
+          "en": "Okruzhnaya",
+          "cn": "环线换乘站"
+        },
+        "location": {
+          "lat": 55.848601,
+          "lon": 37.57313
+        }
+      },
+      {
+        "id": 390,
+        "name": {
+          "ru": "Владыкино",
+          "en": "Vladykino",
+          "cn": "弗拉德金诺"
+        },
+        "location": {
+          "lat": 55.84743,
+          "lon": 37.590567
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 17,
+    "color": "#ee7bae",
+    "name": {
+      "ru": "Некрасовская линия",
+      "en": "Nekrasovkaya line"
+    },
+    "stations": [
+      {
+        "id": 394,
+        "name": {
+          "ru": "Нижегородская",
+          "en": "Nizhegorodskaya",
+          "cn": "下诺夫哥罗德路"
+        },
+        "location": {
+          "lat": 55.731678,
+          "lon": 37.730311
+        }
+      },
+      {
+        "id": 395,
+        "name": {
+          "ru": "Стахановская",
+          "en": "Stakhanovskaya",
+          "cn": "斯达汉诺夫站"
+        },
+        "location": {
+          "lat": 55.7268,
+          "lon": 37.7514
+        }
+      },
+      {
+        "id": 396,
+        "name": {
+          "ru": "Окская",
+          "en": "Okskaya",
+          "cn": "奥卡河路"
+        },
+        "location": {
+          "lat": 55.7179,
+          "lon": 37.7817
+        }
+      },
+      {
+        "id": 397,
+        "name": {
+          "ru": "Юго-Восточная",
+          "en": "Yugo-Vostochnaya",
+          "cn": "东南站"
+        },
+        "location": {
+          "lat": 55.7043,
+          "lon": 37.8181
+        }
+      },
+      {
+        "id": 398,
+        "name": {
+          "ru": "Косино",
+          "en": "Kosino",
+          "cn": "科西诺"
+        },
+        "location": {
+          "lat": 55.7026,
+          "lon": 37.8511
+        }
+      },
+      {
+        "id": 399,
+        "name": {
+          "ru": "Улица Дмитриевского",
+          "en": "Ulitsa Dmitrievskogo",
+          "cn": "德米特里耶夫斯基街"
+        },
+        "location": {
+          "lat": 55.710197,
+          "lon": 37.878906
+        }
+      },
+      {
+        "id": 400,
+        "name": {
+          "ru": "Лухмановская",
+          "en": "Lukhmanovskaya",
+          "cn": "鲁赫玛诺夫路"
+        },
+        "location": {
+          "lat": 55.708686,
+          "lon": 37.901363
+        }
+      },
+      {
+        "id": 401,
+        "name": {
+          "ru": "Некрасовка",
+          "en": "Nekrasovka",
+          "cn": "涅克拉索夫村"
+        },
+        "location": {
+          "lat": 55.704414,
+          "lon": 37.927097
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 36,
+    "color": "#EA5B0C",
+    "name": {
+      "ru": "МЦД-3"
+    },
+    "stations": [
+      {
+        "id": 502,
+        "name": {
+          "ru": "Зеленоград-Крюково",
+          "en": "Zelenograd-Kryukovo",
+          "cn": "泽列诺格拉德-克留科沃"
+        },
+        "location": {
+          "lat": 55.980454,
+          "lon": 37.172383
+        }
+      },
+      {
+        "id": 503,
+        "name": {
+          "ru": "Фирсановская",
+          "en": "Firsanovskaya",
+          "cn": "菲尔萨诺娃站"
+        },
+        "location": {
+          "lat": 55.960528,
+          "lon": 37.251122
+        }
+      },
+      {
+        "id": 504,
+        "name": {
+          "ru": "Сходня",
+          "en": "Skhodnya",
+          "cn": "斯霍德尼亚河"
+        },
+        "location": {
+          "lat": 55.949438,
+          "lon": 37.298962
+        }
+      },
+      {
+        "id": 505,
+        "name": {
+          "ru": "Подрезково",
+          "en": "Podrezkovo",
+          "cn": "波德列兹科沃"
+        },
+        "location": {
+          "lat": 55.942453,
+          "lon": 37.332697
+        }
+      },
+      {
+        "id": 506,
+        "name": {
+          "ru": "Новоподрезково",
+          "en": "Novopodrezkovo",
+          "cn": "新波德列兹科沃"
+        },
+        "location": {
+          "lat": 55.936555,
+          "lon": 37.352689
+        }
+      },
+      {
+        "id": 507,
+        "name": {
+          "ru": "Молжаниново",
+          "en": "Molzhaninovo",
+          "cn": "莫尔扎尼诺沃"
+        },
+        "location": {
+          "lat": 55.924644,
+          "lon": 37.381207
+        }
+      },
+      {
+        "id": 508,
+        "name": {
+          "ru": "Химки",
+          "en": "Khimki",
+          "cn": "希姆基"
+        },
+        "location": {
+          "lat": 55.894299,
+          "lon": 37.4526
+        }
+      },
+      {
+        "id": 509,
+        "name": {
+          "ru": "Левобережная",
+          "en": "Levoberezhnaya",
+          "cn": "左岸站"
+        },
+        "location": {
+          "lat": 55.886904,
+          "lon": 37.469711
+        }
+      },
+      {
+        "id": 510,
+        "name": {
+          "ru": "Ховрино",
+          "en": "Khovrino",
+          "cn": "霍夫林诺"
+        },
+        "location": {
+          "lat": 55.880328,
+          "lon": 37.485564
+        }
+      },
+      {
+        "id": 511,
+        "name": {
+          "ru": "Грачёвская",
+          "en": "Grachyovskaya",
+          "cn": "格拉乔夫卡站"
+        },
+        "location": {
+          "lat": 55.869855,
+          "lon": 37.507448
+        }
+      },
+      {
+        "id": 512,
+        "name": {
+          "ru": "Моссельмаш",
+          "en": "Mosselmash",
+          "cn": "农业机械制造厂"
+        },
+        "location": {
+          "lat": 55.86163,
+          "lon": 37.525199
+        }
+      },
+      {
+        "id": 513,
+        "name": {
+          "ru": "Лихоборы",
+          "en": "Likhobory",
+          "cn": "幽暗密林"
+        },
+        "location": {
+          "lat": 55.850201,
+          "lon": 37.55231
+        }
+      },
+      {
+        "id": 514,
+        "name": {
+          "ru": "Петровско-Разумовская",
+          "en": "Petrovsko-Razumovskaya",
+          "cn": "农业大学"
+        },
+        "location": {
+          "lat": 55.839461,
+          "lon": 37.568569
+        }
+      },
+      {
+        "id": 515,
+        "name": {
+          "ru": "Останкино",
+          "en": "Ostankino",
+          "cn": "奥斯坦金诺"
+        },
+        "location": {
+          "lat": 55.817918,
+          "lon": 37.603096
+        }
+      },
+      {
+        "id": 628,
+        "name": {
+          "ru": "Митьково",
+          "en": "Mitkovo",
+          "cn": "米特科沃"
+        },
+        "location": {
+          "lat": 55.785341,
+          "lon": 37.672495
+        }
+      },
+      {
+        "id": 516,
+        "name": {
+          "ru": "Электрозаводская",
+          "en": "Elektrozavodskaya",
+          "cn": "电器厂"
+        },
+        "location": {
+          "lat": 55.781079,
+          "lon": 37.705043
+        }
+      },
+      {
+        "id": 517,
+        "name": {
+          "ru": "Сортировочная",
+          "en": "Sortirovochnaya",
+          "cn": "编组站"
+        },
+        "location": {
+          "lat": 55.762849,
+          "lon": 37.721192
+        }
+      },
+      {
+        "id": 518,
+        "name": {
+          "ru": "Авиамоторная",
+          "en": "Aviamotornaya",
+          "cn": "航空发动机学院"
+        },
+        "location": {
+          "lat": 55.751078,
+          "lon": 37.721122
+        }
+      },
+      {
+        "id": 519,
+        "name": {
+          "ru": "Андроновка",
+          "en": "Andronovka",
+          "cn": "安德罗诺夫卡"
+        },
+        "location": {
+          "lat": 55.745753,
+          "lon": 37.738649
+        }
+      },
+      {
+        "id": 520,
+        "name": {
+          "ru": "Перово",
+          "en": "Perovo",
+          "cn": "佩罗沃"
+        },
+        "location": {
+          "lat": 55.736305,
+          "lon": 37.762698
+        }
+      },
+      {
+        "id": 521,
+        "name": {
+          "ru": "Плющево",
+          "en": "Plyuschevo",
+          "cn": "普柳谢沃"
+        },
+        "location": {
+          "lat": 55.730581,
+          "lon": 37.777364
+        }
+      },
+      {
+        "id": 522,
+        "name": {
+          "ru": "Вешняки",
+          "en": "Veshnyaki",
+          "cn": "韦什尼亚基"
+        },
+        "location": {
+          "lat": 55.722627,
+          "lon": 37.797186
+        }
+      },
+      {
+        "id": 523,
+        "name": {
+          "ru": "Выхино",
+          "en": "Vykhino",
+          "cn": "维欣诺"
+        },
+        "location": {
+          "lat": 55.716063,
+          "lon": 37.816051
+        }
+      },
+      {
+        "id": 524,
+        "name": {
+          "ru": "Косино",
+          "en": "Kosino",
+          "cn": "科西诺"
+        },
+        "location": {
+          "lat": 55.705625,
+          "lon": 37.847683
+        }
+      },
+      {
+        "id": 525,
+        "name": {
+          "ru": "Ухтомская",
+          "en": "Ukhtomskaya",
+          "cn": "乌赫托姆斯基站"
+        },
+        "location": {
+          "lat": 55.698606,
+          "lon": 37.865022
+        }
+      },
+      {
+        "id": 526,
+        "name": {
+          "ru": "Люберцы",
+          "en": "Lyubertsy",
+          "cn": "柳别尔齐"
+        },
+        "location": {
+          "lat": 55.681781,
+          "lon": 37.897077
+        }
+      },
+      {
+        "id": 527,
+        "name": {
+          "ru": "Панки",
+          "en": "Panki",
+          "cn": "潘基"
+        },
+        "location": {
+          "lat": 55.668695,
+          "lon": 37.924869
+        }
+      },
+      {
+        "id": 528,
+        "name": {
+          "ru": "Томилино",
+          "en": "Tomilino",
+          "cn": "多米里诺"
+        },
+        "location": {
+          "lat": 55.655609,
+          "lon": 37.95234
+        }
+      },
+      {
+        "id": 529,
+        "name": {
+          "ru": "Красково",
+          "en": "Kraskovo",
+          "cn": "克拉斯科沃"
+        },
+        "location": {
+          "lat": 55.650254,
+          "lon": 37.981848
+        }
+      },
+      {
+        "id": 530,
+        "name": {
+          "ru": "Малаховка",
+          "en": "Malakhovka",
+          "cn": "马拉霍夫卡"
+        },
+        "location": {
+          "lat": 55.64523,
+          "lon": 38.009449
+        }
+      },
+      {
+        "id": 531,
+        "name": {
+          "ru": "Удельная",
+          "en": "Udelnaya",
+          "cn": "乌杰利纳亚"
+        },
+        "location": {
+          "lat": 55.634352,
+          "lon": 38.044489
+        }
+      },
+      {
+        "id": 532,
+        "name": {
+          "ru": "Быково",
+          "en": "Bykovo",
+          "cn": "贝科沃"
+        },
+        "location": {
+          "lat": 55.626346,
+          "lon": 38.073039
+        }
+      },
+      {
+        "id": 533,
+        "name": {
+          "ru": "Ильинская",
+          "en": "Ilyinskaya",
+          "cn": "伊里因站"
+        },
+        "location": {
+          "lat": 55.615747,
+          "lon": 38.102483
+        }
+      },
+      {
+        "id": 534,
+        "name": {
+          "ru": "Отдых",
+          "en": "Otdykh",
+          "cn": "休养院"
+        },
+        "location": {
+          "lat": 55.601295,
+          "lon": 38.135526
+        }
+      },
+      {
+        "id": 535,
+        "name": {
+          "ru": "Кратово",
+          "en": "Kratovo",
+          "cn": "克拉托沃"
+        },
+        "location": {
+          "lat": 55.591362,
+          "lon": 38.162373
+        }
+      },
+      {
+        "id": 536,
+        "name": {
+          "ru": "Есенинская",
+          "en": "Eseninskaya",
+          "cn": "叶赛宁站"
+        },
+        "location": {
+          "lat": 55.581782,
+          "lon": 38.185544
+        }
+      },
+      {
+        "id": 537,
+        "name": {
+          "ru": "Фабричная",
+          "en": "Fabrichnaya",
+          "cn": "纺织厂站"
+        },
+        "location": {
+          "lat": 55.572605,
+          "lon": 38.206801
+        }
+      },
+      {
+        "id": 538,
+        "name": {
+          "ru": "Раменское",
+          "en": "Ramenskoe",
+          "cn": "拉缅斯科耶"
+        },
+        "location": {
+          "lat": 55.565605,
+          "lon": 38.226271
+        }
+      },
+      {
+        "id": 539,
+        "name": {
+          "ru": "Ипподром",
+          "en": "Ippodrom",
+          "cn": "跑马场"
+        },
+        "location": {
+          "lat": 55.559615,
+          "lon": 38.240749
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 37,
+    "color": "#45B384",
+    "name": {
+      "ru": "МЦД-4"
+    },
+    "stations": [
+      {
+        "id": 540,
+        "name": {
+          "ru": "Железнодорожная",
+          "en": "Zheleznodorozhnaya",
+          "cn": "热烈兹诺多罗日内站"
+        },
+        "location": {
+          "lat": 55.752544,
+          "lon": 38.010007
+        }
+      },
+      {
+        "id": 541,
+        "name": {
+          "ru": "Ольгино",
+          "en": "Olgino",
+          "cn": "奥尔吉诺"
+        },
+        "location": {
+          "lat": 55.751804,
+          "lon": 37.980836
+        }
+      },
+      {
+        "id": 542,
+        "name": {
+          "ru": "Кучино",
+          "en": "Kuchino",
+          "cn": "库奇诺"
+        },
+        "location": {
+          "lat": 55.752099,
+          "lon": 37.955134
+        }
+      },
+      {
+        "id": 543,
+        "name": {
+          "ru": "Салтыковская",
+          "en": "Saltykovskaya",
+          "cn": "萨尔蒂科夫站"
+        },
+        "location": {
+          "lat": 55.757793,
+          "lon": 37.922254
+        }
+      },
+      {
+        "id": 544,
+        "name": {
+          "ru": "Никольское",
+          "en": "Nikolskoe",
+          "cn": "尼古拉庄园"
+        },
+        "location": {
+          "lat": 55.759653,
+          "lon": 37.897518
+        }
+      },
+      {
+        "id": 545,
+        "name": {
+          "ru": "Реутов",
+          "en": "Reutov",
+          "cn": "列乌托夫"
+        },
+        "location": {
+          "lat": 55.75157,
+          "lon": 37.855701
+        }
+      },
+      {
+        "id": 546,
+        "name": {
+          "ru": "Новогиреево",
+          "en": "Novogireevo",
+          "cn": "新吉列耶沃"
+        },
+        "location": {
+          "lat": 55.744471,
+          "lon": 37.81938
+        }
+      },
+      {
+        "id": 547,
+        "name": {
+          "ru": "Кусково",
+          "en": "Kuskovo",
+          "cn": "库斯科沃庄园"
+        },
+        "location": {
+          "lat": 55.739541,
+          "lon": 37.794706
+        }
+      },
+      {
+        "id": 548,
+        "name": {
+          "ru": "Чухлинка",
+          "en": "Chukhlinka",
+          "cn": "丘赫林卡"
+        },
+        "location": {
+          "lat": 55.733406,
+          "lon": 37.763127
+        }
+      },
+      {
+        "id": 549,
+        "name": {
+          "ru": "Нижегородская",
+          "en": "Nizhegorodskaya",
+          "cn": "下诺夫哥罗德路"
+        },
+        "location": {
+          "lat": 55.733366,
+          "lon": 37.729584
+        }
+      },
+      {
+        "id": 550,
+        "name": {
+          "ru": "Серп и Молот",
+          "en": "Serp i Molot",
+          "cn": "锤子与镰刀"
+        },
+        "location": {
+          "lat": 55.748184,
+          "lon": 37.682253
+        }
+      },
+      {
+        "id": 551,
+        "name": {
+          "ru": "Курская",
+          "en": "Kurskaya",
+          "cn": "库尔斯克火车站"
+        },
+        "location": {
+          "lat": 55.758293,
+          "lon": 37.662377
+        }
+      },
+      {
+        "id": 552,
+        "name": {
+          "ru": "Площадь трёх вокзалов",
+          "en": "Ploschad Tryokh Vokzalov",
+          "cn": "三站广场"
+        },
+        "location": {
+          "lat": 55.77607,
+          "lon": 37.65168
+        }
+      },
+      {
+        "id": 553,
+        "name": {
+          "ru": "Марьина Роща",
+          "en": "Maryina Roscha",
+          "cn": "玛丽亚丛林"
+        },
+        "location": {
+          "lat": 55.800826,
+          "lon": 37.619103
+        }
+      },
+      {
+        "id": 554,
+        "name": {
+          "ru": "Савёловская",
+          "en": "Savyolovskaya",
+          "cn": "萨维奥洛沃火车站"
+        },
+        "location": {
+          "lat": 55.794325,
+          "lon": 37.590278
+        }
+      },
+      {
+        "id": 555,
+        "name": {
+          "ru": "Белорусская",
+          "en": "Beloruskaya",
+          "cn": "白俄罗斯火车站"
+        },
+        "location": {
+          "lat": 55.776942,
+          "lon": 37.580414
+        }
+      },
+      {
+        "id": 556,
+        "name": {
+          "ru": "Москва-Сити",
+          "en": "Moskva-City",
+          "cn": "莫斯科CBD"
+        },
+        "location": {
+          "lat": 55.74782,
+          "lon": 37.531973
+        }
+      },
+      {
+        "id": 557,
+        "name": {
+          "ru": "Кутузовская",
+          "en": "Kutuzovskaya",
+          "cn": "库图佐夫大街"
+        },
+        "location": {
+          "lat": 55.740081,
+          "lon": 37.533772
+        }
+      },
+      {
+        "id": 558,
+        "name": {
+          "ru": "Поклонная",
+          "en": "Poklonnaya",
+          "cn": "俯首山路"
+        },
+        "location": {
+          "lat": 55.728294,
+          "lon": 37.511704
+        }
+      },
+      {
+        "id": 559,
+        "name": {
+          "ru": "Минская",
+          "en": "Minskaya",
+          "cn": "明斯克路"
+        },
+        "location": {
+          "lat": 55.723645,
+          "lon": 37.500681
+        }
+      },
+      {
+        "id": 560,
+        "name": {
+          "ru": "Матвеевская",
+          "en": "Matveevskaya",
+          "cn": "马特维耶夫站"
+        },
+        "location": {
+          "lat": 55.70457,
+          "lon": 37.481624
+        }
+      },
+      {
+        "id": 561,
+        "name": {
+          "ru": "Аминьевская",
+          "en": "Aminyevskaya",
+          "cn": "阿米尼沃公路"
+        },
+        "location": {
+          "lat": 55.69791,
+          "lon": 37.469579
+        }
+      },
+      {
+        "id": 562,
+        "name": {
+          "ru": "Очаково",
+          "en": "Ochakovo",
+          "cn": "奥恰科沃"
+        },
+        "location": {
+          "lat": 55.683236,
+          "lon": 37.450691
+        }
+      },
+      {
+        "id": 563,
+        "name": {
+          "ru": "Мещерская",
+          "en": "Mescherskaya",
+          "cn": "梅舍尔斯基站"
+        },
+        "location": {
+          "lat": 55.666736,
+          "lon": 37.424606
+        }
+      },
+      {
+        "id": 564,
+        "name": {
+          "ru": "Солнечная",
+          "en": "Solnechnaya",
+          "cn": "阳光站"
+        },
+        "location": {
+          "lat": 55.657377,
+          "lon": 37.385526
+        }
+      },
+      {
+        "id": 565,
+        "name": {
+          "ru": "Переделкино",
+          "en": "Peredelkino",
+          "cn": "作家村"
+        },
+        "location": {
+          "lat": 55.656276,
+          "lon": 37.354897
+        }
+      },
+      {
+        "id": 566,
+        "name": {
+          "ru": "Мичуринец",
+          "en": "Michurinets",
+          "cn": "米丘林合作社"
+        },
+        "location": {
+          "lat": 55.646211,
+          "lon": 37.316119
+        }
+      },
+      {
+        "id": 567,
+        "name": {
+          "ru": "Внуково",
+          "en": "Vnukovo",
+          "cn": "伏努科沃"
+        },
+        "location": {
+          "lat": 55.649031,
+          "lon": 37.269534
+        }
+      },
+      {
+        "id": 568,
+        "name": {
+          "ru": "Лесной Городок",
+          "en": "Lesnoy Gorodok",
+          "cn": "林中小镇"
+        },
+        "location": {
+          "lat": 55.631931,
+          "lon": 37.218274
+        }
+      },
+      {
+        "id": 569,
+        "name": {
+          "ru": "Толстопальцево",
+          "en": "Tolstopaltsevo",
+          "cn": "厚指村"
+        },
+        "location": {
+          "lat": 55.607552,
+          "lon": 37.18589
+        }
+      },
+      {
+        "id": 570,
+        "name": {
+          "ru": "Кокошкино",
+          "en": "Kokoshkino",
+          "cn": "科科什基诺"
+        },
+        "location": {
+          "lat": 55.599827,
+          "lon": 37.171349
+        }
+      },
+      {
+        "id": 571,
+        "name": {
+          "ru": "Санино",
+          "en": "Sanino",
+          "cn": "萨尼诺"
+        },
+        "location": {
+          "lat": 55.584007,
+          "lon": 37.138015
+        }
+      },
+      {
+        "id": 572,
+        "name": {
+          "ru": "Крёкшино",
+          "en": "Kryokshino",
+          "cn": "克廖克希诺"
+        },
+        "location": {
+          "lat": 55.577949,
+          "lon": 37.109853
+        }
+      },
+      {
+        "id": 573,
+        "name": {
+          "ru": "Победа",
+          "en": "Pobeda",
+          "cn": "胜利站"
+        },
+        "location": {
+          "lat": 55.566207,
+          "lon": 37.092795
+        }
+      },
+      {
+        "id": 574,
+        "name": {
+          "ru": "Апрелевка",
+          "en": "Aprelevka",
+          "cn": "阿普雷列夫卡"
+        },
+        "location": {
+          "lat": 55.55016,
+          "lon": 37.066903
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 75,
+    "color": "#007762",
+    "name": {
+      "ru": "Троицкая линия"
+    },
+    "stations": [
+      {
+        "id": 634,
+        "name": {
+          "ru": "Новаторская",
+          "en": "Novatorskaya",
+          "cn": "创新者路"
+        },
+        "location": {
+          "lat": 55.668931,
+          "lon": 37.523906
+        }
+      },
+      {
+        "id": 635,
+        "name": {
+          "ru": "Университет Дружбы Народов",
+          "en": "Universitet Druzhby Narodov",
+          "cn": "人民友谊大学"
+        },
+        "location": {
+          "lat": 55.64824,
+          "lon": 37.507556
+        }
+      },
+      {
+        "id": 636,
+        "name": {
+          "ru": "Генерала Тюленева",
+          "en": "Generala Tyuleneva",
+          "cn": "秋列涅夫大将街"
+        },
+        "location": {
+          "lat": 55.626248,
+          "lon": 37.486032
+        }
+      },
+      {
+        "id": 637,
+        "name": {
+          "ru": "Тютчевская",
+          "en": "Tyutchevskaya",
+          "cn": "秋切夫站"
+        },
+        "location": {
+          "lat": 55.618801,
+          "lon": 37.481415
+        }
+      },
+      {
+        "id": 639,
+        "name": {
+          "ru": "Корниловская",
+          "en": "Kornilovskaya",
+          "cn": "科尔尼洛夫海军中将街"
+        },
+        "location": {
+          "lat": 55.597925,
+          "lon": 37.479323
+        }
+      },
+      {
+        "id": 640,
+        "name": {
+          "ru": "Коммунарка",
+          "en": "Kommunarka",
+          "cn": "科穆纳尔卡"
+        },
+        "location": {
+          "lat": 55.573578,
+          "lon": 37.467536
+        }
+      },
+      {
+        "id": 641,
+        "name": {
+          "ru": "Новомосковская",
+          "en": "Novomoskovskaya",
+          "cn": "新莫斯科站"
+        },
+        "location": {
+          "lat": 55.560715,
+          "lon": 37.465379
+        }
+      }
+    ]
+  },
+  {
+    "line_id": 38,
+    "color": "#45B384",
+    "name": {
+      "ru": "МЦД-4А"
+    },
+    "stations": [
+      {
+        "id": 575,
+        "name": {
+          "ru": "Солнечная",
+          "en": "Solnechnaya",
+          "cn": "阳光站"
+        },
+        "location": {
+          "lat": 55.657377,
+          "lon": 37.385526
+        }
+      },
+      {
+        "id": 576,
+        "name": {
+          "ru": "Новопеределкино",
+          "en": "Novoperedelkino",
+          "cn": "作家新村"
+        },
+        "location": {
+          "lat": 55.638766,
+          "lon": 37.382211
+        }
+      }
+    ]
+  }
+]
