@@ -1,8 +1,22 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from app.service.models import Event, UserProfile
+
+
+class TelegramAuthRequest(BaseModel):
+    """Схема запроса для аутентификации через Telegram Mini App"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "init_data": "user=%7B%22id%22%3A123456789%2C%22first_name%22%3A%22Test%22%7D&auth_date=1234567890&hash=test_hash"
+            }
+        }
+    )
+
+    init_data: str = Field(description="Init data от Telegram Mini App")
 
 
 class ScheduleResponse(BaseModel):
@@ -122,3 +136,109 @@ class UserProfileUpdateRequest(BaseModel):
     fields: Dict[str, Any] = Field(
         description="Словарь с полями для обновления", min_length=1
     )
+
+
+class MetroOptimizationContract(BaseModel):
+    """Контракт для оптимизации данных метро"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "language": "ru",
+                "include_location": True,
+                "use_numeric_keys": True,
+            }
+        }
+    )
+
+    language: str = Field(
+        default="ru",
+        description="Язык для названий (ru, en, cn, all)",
+        pattern="^(ru|en|cn|all)$",
+    )
+    include_location: bool = Field(
+        default=True, description="Включать ли координаты станций"
+    )
+    use_numeric_keys: bool = Field(
+        default=False, description="Использовать числовые ключи вместо строковых"
+    )
+
+
+class OptimizedMetroLine(BaseModel):
+    """Оптимизированная модель ветки метро"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "1": 1,  # line_id
+                "2": "#d41317",  # color
+                "3": "Сокольническая линия",  # name
+                "4": [  # stations
+                    {
+                        "1": 1,  # id
+                        "2": "Бульвар Рокоссовского",  # name
+                        "3": {"lat": 55.814789, "lon": 37.733928},  # location
+                    }
+                ],
+            }
+        }
+    )
+
+    # Числовые ключи для оптимизации
+    data: Dict[str, Any] = Field(description="Оптимизированные данные ветки")
+
+
+class OptimizedMetroResponse(BaseModel):
+    """Оптимизированный ответ для эндпоинта /metro"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "lines": [
+                    {
+                        "1": 1,  # line_id
+                        "2": "#d41317",  # color
+                        "3": "Сокольническая линия",  # name
+                        "4": [  # stations
+                            {
+                                "1": 1,  # id
+                                "2": "Бульвар Рокоссовского",  # name
+                                "3": {"lat": 55.814789, "lon": 37.733928},  # location
+                            }
+                        ],
+                    }
+                ]
+            }
+        }
+    )
+
+    lines: List[Dict[str, Any]] = Field(
+        description="Список оптимизированных веток метро"
+    )
+
+
+class MetroResponse(BaseModel):
+    """Схема ответа для эндпоинта /metro"""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "lines": [
+                    {
+                        "line_id": 1,
+                        "color": "#d41317",
+                        "name": {"name": "Сокольническая линия"},
+                        "stations": [
+                            {
+                                "id": 1,
+                                "name": {"name": "Бульвар Рокоссовского"},
+                                "location": {"lat": 55.814789, "lon": 37.733928},
+                            }
+                        ],
+                    }
+                ]
+            }
+        }
+    )
+
+    lines: List[Dict[str, Any]] = Field(description="Список веток метро")
